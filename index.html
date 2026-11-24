@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Valkyrie</title>
+<meta name="description" content="Valkyrie: a light-lag space combat game set in the War of Shattered Stars. Every ship you see is where it was when its light left her.">
+<meta property="og:title" content="Valkyrie">
+<meta property="og:description" content="A light-lag space combat game set in the War of Shattered Stars. Play it in your browser.">
+<meta property="og:image" content="img/ring.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#070605;--panel:#120d09;--line:rgba(255,155,47,.28);--line-soft:rgba(255,155,47,.12);--amber:#ff9b2f;--amber-hi:#ffc06a;--text:#ffe2bd;--dim:#c79a68;--faint:#8a6a4a;--us:#5fd6ff;--con:#e9cf86;--dom:#e0584a;--bad:#ff6e3c;
+  --display:"Rajdhani","Bahnschrift",sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--sans:"IBM Plex Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--amber-hi)}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:rgba(7,6,5,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:56px}
+nav .brand{font:700 20px var(--display);letter-spacing:.32em;color:var(--amber);text-decoration:none;margin-right:auto}
+nav a.l{font:600 14px var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none}
+nav a.l:hover{color:var(--amber-hi)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 18px var(--display);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid var(--amber);color:var(--amber-hi);background:rgba(255,155,47,.06);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn:hover{background:rgba(255,155,47,.16)}
+.btn.go{background:linear-gradient(180deg,#ffb04d,#f08a1c);color:#1c0f03;border-color:#ffb04d}
+.btn.go:hover{background:linear-gradient(180deg,#ffc06a,#ff9b2f)}
+nav .btn{font-size:14px;padding:7px 16px}
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line-soft)}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/ring.jpg) 72% 50%/cover no-repeat;opacity:.62}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,6,5,.97) 0%,rgba(7,6,5,.82) 40%,rgba(7,6,5,.15) 75%,rgba(7,6,5,.4) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 30%)}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.eyebrow{font:600 13px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 10px}
+h1{font:700 clamp(64px,11vw,132px)/.9 var(--display);letter-spacing:.12em;margin:0;color:var(--amber);text-shadow:0 0 40px rgba(255,155,47,.35)}
+.tag{font:600 clamp(22px,2.6vw,30px)/1.25 var(--display);letter-spacing:.04em;max-width:640px;margin:18px 0 12px;color:var(--text)}
+.lede{max-width:560px;color:var(--dim);margin:0 0 28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.note{font:500 12.5px/1.5 var(--mono);color:var(--faint);margin-top:16px;max-width:560px}
+section{padding:88px 0;border-bottom:1px solid var(--line-soft)}
+h2{font:700 clamp(32px,4vw,46px)/1.05 var(--display);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;color:var(--amber)}
+h3{font:700 21px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px;color:var(--text)}
+.sub{color:var(--dim);max-width:720px;margin:0 0 36px}
+.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start}
+.shot{border:1px solid var(--line);background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.shot figcaption{font:500 12px var(--mono);color:var(--faint);padding:8px 12px;border-top:1px solid var(--line-soft)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.facts li{padding-left:16px;border-left:2px solid var(--line)}
+.facts b{display:block;font:700 17px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--amber-hi)}
+.facts span{color:var(--dim);font-size:15px}
+.blocs{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.bloc{border:1px solid var(--line-soft);padding:22px 24px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.bloc h3{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.bloc h3 small{font:500 12px var(--mono);letter-spacing:.1em;color:var(--faint);text-transform:none}
+.bloc blockquote{margin:0 0 14px;font:italic 15px var(--sans);color:var(--dim)}
+.races{list-style:none;margin:0;padding:0}
+.races li{display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line-soft);font-size:14.5px}
+.races i{width:10px;height:10px;border-radius:50%}
+.races em{font:500 12px var(--mono);font-style:normal;color:var(--faint)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{border:1px solid var(--line-soft);padding:22px;background:var(--panel)}
+.card .k{font:600 12px var(--mono);letter-spacing:.16em;color:var(--amber);margin-bottom:10px}
+.card p{margin:0;color:var(--dim);font-size:15px}
+.wide{margin-top:40px}
+.friends{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.friends .card h3{margin-bottom:6px}
+.friends ol{margin:8px 0 0;padding-left:20px;color:var(--dim);font-size:15px}
+footer{padding:36px 0 60px;color:var(--faint);font:500 13px var(--mono)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+footer a{color:var(--dim)}
+@media (max-width:900px){.split,.blocs,.friends{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}nav a.l{display:none}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid4{grid-template-columns:1fr}section{padding:60px 0}.hero::after{background:linear-gradient(0deg,rgba(7,6,5,.96) 10%,rgba(7,6,5,.7) 60%,rgba(7,6,5,.5))}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#">VALKYRIE</a><a class="l" href="#war">The war</a><a class="l" href="#play">How it plays</a><a class="l" href="#friends">With friends</a><a class="l" href="changelog.html">Changelog</a><a class="btn go" href="play/">Play</a></div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">A light-lag space combat game · v<span id="ver">0.18.0</span></p>
+  <h1>VALKYRIE</h1>
+  <p class="tag">Every ship you see is where she was when her light left her.</p>
+  <p class="lede">Captain a salvage cutter through the War of Shattered Stars. Hunt ships a tier above you, strip their parts, and choose a side in a war that keeps moving whether you are there or not.</p>
+  <div class="ctas"><a class="btn go" href="play/">Play in your browser</a><a class="btn" href="changelog.html">What's new</a></div>
+  <p class="note">Free, nothing to install. Needs a desktop browser (Chrome, Edge or Firefox) and a graphics card. Your career is saved in your browser. Playing with friends needs the Windows app.</p>
+</div></header>
+
+<section id="war"><div class="wrap">
+  <p class="eyebrow">The War of Shattered Stars</p>
+  <h2>Two powers. Ten races. One front that never stops moving.</h2>
+  <p class="sub">For nearly two centuries the Concord and the Dominion have fought over the Elysian Gate, an ancient structure buried in the well of a dead star. Neither can win. Neither can afford to lose. And something beneath the battlefields is beginning to wake.</p>
+  <div class="split">
+    <figure class="shot" style="margin:0"><img src="img/war-map.jpg" alt="The galaxy map: 32 systems tinted by the race that holds them, with a glowing front line between Concord and Dominion space." loading="lazy" width="968" height="542"><figcaption>The War tab at Tarsis Ring: who holds what, and where the front runs.</figcaption></figure>
+    <ul class="facts">
+      <li><b>32 systems, every race its own space</b><span>Each race holds its own territory round a capital that never falls. Neutral ports, the Free Companies and the Outer Collective sit between them.</span></li>
+      <li><b>The front moves</b><span>Battles burn wherever the two powers' space meets. Lose enough of them and a system changes hands, holding fleet and all.</span></li>
+      <li><b>You can tip it</b><span>Fight beside one side at a flash point, or hunt down a system's holding fleet and break its hold.</span></li>
+      <li><b>It goes on without you</b><span>Every twenty minutes away is another battle somewhere on the front. Come back to a different map.</span></li>
+    </ul>
+  </div>
+  <div class="blocs">
+    <div class="bloc" style="border-top:3px solid var(--con)"><h3>The Concord <small>a federation led by the Seraphine</small></h3><blockquote>“A thousand worlds. A million voices. One future.”</blockquote>
+      <ul class="races"><li><i style="background:#f1d98e"></i>Seraphine Lattice<em>Apex</em></li><li><i style="background:#b79cff"></i>Myrr Choir<em>2nd tier</em></li><li><i style="background:#5fd8cf"></i>Ilk Collective<em>3rd tier</em></li><li><i style="background:#ff9fb0"></i>Tessari Reefs<em>4th tier</em></li><li><i style="background:#9fd7f0"></i>Pell Commons<em>5th tier</em></li></ul></div>
+    <div class="bloc" style="border-top:3px solid var(--dom)"><h3>The Dominion <small>an empire ruled by the Vorrakai</small></h3><blockquote>“Peace is the reward of strength. Weakness is an invitation to destruction.”</blockquote>
+      <ul class="races"><li><i style="background:#ff4d6d"></i>Vorrakai Autarchy<em>Apex</em></li><li><i style="background:#e0684a"></i>Vashkar Hegemony<em>2nd tier</em></li><li><i style="background:#b9b2a2"></i>Grael Bastions<em>3rd tier</em></li><li><i style="background:#9cd26a"></i>Krell Tide<em>4th tier</em></li><li><i style="background:#c98a4b"></i>Dustborn conscripts<em>5th tier</em></li></ul></div>
+  </div>
+</div></section>
+
+<section id="play"><div class="wrap">
+  <p class="eyebrow">How it plays</p>
+  <h2>You only ever see the past.</h2>
+  <p class="sub">Sensors, guns and jump flashes all travel at the speed of light. Out at a few hundred kilometres your picture of a ship is seconds old, and she has moved since. Fly, hide and shoot on that.</p>
+  <div class="grid4">
+    <div class="card"><div class="k">01 · LIGHT LAG</div><h3>Shoot where she will be</h3><p>Every contact is an echo. Sweep to find her, ping to see her clearly and be seen, or go silent and drift.</p></div>
+    <div class="card"><div class="k">02 · SALVAGE</div><h3>Climb the tiers</h3><p>The Magpie starts on human scrap. Beat a ship a tier above you, strip her parts, and fit them. Every step up doubles the danger.</p></div>
+    <div class="card"><div class="k">03 · STANDING</div><h3>Pick a side, or don't</h3><p>Both powers post bounties at Tarsis Ring. Work for one and the other starts hunting you. Get infamous enough and everyone does.</p></div>
+    <div class="card"><div class="k">04 · THE DARK</div><h3>Something is waking</h3><p>Architect Remnants drink the energy of every battle near them. Wake one and both fleets turn on it. What sits at its heart is worth a fortune.</p></div>
+  </div>
+  <figure class="shot wide" style="margin-top:40px"><img src="img/fight.jpg" alt="A flash point battle seen from the Magpie's cockpit, with contacts, the target window and the scanner." loading="lazy" width="1500" height="950"><figcaption>A flash point: two fleets, and you in the middle of it.</figcaption></figure>
+</div></section>
+
+<section id="friends"><div class="wrap">
+  <p class="eyebrow">With friends</p>
+  <h2>Fly together.</h2>
+  <p class="sub">One captain hosts the war on their PC, and friends join from theirs, each in their own ship, sharing one galaxy and one front.</p>
+  <div class="friends">
+    <div class="card"><h3>Solo, in the browser</h3><p>Everything in the game, on this page. Your career and your war are kept in this browser.</p><p style="margin-top:14px"><a class="btn go" href="play/">Play now</a></p></div>
+    <div class="card"><h3>Multiplayer, with the Windows app</h3><p>The host runs <b>Valkyrie Host</b>; friends run <b>Valkyrie</b> and type the host's address. The apps are shared directly by the developer for now. Ask whoever sent you here.</p>
+      <ol><li>Everyone needs the same version (0.18.0).</li><li>Windows may warn that the app is unsigned: More info, then Run anyway.</li></ol></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>Valkyrie v0.18.0</span><a href="changelog.html">Changelog</a><a href="THIRD-PARTY-NOTICES.txt">Third-party notices</a><a href="https://github.com/epitaph413/valkyrie">Source on GitHub</a><span>Found a bug? In the game: Report a problem.</span></div></footer>
+</body>
+</html>
