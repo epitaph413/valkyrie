@@ -456,6 +456,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
 .win.tut-hold,.grp.tut-hold{visibility:hidden!important;pointer-events:none!important}.grp.tut-hold{display:none}.win.tut-new{animation:tutnew 1.4s ease-in-out 3}@keyframes tutnew{50%{box-shadow:0 0 0 2px var(--us),0 0 26px rgba(95,214,255,.45)}}.tut .tut-new-l{margin:6px 0 0;padding:6px 8px;border-left:2px solid var(--us);background:rgba(95,214,255,.07);font-size:12.5px;line-height:1.45}.age{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:2px 10px;margin:6px 0 4px;padding:6px 9px;border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--c,var(--ok));background:rgba(0,0,0,.28)}.age .age-l{font:600 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}.age b{font:700 26px/1 var(--mono);color:var(--c,var(--ok));text-shadow:0 0 12px color-mix(in srgb,var(--c,var(--ok)) 45%,transparent);text-align:right}.age em{grid-column:1/-1;font:italic 12px/1.35 var(--sans,inherit);color:var(--faint)}.age[data-lv=fresh]{--c:var(--ok)}.age[data-lv=aging]{--c:var(--warn)}.age[data-lv=stale]{--c:var(--bad)}.tag-age{position:absolute;right:-4px;top:-4px;transform:translate(100%,-100%);padding:0 5px;font:700 12px/1.5 var(--mono);background:rgba(8,6,5,.78);color:var(--c);border:1px solid var(--c)}.tag-age[data-lv=fresh]{--c:var(--ok)}.tag-age[data-lv=aging]{--c:var(--warn)}.tag-age[data-lv=stale]{--c:var(--bad)}.tag-age:empty{display:none}.ov-row .ov-age{font:600 11px var(--mono);text-align:right;color:var(--ok)}.ov-age[data-lv=aging]{color:var(--warn)}.ov-age[data-lv=stale]{color:var(--bad)}
 .rep-priv summary{color:var(--ok)}.rep-privtxt{font-size:12.5px;line-height:1.5;max-height:220px;overflow:auto;padding:4px 2px}.rep-privtxt p{margin:0 0 6px}.rep-chk{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--faint);margin:4px 0 2px}.rep-chk input{accent-color:var(--amber)}.st-boot{margin:8px 0;padding:8px 10px;border-left:3px solid var(--warn);background:rgba(255,210,63,.07);font-size:13px;line-height:1.45}.st-boot .row{margin-top:6px}
 .gal-h{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.gal-tools{display:inline-flex;gap:4px}.gal-tools .btn{padding:2px 9px;font-size:12px;min-height:0}#galaxy,#warmap{touch-action:none;cursor:grab}#galaxy:active,#warmap:active{cursor:grabbing}.war-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,1fr);gap:18px;align-items:start}.war-map canvas{width:100%;height:auto;aspect-ratio:760/640;background:#070605;box-shadow:inset 0 0 0 1px var(--line-soft)}.war-sel{margin-top:6px;font-size:13px}.war-sel h3{font:700 17px var(--display);margin:4px 0}.war-sel h3 small{font:500 11px var(--mono);color:var(--faint);margin-left:6px}.war-sel p{margin:0 0 6px;line-height:1.45}.war-side h2{margin:6px 0 8px}.war-bar{display:flex;height:22px;margin-bottom:10px;font:700 11px/22px var(--mono);color:#140e08;overflow:hidden}.war-bar span{padding:0 8px;white-space:nowrap}.war-bar span:last-child{text-align:right}.war-races{list-style:none;margin:0 0 10px;padding:0}.war-races li{display:grid;grid-template-columns:12px 1fr auto;gap:8px;align-items:center;padding:3px 0;border-bottom:1px solid var(--line-soft);font-size:13px}.war-races i{width:10px;height:10px;border-radius:50%}.war-races small{display:block;font:500 10.5px var(--mono);color:var(--faint)}.war-races b{font:700 14px var(--mono)}.war-races em{font-style:normal;font-size:11px}.war-races em.up{color:var(--ok)}.war-races em.down{color:var(--bad)}.war-news{list-style:none;margin:0 0 10px;padding:0;max-height:300px;overflow:auto}.war-news li{padding:5px 0 5px 9px;border-left:2px solid var(--line);margin-bottom:4px;font-size:12.5px;line-height:1.4}.war-news li[data-k=flip]{border-left-color:#ff6e3c}.war-news li[data-k=hold]{border-left-color:var(--ok)}.war-news li.new{background:rgba(255,110,60,.09)}.war-news small{display:block;font:500 10.5px var(--mono);color:var(--faint)}.war-mini{margin:4px 0;padding-left:16px;font-size:13px}.war-mini small{color:var(--faint)}@media (max-width:900px){.war-grid{grid-template-columns:1fr}}
+.war-side h2 small,.intel-wrap h2 small{font:500 11px var(--mono);color:var(--faint);letter-spacing:.06em;margin-left:6px;text-transform:none}.intel-wrap{margin-top:18px}.intel-f{display:inline-flex;gap:4px;flex-wrap:wrap}.intel-f .chip{font:600 11px var(--mono);padding:3px 8px;border:1px solid var(--line-soft);background:transparent;color:var(--dim);cursor:pointer}.intel-f .chip.on{border-color:var(--amber);color:var(--text);background:rgba(255,155,47,.1)}.intel-f .chip b{color:var(--faint);margin-left:3px}.intel-scroll{max-height:320px;overflow:auto;border:1px solid var(--line-soft)}.intel-t{width:100%;border-collapse:collapse;font-size:12.5px}.intel-t th{position:sticky;top:0;background:#120d09;font:600 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line-soft)}.intel-t td{padding:5px 8px;border-bottom:1px solid rgba(255,155,47,.06);vertical-align:top}.intel-t tr[data-cl=historical] td{opacity:.55}.intel-t tr[data-cl=outdated] td{opacity:.78}.ic{font:700 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px solid currentColor;white-space:nowrap}.ic[data-cl=observed]{color:#5fd6ff}.ic[data-cl=recent]{color:var(--ok)}.ic[data-cl=outdated]{color:var(--warn)}.ic[data-cl=historical]{color:var(--faint)}.ic[data-cl=unconfirmed]{color:#c58cff;border-style:dashed}.intel-net{display:grid;grid-template-columns:1fr 1fr;gap:16px}.intel-net ul{list-style:none;margin:0;padding:0;columns:2;column-gap:14px}.intel-net li{font-size:12.5px;padding:2px 0;break-inside:avoid}.intel-net li small{color:var(--faint);font-family:var(--mono)}.intel-net .rt{display:inline-block;width:16px;height:16px;line-height:16px;text-align:center;font:700 10px var(--mono);background:var(--c);color:#140e08;margin-right:6px}@media (max-width:900px){.intel-net{grid-template-columns:1fr}.intel-net ul{columns:1}}
 </style>
 
 <div id="app">
@@ -587,7 +588,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
       <section class="receipt mp" id="mp" hidden aria-label="Multiplayer"></section>
       <section class="receipt" id="receipt" hidden aria-label="Docking receipt"></section>
       <section class="tabpane" id="tab-missions" role="tabpanel"><p class="hint">Both powers keep liaisons on the Ring. Take up to three missions at once; bounties are paid when you dock, and every mission moves your standing: up with the side that pays, down with the side you hit. Orrin also pays a standing bounty on any warship you capture or kill.</p><ul id="board"></ul></section>
-      <section class="tabpane" id="tab-war" role="tabpanel" hidden><div class="war-grid"><div class="war-map"><h2 class="gal-h">The War of Shattered Stars <span class="gal-tools" id="war-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button></span></h2><canvas id="warmap" width="760" height="640" aria-label="The galaxy, tinted by who holds each system, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to see who holds it."></canvas><p class="map-legend"><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital: never falls</span><span><i style="border:2px solid #ff4b3a"></i>Flash point</span><span>Tint: who holds it</span></p><div id="war-sel" class="war-sel"></div></div><div class="war-side"><h2>Who holds what</h2><div id="war-terr"></div><h2>From the front</h2><ol id="war-news" class="war-news"></ol><p class="hint">Battles on the front move it: a side that loses a battle loses its hold, and at zero the system changes hands. Wrecking a holding fleet weakens the hold too. The war goes on while you are away.</p></div></div></section>
+      <section class="tabpane" id="tab-war" role="tabpanel" hidden><div class="war-grid"><div class="war-map"><h2 class="gal-h">The War of Shattered Stars <span class="gal-tools" id="war-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button></span></h2><canvas id="warmap" width="760" height="640" aria-label="The galaxy, tinted by who holds each system, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to see who holds it."></canvas><p class="map-legend"><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital: never falls</span><span><i style="border:2px solid #ff4b3a"></i>Battle as reported</span><span><b style="font-weight:700">■</b> Relay S/M/R/L</span><span>Dashed or faded: old news</span></p><div id="war-sel" class="war-sel"></div></div><div class="war-side"><p class="eyebrow" id="war-asof"></p><h2>Who holds what <small>as far as you know</small></h2><div id="war-terr"></div><h2>From the front</h2><ol id="war-news" class="war-news"></ol><p class="hint">Nothing here is live. Every report was carried: by a star carrier between relays, by a picket coming home, by an Orrin trader to Tarsis, or by you. The map shows each system as last reported; dashed and faded means old news.</p></div></div><div class="intel-wrap"><h2 class="gal-h">Intelligence <span class="intel-f" id="intel-f"></span></h2><div class="intel-scroll"><table class="intel-t" id="intel-t"></table></div><h2>Relay networks <small>as far as you know</small></h2><div id="intel-net" class="intel-net"></div><p class="hint"><b>Local</b> relays connect their own system and sync only at the relay. <b>Regional</b> relays run a star carrier round the locals near them. <b>Strategic</b> relays are high command, joined by long-haul star carriers. <b>Military</b> relays take reports from pickets first, send a courier to high command with anything urgent, and can order reinforcements. Fly into range of a relay of a power that trusts you and you swap reports automatically: they pay in standing for news of the other side. Destroy a star carrier or a picket and its reports die with it, unless you strip its data core. A captured relay's whole database goes to the side that took it.</p></div></section>
       <section class="tabpane" id="tab-factions" role="tabpanel" hidden><div class="fx-grid" id="factions"></div></section>
       <section class="tabpane" id="tab-fitting" role="tabpanel" hidden><div class="shipname"><label for="ship-name">Ship name</label><input id="ship-name" maxlength="24" autocomplete="off" spellcheck="false"><span class="hint" id="ship-class"></span></div><p class="note" id="wright-note"></p><p class="hint">Nothing here is for sale. Every upgrade is a part stripped from a wreck or a prize, carrying the tier of the ship it came from and its condition. Two parts of the same type and the same tier combine by adding their condition; different tiers will not mate. The yard can repair human-made (5th tier) parts only.</p><ul id="refit"></ul></section>
       <details class="how">
@@ -664,7 +665,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
         <div class="row"><span class="hint" id="map-drive"></span><button class="btn" type="button" id="b-mapclose">Close<kbd>M</kbd></button></div>
       </div>
       <div class="map-grid">
-        <div><h2 class="gal-h">The galaxy <span class="gal-tools" id="gal-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button><button class="btn quiet" type="button" data-z="me">Where I am</button></span></h2><canvas id="galaxy" width="720" height="720" aria-label="Every system, tinted by who holds it, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to view it."></canvas><p class="map-legend"><span><i style="background:#5fd6ff"></i>You</span><span><i style="border:1px dashed #c58cff"></i>Your jump range</span><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital</span><span>Tint: who holds it</span></p></div>
+        <div><h2 class="gal-h">The galaxy <span class="gal-tools" id="gal-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button><button class="btn quiet" type="button" data-z="me">Where I am</button></span></h2><canvas id="galaxy" width="720" height="720" aria-label="Every system, tinted by who holds it, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to view it."></canvas><p class="map-legend"><span><i style="background:#5fd6ff"></i>You</span><span><i style="border:1px dashed #c58cff"></i>Your jump range</span><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital</span><span><b style="font-weight:700">■</b> Relay S/M/R/L</span><span>Dashed or faded: old news</span><span>Tint: who holds it, as last reported</span></p></div>
         <div><h2 id="sys-title">System</h2><canvas id="sysmap" width="900" height="600" aria-label="The system you are viewing. Click a place, or anywhere, to plot a jump there."></canvas>
           <p class="map-legend"><span><i style="background:#5fd6ff"></i>Station</span><span><i style="background:#ffd23f"></i>Contract target reported</span><span><i style="background:#ff4b3a"></i>Hostile site</span><span><b style="color:#ff4b3a;font-weight:600">×</b> Flash point</span><span><i style="border:1px solid #c58cff"></i>Damping field</span><span><i style="background:#5fd6ff"></i>You</span></p></div>
       </div>
@@ -725,7 +726,7 @@ const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: 
    multiplayer state and the PC's graphics details, shows the player exactly what will be sent, and sends it to the
    developer through a form service. Only that service knows where it goes: the game holds a form ID, never an
    address. Without a form ID or a connection, the player can save the report as a file or copy it instead. */
-const NET_PROTO = 8;   // bump when what host and clients send each other changes
+const NET_PROTO = 9;   // bump when what host and clients send each other changes
 const REPORT_FORM = (window.VALK_REPORT_FORM || '').replace(/^__.*__$/, '');
 const VLOG = { lines: [], errors: 0, t0: Date.now(), frames: [], lastNet: '' };
 const VALK_VERSION0 = (document.currentScript && (document.currentScript.textContent.match(new RegExp('const VALK_' + 'VERSION = .([0-9][^\x27]*).')) || [])[1]) || '?';
@@ -848,6 +849,12 @@ function crashPrompt() {
 
 /* ---------- What's new: shown once after an update, and any time from the station ---------- */
 const NEWS = [
+  { v: '0.19.0', title: 'Nothing is known until it is carried', items: [
+    'No one knows anything instantly any more, you included. Every relay, star carrier, picket and captain keeps their own picture, and reports travel only when ships carry them.',
+    '<b>Relay stations</b> in 30 systems: <b>local</b>, <b>regional</b>, <b>strategic</b> (high command) and <b>military</b>. Each power runs its own network, and the free ports trade public news.',
+    '<b>Star carriers</b> run the routes, <b>pickets</b> watch enemy systems and run home with what they see, and <b>couriers</b> rush urgent news to high command. Kill them and the news dies with them; strip their data core and it is yours.',
+    'It changes the war: a defender gets reinforcements only when the battle report reaches its command, sooner if a picket saw the attack massing.',
+    'Your map and the War tab show what you know and how old it is: observed, recent, outdated, historical or unconfirmed. Fly into a friendly relay to swap reports; they pay in standing for news of the other side.'] },
   { v: '0.18.0', title: 'A galaxy at war', items: [
     '<b>32 systems</b> instead of five. Every race has its own territory, with a capital that never falls, and the three great fronts are on the map: the Ashen Frontier, the Elysian Front and the Celestial Reach.',
     'The <b>front moves</b>. Flash points burn wherever the two powers\' space meets. Lose a battle and you lose hold; at zero the system changes hands, and its holding fleet with it.',
@@ -2472,7 +2479,7 @@ function glbSwap(key) {
   if (typeof frameRefresh === 'function') frameRefresh(key);
   const all = new Set(WORLD.concat(NPCS, Object.values(CRAFT || {})));   // strike craft in flight live in NPCS only
   for (const s of all) {
-    if (!s.model || s.model.glb || glbKey(s.fac, s.cls) !== key) continue;
+    if (!s.model || s.model.glb || s.relayType || glbKey(s.fac, s.cls) !== key) continue;
     const old = s.model.g, par = old.parent; if (par) par.remove(old);
     s.model = makeModel(s.fac, s.cls); s.m.g = s.model.g; s.model.g.position.copy(old.position); s.model.g.quaternion.copy(old.quaternion); s.model.g.visible = old.visible;
     if (s.status === 'dead' || s.status === 'struck') wreckModel(s);
@@ -2570,8 +2577,9 @@ function makeModel(fac, cls, look) {
   const CL = CLASSES[cls];
   let m;
   const gk = cls === 'magpie' ? null : glbKey(fac, cls);
-  if (gk) glbWant(gk);
-  if (gk && GLB[gk]) m = glbModel(gk, fac, cls); else if (cls === 'magpie') m = buildMagpie(look); else if (cls === 'station') m = buildStation8(); else if (cls === 'base') m = buildBase8(); else if (cls === 'pds') m = buildPDS8(); else if (cls === 'remnant') m = buildRemnant(); else m = raceShip(fac, cls);
+  const isRelay = cls === 'pds' && typeof look === 'string';
+  if (gk && !isRelay) glbWant(gk);
+  if (isRelay) m = buildRelay8(fac, look); else if (gk && GLB[gk]) m = glbModel(gk, fac, cls); else if (cls === 'magpie') m = buildMagpie(look); else if (cls === 'station') m = buildStation8(); else if (cls === 'base') m = buildBase8(); else if (cls === 'pds') m = buildPDS8(); else if (cls === 'remnant') m = buildRemnant(); else m = raceShip(fac, cls);
   if (m.envelope) { const E = m.envelope; m.half = V(E.x, E.y, E.z); m.ctr = V(); m.len = m.L || E.z / 0.44; m.scale = 1; }
   else {
     m.g.updateMatrixWorld(true); _box.setFromObject(m.g); _box.getSize(_bs); _box.getCenter(_bc);
@@ -2780,6 +2788,21 @@ const GAL_NEW = [
     }
     SYSTEMS[id] = S;
   });
+}
+/* ---------- relay stations: where each network keeps its database ---------- */
+const RELAY_TYPES = {
+  local: { name: 'Local relay', short: 'L', size: 1, mul: 1, range: 'site', cap: 140, blurb: 'Connects its own system. Only as current as the last star carrier to call; sync at the relay itself.' },
+  regional: { name: 'Regional relay', short: 'R', size: 1.35, mul: 2.5, range: 'system', cap: 260, blurb: 'Home of a regional star carrier that runs the local relays around it. Syncs anywhere in its system.' },
+  strategic: { name: 'Strategic relay', short: 'S', size: 1.8, mul: 4, range: 'system', cap: 600, command: true, blurb: 'High command. Long-haul star carriers run between it and the regional and military relays; pickets are built here.' },
+  military: { name: 'Military relay', short: 'M', size: 1.55, mul: 3, range: 'system', cap: 320, command: true, blurb: 'Takes military and reconnaissance reports first. Pickets report here, a courier rides urgent news to high command, and it can order reinforcements.' },
+};
+const RELAY_AT = { lattice: 'strategic', choir: 'strategic', radiance: 'military', spindrift: 'military', lantern: 'military', ilkmere: 'regional', hearth: 'regional', descant: 'regional', coralmouth: 'local', tessar: 'local', kitewell: 'local', sowing: 'local', cantor: 'local', halo: 'local',
+  vorrak: 'strategic', vashkar: 'strategic', rampart: 'military', veyr: 'military', slag: 'military', graelhold: 'regional', cinder: 'regional', ascend: 'regional', kessan: 'local', broodmere: 'local', grist: 'local', ashfall: 'local', oath: 'local',
+  tarsis: 'strategic', brass: 'local', driftmark: 'local', meridian: 'local' };
+for (const sid in RELAY_AT) {
+  const S = SYSTEMS[sid]; if (S.owner === 'orrin') continue;
+  const p = S.planets[S.planets.length > 1 ? 1 : 0], T0 = RELAY_TYPES[RELAY_AT[sid]];
+  S.sites.push({ id: 'relay', name: S.name + ' relay', kind: 'empty', relay: true, near: p.id, off: [0.22, -0.1, 0.28], desc: T0.name + '. ' + T0.blurb });
 }
 for (const sid in SYSTEMS) {
   const S = SYSTEMS[sid]; S.id = sid;
@@ -3354,7 +3377,7 @@ function npcDef(fac, cls) {
     gun: CL.guns ? gunSpec(fac, cls) : null, msl: CL.msl && Fa.msl ? Object.assign({}, Fa.msl, { dmg: Fa.msl.dmg * DM(t), tier: t }) : null, pd, damp: CL.damp && !CL.static ? { s: CL.damp.s * (1 + 0.25 * t), r: CL.damp.r } : CL.damp, quiet: !!Fa.quiet && !CL.static, regen: Fa.regen || 0, hangar: CL.hangar || null };
 }
 function makeShip(o) {
-  const CL = CLASSES[o.cls], model = makeModel(o.fac, o.cls);
+  const CL = CLASSES[o.cls], model = makeModel(o.fac, o.cls, o.relayType);
   const s = Object.assign({ isUs: false, home: o.site }, o, { CL, Fa: FACTIONS[o.fac] || {}, model, frame: new T.Object3D(), inv: new T.Matrix4(), hist: [], fireT: [] });
   s.m = mover(model.g, Math.max(model.half.x, model.half.z) * 0.9 + 2, CL.turn || 0.8, CL.accel || 11, CL.agil);
   s.def = s.isUs ? null : npcDef(o.fac, o.cls);
@@ -3685,7 +3708,7 @@ function echoBack(e) {
     if (!isLive(e.tgt) && e.tgt.status !== 'struck') return;
     G.stats.ourFound++; const tr = trOf(e.tgt), fresh = observe(tr, e.origin, e.vel, e.t0, 0.35 + 0.45 * e.p, e.jink), age = G.t - e.t0;
     AUD.sfx('echo'); flash('us', e.ping ? 'Ping return' : 'Sweep return', pct(e.p) + ' · ' + (fresh ? 'New contact' : shipLabel(e.tgt)) + ' · ' + age.toFixed(1) + ' s old', 'ok');
-    if (fresh) { say('sens', (tr.q >= 0.45 ? 'Contact. That is the ' + e.tgt.name + ', ' + CLASSES[e.tgt.cls].name.toLowerCase() : 'Contact ' + e.tgt.tag + ', too faint to classify') + '. Bearing ' + bearingTo(US.m.pos, e.origin) + ', ' + km(US.m.pos.distanceTo(e.origin)) + '. The echo took ' + age.toFixed(1) + ' s.', 'ok'); if (!G.sel) G.sel = e.tgt.uid; }
+    if (fresh) { say('sens', (tr.q >= 0.45 ? 'Contact. That is the ' + e.tgt.name + ', ' + clsName(e.tgt).toLowerCase() : 'Contact ' + e.tgt.tag + ', too faint to classify') + '. Bearing ' + bearingTo(US.m.pos, e.origin) + ', ' + km(US.m.pos.distanceTo(e.origin)) + '. The echo took ' + age.toFixed(1) + ' s.', 'ok'); if (!G.sel) G.sel = e.tgt.uid; }
   } else {
     if (!isLive(e.src)) return;
     G.stats.herSaw++; const fresh = observe(ftOf(e.src.fac), e.origin, e.vel, e.t0, 0.35 + 0.45 * e.p, e.jink);
@@ -4166,8 +4189,8 @@ function fpEscortRace(B) {
   let r = rand() * w.reduce((a, b) => a + b, 0); for (let i = 0; i < races.length; i++) { r -= w[i]; if (r <= 0) return races[i]; } return races[0];
 }
 function fpStart() {
-  const fr = warPick(FPS.last && FPS.last[0]), sys = fr.sys, site = (siteFlash(sys) || { id: 'gap' }).id;
-  const c = { id: 'fp' + (++FPS.n), sys, site, att: fr.att, from: fr.from, caps: { concord: 1 + (rand() < warCapOdds('concord') ? 1 : 0), dominion: 1 + (rand() < warCapOdds('dominion') ? 1 : 0) }, phase: 'battle', started: WT, abT: 25 + rand() * 10, endsAt: 0, winner: null };
+  const fr = FPS.force || warPick(FPS.last && FPS.last[0]), sys = fr.sys, site = (siteFlash(sys) || { id: 'gap' }).id;
+  const c = { id: 'fp' + (++FPS.n), sys, site, att: fr.att, from: fr.from, caps: FPS.force ? Object.assign({}, FPS.force.caps) : { concord: 1 + (rand() < warCapOdds('concord') ? 1 : 0), dominion: 1 + (rand() < warCapOdds('dominion') ? 1 : 0) }, phase: 'battle', started: WT, abT: 25 + rand() * 10, endsAt: 0, winner: null };
   const used = new Set(); let k = 0;
   for (const B of ['concord', 'dominion']) {
     const side = B === 'concord' ? -1 : 1, apex = BLOCS[B].lead, capNames = CAP_NAMES[B].slice().sort(() => rand() - 0.5);
@@ -4185,7 +4208,7 @@ function fpStart() {
   if (rand() < (sys === 'elysian' ? Math.min(0.95, REM.chance * 1.8) : REM.chance)) remSpawn(c);
   FPS.list.push(c);
   const S = SYSTEMS[sys], st = siteOf(sys, site), n = x => x === 2 ? 'two' : 'one';
-  sayAll('ops', 'Flash point! The war has flared up at ' + st.name + ' in ' + S.name + ': ' + n(c.caps.concord) + ' Seraphine capital ship' + (c.caps.concord > 1 ? 's' : '') + ' against ' + n(c.caps.dominion) + ' Vorrakai, each with escorts. Plot a jump on the map to see it.' + warFpLine(c), 'warn');
+  sayIn(sys, 'ops', 'Flash point! The war has flared up at ' + st.name + ' in ' + S.name + ': ' + n(c.caps.concord) + ' Seraphine capital ship' + (c.caps.concord > 1 ? 's' : '') + ' against ' + n(c.caps.dominion) + ' Vorrakai, each with escorts. Plot a jump on the map to see it.' + warFpLine(c), 'warn');
   return c;
 }
 /* Strength of what a side still has in the fight. */
@@ -4214,9 +4237,10 @@ function fpEnd(c, winner) {
   c.phase = 'aftermath'; c.winner = winner; c.endsAt = WT + 300; const loser = OTHER_BLOC[winner], here = fpHere(c), st = siteOf(c.sys, c.site);
   for (const s of fpShips(c, loser)) { if (here && NPCS.includes(s)) { s.state = 'flee'; s.resolve = 0; } else s.site = null; }
   for (const s of fpShips(c, winner)) { s.state = 'patrol'; s.m.wp = null; s.foe = null; }
-  sayAll('ops', BLOCS[winner].name + ' hold ' + st.name + '. ' + BLOCS[loser].name + ' are broken and running. The wreck field is there for the taking until the victors move on.', 'warn');
+  sayIn(c.sys, 'ops', BLOCS[winner].name + ' hold ' + st.name + '. ' + BLOCS[loser].name + ' are broken and running. The wreck field is there for the taking until the victors move on.', 'warn');
   for (const p of fieldPlayers()) withP(p, () => { if (here && G.phase === 'play' && fpFriend(winner) && !(G.provoked && G.provoked[winner])) { G.rep[winner] += 400; say('xo', 'We stood with ' + BLOCS[winner].name + ' at ' + st.name + '. They will remember it.', 'ok'); } });
   FPS.nextAt = WT + 150 + rand() * 150;
+  intelFpEnd(c, winner);
   warResult(c, winner);
 }
 function fpClear(c) {
@@ -4224,7 +4248,7 @@ function fpClear(c) {
 }
 function fpTick(dt) {
   if (NET.mode === 'client') return;
-  if (!fpBattle() && WT >= FPS.nextAt) fpStart();
+  if (!fpBattle() && WT >= FPS.nextAt) stageTick();
   for (const c of FPS.list.slice()) {
     const here = fpHere(c);
     if (c.phase === 'battle') {
@@ -4266,7 +4290,7 @@ function warFronts() {
     if (sid === 'elysian') { out.push({ sys: sid, att: rand() < 0.5 ? 'concord' : 'dominion', from: null, w: 1.3 }); continue; }
     const foes = warFoes(sid); if (!foes.length) continue;
     const S = SYSTEMS[sid];
-    out.push({ sys: sid, att: OTHER_BLOC[sysBloc(sid)], from: foes[Math.floor(rand() * foes.length)], w: (S.cap ? 0.4 : 1) * (1 + (100 - WAR.hold[sid]) / 70) * (1 + 0.2 * (foes.length - 1)) });
+    out.push({ sys: sid, att: OTHER_BLOC[sysBloc(sid)], from: foes[Math.floor(rand() * foes.length)], w: (S.cap ? 0.4 : 1) * (1 + (100 - intelHoldGuess(OTHER_BLOC[sysBloc(sid)], sid)) / 70) * (1 + 0.2 * (foes.length - 1)) });
   }
   return out;
 }
@@ -4283,6 +4307,7 @@ function warDefOdds(f) {
   const S = SYSTEMS[f.sys]; let p = 0.5 + 0.07 * (blocLost(D) - blocLost(f.att)) + (S.cap ? 0.15 : 0);
   if (S.region === 'ashen') p += D === 'dominion' ? 0.06 : -0.06;   // the Dominion is winning the Ashen Frontier
   if (S.region === 'reach') p += D === 'concord' ? 0.08 : -0.04;    // and the Seraphine keep their best ships in the Reach
+  p += 0.08 * (intelNet(D) - intelNet(f.att));   // a side whose network is in pieces reacts late
   return clamp(p, 0.25, 0.8);
 }
 /* Who takes a fallen system: the race whose space the attack came from, or the nearest of that side. */
@@ -4300,12 +4325,12 @@ function warResult(c, winner, away) {
     WAR.hold[sid] -= 40 + rand() * 25;
     if (S.cap) { WAR.hold[sid] = Math.max(15, WAR.hold[sid]); msg = W.name + ' broke a fleet over ' + S.name + ', but the ' + FACTIONS[S.owner].name + ' capital holds.'; }
     else if (WAR.hold[sid] <= 0) {
-      const prev = S.owner, nu = warTaker(sid, winner, c.from); WAR.own[sid] = nu; WAR.hold[sid] = 45; WAR.gen[sid] = (WAR.gen[sid] || 0) + 1; garSwap(sid);
+      const prev = S.owner, nu = warTaker(sid, winner, c.from); WAR.own[sid] = nu; WAR.hold[sid] = 45; WAR.gen[sid] = (WAR.gen[sid] || 0) + 1; garSwap(sid); relayCapture(sid, nu);
       msg = W.name + ' have taken ' + S.name + ' from the ' + FACTIONS[prev].name + '. The ' + FACTIONS[nu].name + ' hold it now.'; kind = 'flip';
     } else msg = W.name + ' won at ' + S.name + '. The ' + FACTIONS[S.owner].name + ' hold there is down to ' + Math.round(WAR.hold[sid]) + '%.';
   }
   warNews(msg, kind, sid, away);
-  if (!away) sayAll('ops', 'The front: ' + msg, kind === 'flip' ? 'warn' : '');
+  if (!away) sayIn(sid, 'ops', 'The front: ' + msg, kind === 'flip' ? 'warn' : '');
   WAR.ver++; warSave(); warDirty();
   return { msg, kind };
 }
@@ -4313,14 +4338,14 @@ function warResult(c, winner, away) {
 function warCatchUp() {
   if (NET.mode === 'client' || WAR.remote) return [];
   const gone = Date.now() - (WAR.at || Date.now()), n = Math.min(10, Math.floor(gone / WAR_AWAY)), out = [];
-  for (let i = 0; i < n; i++) { const f = warPick(), D = sysBloc(f.sys), win = !D ? (rand() < 0.5 ? 'concord' : 'dominion') : rand() < warDefOdds(f) ? D : f.att; out.push(warResult(f, win, true)); }
-  WAR.at = Date.now(); warSave(); return out;
+  for (let i = 0; i < n; i++) { intelFF(WAR_AWAY / 1000); const f = warPick(), D = sysBloc(f.sys), win = !D ? (rand() < 0.5 ? 'concord' : 'dominion') : rand() < warDefOdds(f) ? D : f.att; intelAwayBattle(f, win); out.push(warResult(f, win, true)); }
+  WAR.at = Date.now(); warSave(); if (n) intelSave(); return out;
 }
-function warPack() { return { v: WAR.ver, o: SYS_IDS.map(s => WAR.own[s]), h: SYS_IDS.map(s => Math.round(WAR.hold[s])), n: WAR.news.slice(-14) }; }
+function warPack() { return { k: WAR.clock || 0, v: WAR.ver, o: SYS_IDS.map(s => WAR.own[s]), h: SYS_IDS.map(s => Math.round(WAR.hold[s])), n: WAR.news.slice(-14) }; }
 function warSave() {
   if (NET.mode === 'client' || WAR.remote) return;
   WAR.at = Date.now();
-  try { localStorage.setItem(WAR_KEY, JSON.stringify({ v: 1, ver: WAR.ver, own: WAR.own, hold: WAR.hold, gen: WAR.gen, news: WAR.news, at: WAR.at, seenAt: WAR.seenAt })); } catch (_) {}
+  try { localStorage.setItem(WAR_KEY, JSON.stringify({ v: 1, ver: WAR.ver, own: WAR.own, hold: WAR.hold, gen: WAR.gen, news: WAR.news, at: WAR.at, seenAt: WAR.seenAt, clock: WAR.clock || 0 })); } catch (_) {}
 }
 function warLoad() {
   let d = null; try { d = JSON.parse(localStorage.getItem(WAR_KEY) || 'null'); } catch (_) {}
@@ -4330,11 +4355,12 @@ function warLoad() {
     if (d.hold && typeof d.hold[sid] === 'number') WAR.hold[sid] = clamp(d.hold[sid], 1, 100);
     if (d.gen && d.gen[sid]) WAR.gen[sid] = d.gen[sid] | 0;
   }
-  WAR.news = Array.isArray(d.news) ? d.news.slice(-40) : []; WAR.ver = d.ver || 1; WAR.at = d.at || Date.now(); WAR.seenAt = d.seenAt || 0;
+  WAR.news = Array.isArray(d.news) ? d.news.slice(-40) : []; WAR.ver = d.ver || 1; WAR.at = d.at || Date.now(); WAR.seenAt = d.seenAt || 0; WAR.clock = d.clock || 0;
 }
 /* A friend's game gets the host's war with the roster, every couple of seconds. */
 function warApply(w) {
   if (!w || !w.o || w.o.length !== SYS_IDS.length) return;
+  if (w.k != null) WAR.clock = w.k;
   if (WAR.remote && w.v === WAR.ver) return;
   WAR.remote = true; WAR.ver = w.v; SYS_IDS.forEach((s, i) => { if (FACTIONS[w.o[i]]) WAR.own[s] = w.o[i]; WAR.hold[s] = w.h[i]; }); WAR.news = w.n || []; warDirty();
 }
@@ -4353,6 +4379,7 @@ function garBuild(sid) {
 function garSwap(sid) { if (garHere(sid)) GAR.pending.add(sid); else garBuild(sid); }
 function warTick(dt) {
   if (NET.mode === 'client') return;
+  intelTick(dt);
   for (const sid of [...GAR.pending]) if (!garHere(sid)) { GAR.pending.delete(sid); garBuild(sid); }
   for (const w of WORLD) if (w.gar && w.status === 'dead' && !w.garHit) {
     w.garHit = true; const sid = w.gar, S = SYSTEMS[sid];
@@ -4364,13 +4391,533 @@ function warTick(dt) {
   for (const sid in GAR.regrow) if (WT >= GAR.regrow[sid] && !garHere(sid)) { delete GAR.regrow[sid]; garBuild(sid); }
   GAR.hold += dt; if (GAR.hold >= 60) { GAR.hold = 0; for (const sid of SYS_IDS) if (sysBloc(sid) && WAR.hold[sid] < 100 && !FPS.list.some(c => c.sys === sid && c.phase === 'battle')) WAR.hold[sid] = Math.min(100, WAR.hold[sid] + 1); WAR.ver++; warSave(); }
 }
-function warBoot() { warLoad(); for (const sid of SYS_IDS) garBuild(sid); warCatchUp(); }
+function warBoot() { warLoad(); for (const sid of SYS_IDS) garBuild(sid); intelBoot(); warCatchUp(); }
 /* What the flash point announcement adds: who is attacking whom. */
 function warFpLine(c) {
   const D = sysBloc(c.sys), S = SYSTEMS[c.sys];
   if (!D) return ' Both powers want the Gate, and something there is listening.';
   return ' ' + BLOCS[c.att || OTHER_BLOC[D]].name + ' are attacking ' + FACTIONS[S.owner].name + ' space; their hold is ' + Math.round(WAR.hold[c.sys]) + '%' + (S.cap ? ', and a capital never falls.' : '. Lose here and it could change hands.');
 }
+/* ---------- intelligence: nothing is known until it is carried ----------
+   Every relay station, star carrier, picket and captain keeps its own intelligence database: who holds each system,
+   battles, fleets massing, enemy pickets and carriers, relays and whether they are up. A record is what one observer
+   saw at one moment, and it never changes; a database holds the newest record it has for each subject, with how many
+   hands it passed through and when it arrived. Records move only when two holders meet: a carrier docks at a relay, a
+   picket reports in, a captain flies into a friendly relay's range. Nothing is broadcast.
+
+   The relays are graded:
+     Local      connects its own system; only as current as the last star carrier to call (sync at the relay itself)
+     Regional   home of a regional star carrier that runs the local relays round it (sync anywhere in the system)
+     Strategic  high command: long-haul star carriers run between the strategic, regional and military relays
+     Military   takes military and reconnaissance reports first: pickets report here, a courier rides urgent news to
+                high command, and like a strategic relay it can order reinforcements
+   Each power runs its own network. The free ports (Tarsis, Brasshold, Driftmark, Meridian) run a third, of public
+   news only, carried by Orrin traders.
+
+   What the powers do with it: a defender's second capital group comes only once a battle report reaches one of its
+   strategic or military relays (sooner if its pickets saw the attackers massing beforehand); an attacker chooses where
+   to strike by what its own command believes each system's hold to be. Losing pickets blinds a side; losing carriers
+   slows it; losing a relay cuts off whatever it served until the carriers route round it. Captured relays and wrecked
+   carriers give their databases to whoever takes them. */
+const GC = () => WAR.clock || 0;
+const clsName = s => s.relayType ? RELAY_TYPES[s.relayType].name : CLASSES[s.cls].name;
+const INTEL_AGE = { fleet: [600, 3600], agent: [600, 3600], battle: [900, 5400], remnant: [600, 3600], recon: [1200, 7200], control: [1800, 10800], install: [1800, 14400] };
+const INTEL_PUBLIC = { control: 1, battle: 1, install: 1 };
+const INTEL_URGENT = r => (r.c === 'battle' && r.d.ph === 'battle') || (r.c === 'fleet' && r.d.st) || (r.c === 'remnant');
+const AG_SPEED = { carrier: [110, 12, 45, 40], regional: [110, 12, 45, 40], courier: [40, 5, 15, 10], picket: [65, 8, 25, 15], trader: [140, 14, 60, 40] };   // per hop s, per ly s, dwell s, passing s
+const AG_RACE = { concord: { picket: 'ilk', courier: 'myrr' }, dominion: { picket: 'grael', courier: 'vashkar' } };
+
+/* ---------- holders and records ---------- */
+const IH = new Map();
+function ihMake(id, o) { const h = Object.assign({ id, db: new Map(), ver: 0, bloc: null, name: id, hist: null }, o || {}); IH.set(id, h); return h; }
+const recKey = d => JSON.stringify(d);
+/* Write what this holder sees now. A re-sighting of the same state refreshes the time no more than once a minute. */
+function ihSee(h, s, c, d, cf, src) {
+  const now = GC(), p = h.db.get(s), k = recKey(d);
+  if (p && p.r.k === k && now - p.r.u < 60) return null;
+  const r = { s, c, t0: p && p.r.k === k ? p.r.t0 : now, u: now, d, k, src: src || h.name, cf, b: h.bloc };
+  const e = { r, h: 0, rx: now, sent: false, sv: ++h.ver }; h.db.set(s, e); ihCap(h); return e;
+}
+/* A record is better than another if newer; a shaky one counts as ten minutes older than it is. */
+const recScore = r => r.u - (1 - r.cf) * 1000;
+function ihTake(to, e, now, cap) {
+  const o = to.db.get(e.r.s); if (o && (o.r === e.r || recScore(o.r) >= recScore(e.r))) return null;
+  const n = { r: e.r, h: e.h + 1, rx: now, sent: false, sv: ++to.ver, cap: cap || e.cap || false, prev: o ? o.r : null }; to.db.set(e.r.s, n); return n;
+}
+/* Hand everything newer across. filter decides what may pass (public news, a hostile relay). Returns what was new. */
+function ihXfer(from, to, filter, cap) {
+  const now = GC(), got = [];
+  for (const e of from.db.values()) { if (filter && !filter(e.r)) continue; const n = ihTake(to, e, now, cap); if (n) { got.push(n); e.sent = true; } }
+  if (got.length) ihCap(to);
+  return got;
+}
+function ihCap(h) {
+  const lim = h.cap || 300; if (h.db.size <= lim) return;
+  const old = [...h.db.values()].filter(e => e.r.c !== 'control' && e.r.c !== 'install').sort((a, b) => a.r.u - b.r.u);
+  for (let i = 0; i < old.length && h.db.size > lim; i++) h.db.delete(old[i].r.s);
+}
+/* How a captain should read a record: observed now, recently reported, outdated, historical, or unconfirmed. */
+function intelClass(e, now) {
+  const r = e.r, age = now - r.u, L = INTEL_AGE[r.c] || [900, 5400];
+  if (r.cf < 0.65 || e.cap) return age < L[1] ? 'unconfirmed' : 'historical';
+  if (e.h === 0 && age < 20 && r.d.sys && SITE && SITE.sys === r.d.sys && r.src === 'you') return 'observed';
+  return age < L[0] ? 'recent' : age < L[1] ? 'outdated' : 'historical';
+}
+const INTEL_CLS = { observed: ['Observed', 'Seen with your own sensors, now'], recent: ['Recent', 'Reported recently'], outdated: ['Outdated', 'Old enough that things have probably moved'], historical: ['Historical', 'Kept for the record; do not act on it'], unconfirmed: ['Unconfirmed', 'Rumour, a captured database or a doubtful sighting'] };
+const intelConf = (e, now) => { const L = INTEL_AGE[e.r.c] || [900, 5400]; return e.r.cf * Math.exp(-Math.max(0, now - e.r.u) / L[1]) * (e.cap ? 0.8 : 1); };
+
+/* ---------- what an observer in a system can see ---------- */
+let GAR_BY = null, GAR_T = -1;
+function garBy(sid) { if (GAR_T !== GC() || !GAR_BY) { GAR_BY = {}; for (const w of WORLD) if (w.gar && isLive(w)) (GAR_BY[w.gar] = GAR_BY[w.gar] || []).push(w.cls); GAR_T = GC(); } return GAR_BY[sid] || []; }
+function ihObserve(h, sid, opts) {
+  opts = opts || {}; const pub = h.bloc === 'orrin', own = WAR.own[sid], B = BLOC_OF(own), src = opts.src || h.name;
+  ihSee(h, 'ctl:' + sid, 'control', { sys: sid, o: own, hold: B ? Math.round(WAR.hold[sid] / 5) * 5 : null }, B === h.bloc || pub ? 0.95 : 0.85, src);
+  if (!pub && B) { const g = garBy(sid); ihSee(h, 'gar:' + sid, 'recon', { sys: sid, o: own, n: g.length, cls: g.slice().sort().join(',') }, 0.9, src); }
+  for (const c of FPS.list) if (c.sys === sid) {
+    ihSee(h, 'fp:' + c.id, 'battle', { sys: sid, site: c.site, ph: c.phase, att: c.att || null, def: c.defB || null, cc: c.caps.concord, cd: c.caps.dominion, w: c.winner || null }, 0.95, src);
+    if (!pub && c.rem && c.rem.awake) ihSee(h, 'rem:' + c.id, 'remnant', { sys: sid, site: c.site, awake: 1 }, 0.9, src);
+  }
+  if (!pub && STAGE && STAGE.from === sid && STAGE.att !== h.bloc) ihSee(h, 'st:' + STAGE.id, 'fleet', { sys: sid, st: 1, b: STAGE.att, caps: STAGE.caps[STAGE.att], tgt: STAGE.sys }, opts.close ? 0.85 : 0.7, src);
+  for (const r of RELAYS_IN[sid] || []) if (r.bloc !== 'orrin') ihSee(h, 'rel:' + r.sid, 'install', { sys: sid, b: r.bloc, ty: r.type, up: relayUp(r) ? 1 : 0, dead: r.dead ? 1 : 0 }, 0.95, src);
+  if (!pub) for (const a of AGENTS) if (a.sys === sid && a.bloc !== h.bloc && a.bloc !== 'orrin' && a.state !== 'travel' && a.state !== 'dead') {
+    if (a.kind === 'picket' && !opts.close && rand() > 0.25) continue;   // pickets are hard to spot
+    ihSee(h, 'ag:' + a.id, 'agent', { sys: sid, b: a.bloc, k: a.kind, f: a.fac, n: a.name, st: a.state === 'dwell' ? 'docked' : a.state === 'watch' ? 'watching' : 'passing' }, 0.85, src);
+  }
+}
+
+/* ---------- relays ---------- */
+const RELAYS = {}, RELAYS_IN = {};
+function relayOf(sid) { return RELAYS[sid] || null; }
+const relayUp = r => !!r && !r.dead && GC() >= (r.downUntil || 0) && !FPS.list.some(c => c.sys === r.sid && c.phase === 'battle') && !(r.ship && NPCS.includes(r.ship) && !fn(r.ship, 'SENSORS'));
+const relayCmd = r => !!RELAY_TYPES[r.type].command;
+function relayInit(sid, type) {
+  const own = WAR.own[sid], bloc = own === 'orrin' ? 'orrin' : BLOC_OF(own);
+  const r = { sid, type, bloc, fac: own, dead: false, rebuildAt: 0, downUntil: 0, gen: 0, lastVisit: 0, sentU: {}, ship: null, h: ihMake('R:' + sid, { bloc, name: SYSTEMS[sid].name + ' ' + RELAY_TYPES[type].name.toLowerCase(), cap: RELAY_TYPES[type].cap }) };
+  RELAYS[sid] = r; (RELAYS_IN[sid] = RELAYS_IN[sid] || []).push(r); return r;
+}
+function relayShip(r) {
+  if (r.bloc === 'orrin' || r.dead) return;
+  WORLD = WORLD.filter(w => w.relay !== r.sid || NPCS.includes(w));
+  const T0 = RELAY_TYPES[r.type], s = makeShip({ uid: 'relay-' + r.sid + '-' + r.gen, name: SYSTEMS[r.sid].name + ' relay', fac: r.fac, cls: 'pds', sys: r.sid, site: 'relay', relay: r.sid, relayType: r.type });
+  s.maxStruct = Math.round(s.maxStruct * T0.mul); s.struct = s.maxStruct; s.relay = r.sid; s.relayType = r.type; r.ship = s; WORLD.push(s);
+}
+/* A system changes hands: its relay goes with it, database and all. */
+function relayCapture(sid, nu) {
+  const r = RELAYS[sid]; if (!r || r.bloc === 'orrin') return;
+  const was = r.bloc; r.bloc = BLOC_OF(nu); r.fac = nu; r.h.bloc = r.bloc; r.gen++; r.capturedFrom = was;
+  for (const e of r.h.db.values()) e.cap = true;   // what it held is the old owner's picture now
+  r.h.ver++; if (!r.dead) { if (r.ship && NPCS.includes(r.ship)) r.swap = true; else relayShip(r); }
+}
+function relayKilled(r, how) {
+  r.dead = true; r.rebuildAt = GC() + 1800; const old = r.h; if (r.ship) { r.ship.agentGone = true; r.ship.intelDb = old; }
+  r.h = ihMake('R:' + r.sid, { bloc: r.bloc, name: old.name, cap: old.cap }); r.ship = null;
+  for (const p of fieldPlayers()) if (SITE && SITE.sys === r.sid) withP(p, () => say('ops', 'The ' + old.name + ' is gone. Whatever it held is lost, unless someone strips its core.', 'warn'));
+}
+
+/* ---------- star carriers, couriers, pickets and traders ---------- */
+const AGENTS = []; let AG_N = 0;
+function agMake(o) {
+  const a = Object.assign({ id: 'a' + (++AG_N), state: 'dwell', path: [], dest: null, arriveAt: 0, until: GC() + 10 + rand() * 60, respawnAt: 0, post: null, gen: 0, stops: 0, site: null, ship: null, posts: [] }, o);
+  a.h = ihMake('A:' + a.id, { bloc: a.bloc, name: a.name, cap: 400 });
+  AGENTS.push(a); return a;
+}
+/* Where a ship passing through, or a picket on watch, waits: in the system's rock field if it has one. */
+const agField = sid => { const S = SYSTEMS[sid], f = S.sites.find(x => x.kind === 'field') || S.sites.find(x => x.kind === 'empty' && !x.relay) || S.sites.find(x => x.kind !== 'station' && x.kind !== 'body'); return f ? f.id : null; };
+const agCls = a => a.kind === 'carrier' || a.kind === 'regional' ? 'carrier' : 'picket';
+const agRole = a => ({ carrier: 'long-haul star carrier', regional: 'regional star carrier', courier: 'relay courier', picket: 'picket', trader: 'Orrin trader' })[a.kind];
+function agShipTo(a, sys, site) {
+  a.sys = sys; a.site = site;
+  if (a.bloc === 'orrin') return;
+  if (!a.ship) { if (!sys) return; const s = makeShip({ uid: 'ag-' + a.id + '-' + a.gen, name: a.name, fac: a.fac, cls: agCls(a), sys, site }); s.agent = a.id; a.ship = s; WORLD.push(s); }
+  const s = a.ship, loaded = NPCS.includes(s);
+  if (loaded && (s.sys !== sys || s.site !== site)) {   // she jumps away in front of us
+    const pos = s.m.pos.clone(); later(US.m.pos.distanceTo(pos) / C, () => jumpFx(pos, s.model.len * 1.2));
+    scene.remove(s.model.g); for (const k in s.marks) s.marks[k].visible = false; NPCS = NPCS.filter(n => n !== s); if (G.sel === s.uid) { G.sel = null; G.called = null; }
+    const tr = trOf(s); if (tr.q > 0 || tr.ever) sayAll('sens', shipLabel(s) + ' has jumped out' + (sys ? '' : ', outbound') + '.', '');
+  }
+  s.sys = sys || s.sys; s.site = sys ? site : null; s.placed = false;
+  if (sys && SITE && SITE.sys === sys && SITE.id === site && fieldPlayers().length && !NPCS.includes(s) && isLive(s)) arriveNpc(s, 'hop');
+}
+function agDie(a, why) {
+  const now = GC(); a.state = 'dead'; a.respawnAt = now + (a.kind === 'picket' ? 900 : a.kind === 'courier' ? 600 : 1200); a.why = why;
+  if (a.ship) { a.ship.agentGone = true; a.ship.intelDb = a.h; if (!NPCS.includes(a.ship)) WORLD = WORLD.filter(w => w !== a.ship); a.ship = null; }
+  const enemyRelay = (RELAYS_IN[a.sys] || []).find(r => !r.dead && r.bloc !== a.bloc && r.bloc !== 'orrin');
+  if (enemyRelay) ihSee(enemyRelay.h, 'ag:' + a.id, 'agent', { sys: a.sys, b: a.bloc, k: a.kind, f: a.fac, n: a.name, st: 'destroyed' }, 0.9);
+  a.h = ihMake('A:' + a.id, { bloc: a.bloc, name: a.name, cap: 400 });   // what she carried is lost with her
+}
+function agHome(a) {
+  const own = r => r && !r.dead && r.bloc === a.bloc;
+  if (own(RELAYS[a.home])) return a.home;
+  const alt = Object.values(RELAYS).filter(r => own(r) && (r.type === 'strategic' || r.type === 'regional')).sort((x, y) => lyDist(a.home, x.sid) - lyDist(a.home, y.sid))[0];
+  return alt ? alt.sid : null;
+}
+function agRespawn(a) {
+  const home = agHome(a); if (!home) { a.respawnAt = GC() + 600; return; }
+  a.gen++; a.state = 'dwell'; a.until = GC() + 30; a.path = []; a.dest = null; a.stops = 0; a.post = null;
+  const r = RELAYS[home]; if (r) ihXfer(r.h, a.h);
+  agShipTo(a, home, r && r.bloc !== 'orrin' ? 'relay' : agField(home));
+}
+/* Routes avoid the other power's space and battles where they can. */
+function agRoute(from, to, bloc) {
+  if (from === to) return [];
+  const cost = n => 1 + (bloc !== 'orrin' && sysBloc(n) && sysBloc(n) !== bloc ? 3 : 0) + (FPS.list.some(c => c.sys === n && c.phase === 'battle') ? 3 : 0);
+  const D = { [from]: 0 }, P = {}, Q = new Set(SYS_IDS);
+  while (Q.size) { let u = null; for (const q of Q) if (D[q] != null && (u == null || D[q] < D[u])) u = q; if (u == null || u === to) break; Q.delete(u); for (const v of NEAR[u]) { const d = D[u] + cost(v); if (D[v] == null || d < D[v]) { D[v] = d; P[v] = u; } } }
+  if (D[to] == null) return null; const out = []; for (let x = to; x !== from; x = P[x]) out.unshift(x); return out;
+}
+const hopsTo = (a, b) => { const r = agRoute(a, b, null); return r ? r.length : 9; };
+/* Does this agent believe a relay is out of action? */
+function agThinksDown(a, r) { const e = a.h.db.get('rel:' + r.sid); return !!e && (e.r.d.dead || !e.r.d.up) && GC() - e.r.u < 1500; }
+function agNext(a) {
+  const now = GC(), mine = Object.values(RELAYS).filter(r => r.bloc === a.bloc && !r.dead && !agThinksDown(a, r) && r.sid !== a.sys);
+  let dest = null;
+  const urgent = [...a.h.db.values()].some(e => INTEL_URGENT(e.r) && now - e.r.u < 900 && !e.sent);
+  if (a.kind === 'carrier') {
+    let best = -1e9; for (const r of mine) { if (r.type === 'local') continue; const sc = (now - r.lastVisit) + (urgent && relayCmd(r) ? 1500 : 0) - 150 * hopsTo(a.sys, r.sid) + rand() * 60; if (sc > best) { best = sc; dest = r.sid; } }
+  } else if (a.kind === 'regional') {
+    const home = agHome(a), locals = mine.filter(r => r.type === 'local' && home && hopsTo(home, r.sid) <= 3);
+    if (a.stops >= 3 || !locals.length) { dest = home !== a.sys ? home : null; a.stops = 0; }
+    else { let best = -1e9; for (const r of locals) { const sc = (now - r.lastVisit) - 150 * hopsTo(a.sys, r.sid) + rand() * 60; if (sc > best) { best = sc; dest = r.sid; } } }
+    if (!dest && locals.length) dest = locals[0].sid;
+  } else if (a.kind === 'courier') {
+    if (a.task && a.task !== a.sys) dest = a.task; else { a.task = null; const home = agHome(a); dest = home !== a.sys ? home : null; }
+  } else if (a.kind === 'picket') {
+    if (a.post === a.sys && a.state === 'watch') {   // time to report: the nearest military relay, or any relay of ours
+      const m = mine.filter(r => r.type === 'military').sort((x, y) => hopsTo(a.sys, x.sid) - hopsTo(a.sys, y.sid))[0] || mine.sort((x, y) => hopsTo(a.sys, x.sid) - hopsTo(a.sys, y.sid))[0];
+      dest = m ? m.sid : null; a.post = null;
+    } else { a.post = picketPost(a); dest = a.post; }
+  } else if (a.kind === 'trader') {
+    if (a.stops >= 3) { dest = 'tarsis'; a.stops = 0; }
+    else { const T = RELAYS.tarsis.h; let best = -1e9; for (const sid of SYS_IDS) { if (sid === a.sys || FPS.list.some(c => c.sys === sid && c.phase === 'battle')) continue; const e = T.db.get('ctl:' + sid), sc = (now - (e ? e.r.u : -9999)) - 200 * hopsTo(a.sys, sid) + rand() * 120; if (sc > best) { best = sc; dest = sid; } } }
+  }
+  if (!dest || dest === a.sys) { a.state = 'dwell'; a.until = now + 60; return; }
+  const path = agRoute(a.sys, dest, a.bloc); if (!path || !path.length) { a.state = 'dwell'; a.until = now + 90; return; }
+  a.dest = dest; a.path = path; agHop(a);
+}
+function agHop(a) {
+  const sp = AG_SPEED[a.kind], nxt = a.path[0]; a.state = 'travel'; a.arriveAt = GC() + sp[0] + sp[1] * lyDist(a.sys, nxt); a.from = a.sys;
+  agShipTo(a, null, null);
+}
+/* Posts: enemy systems next to our own, the more of our systems they touch and the more they matter, the better. */
+function picketPost(a) {
+  const taken = new Set(AGENTS.filter(b => b !== a && b.kind === 'picket' && b.bloc === a.bloc && b.state !== 'dead').map(b => b.post || b.dest));
+  let best = null, bs = -1e9;
+  for (const sid of SYS_IDS) {
+    const B = sysBloc(sid); if (!B || B === a.bloc || taken.has(sid)) continue;
+    const mineNear = NEAR[sid].filter(n => sysBloc(n) === a.bloc).length; if (!mineNear) continue;
+    const r = RELAYS[sid], sc = mineNear * 2 + (r && r.type === 'military' ? 3 : 0) + (STAGE && STAGE.from === sid ? 2 : 0) - hopsTo(a.sys, sid) * 0.6 + rand();
+    if (sc > bs) { bs = sc; best = sid; }
+  }
+  return best;
+}
+/* She arrives in a system: she sees it, meets whoever of her side is there, and may not survive it. */
+function agArrive(a, sid) {
+  const final = !a.path.length, r = (RELAYS_IN[sid] || []).find(x => x.bloc === a.bloc && !x.dead);
+  const site = a.bloc === 'orrin' ? null : final && r && a.kind !== 'picket' ? 'relay' : agField(sid);
+  agShipTo(a, sid, site);
+  const loaded = a.ship && NPCS.includes(a.ship);
+  if (!loaded && a.bloc !== 'orrin') {
+    const B = sysBloc(sid), hot = FPS.list.some(c => c.sys === sid && c.phase === 'battle');
+    const p = (B && B !== a.bloc ? (a.kind === 'picket' || a.kind === 'courier' ? 0.015 : 0.04) : 0) + (hot ? 0.12 : 0);
+    if (rand() < p) { agDie(a, hot ? 'caught in the battle at ' + SYSTEMS[sid].name : 'intercepted at ' + SYSTEMS[sid].name); return; }
+  }
+  ihObserve(a.h, sid, { close: a.kind === 'picket' });
+  agMeet(a, sid);
+  if (final) { a.stops++; if (a.kind === 'picket' && a.post === sid) { a.state = 'watch'; a.until = GC() + 420; a.watchSeen = 0; } else { a.state = 'dwell'; a.until = GC() + AG_SPEED[a.kind][2]; } if (a.kind === 'courier' && a.task === sid) a.task = null; }
+  else { a.state = 'pass'; a.until = GC() + AG_SPEED[a.kind][3]; }
+}
+function agMeet(a, sid) {
+  const pubF = a.bloc === 'orrin' ? r => !!INTEL_PUBLIC[r.c] : null;
+  for (const r of RELAYS_IN[sid] || []) {
+    if (r.bloc !== a.bloc || !relayUp(r)) continue;
+    if (RELAY_TYPES[r.type].range === 'site' && a.site !== 'relay' && a.bloc !== 'orrin') continue;
+    ihXfer(a.h, r.h, pubF); ihXfer(r.h, a.h, pubF); r.lastVisit = GC();
+  }
+  for (const b of AGENTS) if (b !== a && b.bloc === a.bloc && b.sys === sid && b.state !== 'travel' && b.state !== 'dead') { ihXfer(a.h, b.h, pubF); ihXfer(b.h, a.h, pubF); }
+}
+function agStep(a, now) {
+  if (a.state === 'dead') { if (now >= a.respawnAt) agRespawn(a); return; }
+  if (a.state === 'travel') { if (now >= a.arriveAt) { const sid = a.path.shift(); agArrive(a, sid); } return; }
+  if (a.state === 'pass') { if (now >= a.until) agHop(a); return; }
+  if (a.state === 'watch') {
+    if (now - (a.watchT || 0) >= 30) {
+      a.watchT = now; const before = a.h.ver; ihObserve(a.h, a.sys, { close: true }); agMeet(a, a.sys);
+      const loaded = a.ship && NPCS.includes(a.ship);
+      if (!loaded) { const g = garBy(a.sys).length, r = RELAYS[a.sys], p = (0.01 + 0.004 * g + (r && r.type === 'military' && r.bloc !== a.bloc ? 0.012 : 0)) * 0.5; if (rand() < p) { agDie(a, 'found and destroyed watching ' + SYSTEMS[a.sys].name); return; } }
+      if (a.h.ver !== before && [...a.h.db.values()].some(e => e.sv > before && INTEL_URGENT(e.r))) { agNext(a); return; }   // something worth running home with
+    }
+    if (now >= a.until) agNext(a);
+    return;
+  }
+  if (a.state === 'dwell') {
+    if (a.kind === 'courier' && !a.task) { a.until = now + 30; return; }
+    if (now >= a.until) agNext(a);
+  }
+}
+
+/* ---------- the war's staging, and command ---------- */
+let STAGE = null, STAGE_N = 0;
+/* Before a flash point the attackers mass for four minutes in a system of their own next to the target. */
+function stageTick() {
+  if (!STAGE) {
+    const f = warPick(FPS.last && FPS.last[0]); let from = f.from;
+    if (!from) { const own = SYS_IDS.filter(s => sysBloc(s) === f.att).sort((x, y) => lyDist(f.sys, x) - lyDist(f.sys, y)); from = own[0] || null; }
+    STAGE = Object.assign({}, f, { id: 'st' + (++STAGE_N), from, at: WT + 240, caps: { [f.att]: 1 + (rand() < warCapOdds(f.att) ? 1 : 0) } });
+    for (const r of RELAYS_IN[from] || []) if (!r.dead && r.bloc !== 'orrin') ihObserve(r.h, from);
+    return;
+  }
+  if (WT < STAGE.at) return;
+  const st = STAGE, D = sysBloc(st.sys), caps = { concord: 1, dominion: 1 };
+  caps[st.att] = st.caps[st.att];
+  if (D) caps[D] = 1 + (intelForewarned(D, st) ? 1 : 0); else caps[OTHER_BLOC[st.att]] = 1 + (rand() < warCapOdds(OTHER_BLOC[st.att]) ? 1 : 0);
+  FPS.force = { sys: st.sys, att: st.att, from: st.from, caps }; const c = fpStart(); FPS.force = null; STAGE = null;
+  c.defB = D; c.stage = st.id; c.forewarned = D && caps[D] > 1;
+  for (const r of RELAYS_IN[c.sys] || []) if (!r.dead && r.bloc !== 'orrin') ihObserve(r.h, c.sys);
+}
+const cmdRelays = B => Object.values(RELAYS).filter(r => r.bloc === B && !r.dead && relayCmd(r));
+function cmdKnows(B, subj, maxAge) { const now = GC(); for (const r of cmdRelays(B)) { const e = r.h.db.get(subj); if (e && (maxAge == null || now - e.r.u <= maxAge)) return { r, e }; } return null; }
+const intelForewarned = (D, st) => !!cmdKnows(D, 'st:' + st.id, 900);
+/* What an attacker's command believes a target's hold to be. */
+function intelHoldGuess(B, sid) {
+  let best = null; for (const r of cmdRelays(B)) { const e = r.h.db.get('ctl:' + sid); if (e && (!best || e.r.u > best.r.u)) best = e; }
+  if (!best || best.r.d.hold == null) return 70;
+  const g = (RELAYS[sid] && 0) || 0; return clamp(best.r.d.hold + g, 0, 100);
+}
+/* A defender's second capital group comes only when its command hears of the battle, and then has to get there. */
+function fpAddGroup(c, B) {
+  const side = B === 'concord' ? -1 : 1, i = c.caps[B], used = new Set(WORLD.map(w => w.name)), names = CAP_NAMES[B].filter(n => !used.has(n)), here = fpHere(c);
+  const group = [{ fac: BLOCS[B].lead, cls: 'capital', name: names[Math.floor(rand() * names.length)] || CAP_NAMES[B][0] }].concat(FP_ESCORT.map(cls => { const fac = fpEscortRace(B); return { fac, cls, name: fpName(fac, used) }; }));
+  const z0 = (i % 2 ? 1 : -1) * 900 * Math.ceil(i / 2);
+  group.forEach((o, j) => {
+    const s = makeShip(Object.assign({ uid: c.id + '-r' + i + '-' + j, sys: c.sys, site: c.site }, o)); s.fp = c.id;
+    const ang = j * 1.7, rr = j ? 260 + j * 70 : 0;
+    s.m.pos.set(side * (1500 + (j ? 180 + rand() * 260 : 0)), (rand() - 0.5) * 180 + Math.sin(ang) * rr * 0.3, z0 + Math.cos(ang) * rr); s.m.dir.set(-side, 0, 0); s.m.speed = s.def.cruise * 0.5; s.placed = true; s.state = 'engage'; WORLD.push(s);
+    if (here) { addNpc(s, null); const pos = s.m.pos.clone(); later(US.m.pos.distanceTo(pos) / C, () => jumpFx(pos, s.model.len * 1.2)); }
+  });
+  c.caps[B]++;
+  if (here) sayAll('ops', BLOCS[B].name + ' reinforcements: a ' + (B === 'concord' ? 'Seraphine' : 'Vorrakai') + ' capital group has jumped in. Their command got the report.', 'warn');
+}
+function cmdTick() {
+  const now = GC();
+  for (const c of FPS.list) {
+    if (c.phase !== 'battle' || !c.defB || c.reinf) continue;
+    const k = cmdKnows(c.defB, 'fp:' + c.id); if (!k) continue;
+    c.reinf = { at: WT + 30 + 70 * hopsTo(k.r.sid, c.sys), by: k.r.sid };
+  }
+  for (const c of FPS.list) if (c.phase === 'battle' && c.reinf && !c.reinf.done && WT >= c.reinf.at) { c.reinf.done = true; fpAddGroup(c, c.defB); }
+  // a military relay with urgent news sends its courier to the nearest strategic relay
+  for (const r of Object.values(RELAYS)) {
+    if (r.type !== 'military' || r.dead || r.bloc === 'orrin') continue;
+    const fresh = [...r.h.db.values()].find(e => INTEL_URGENT(e.r) && now - e.r.u < 300 && !r.sentU[e.r.s]); if (!fresh) continue;
+    const cour = AGENTS.find(a => a.kind === 'courier' && a.bloc === r.bloc && a.home === r.sid && a.state === 'dwell' && a.sys === r.sid && !a.task); if (!cour) continue;
+    const s = cmdRelays(r.bloc).filter(x => x.type === 'strategic').sort((x, y) => hopsTo(r.sid, x.sid) - hopsTo(r.sid, y.sid))[0]; if (!s) continue;
+    r.sentU[fresh.r.s] = 1; ihXfer(r.h, cour.h); cour.task = s.sid; agNext(cour);
+  }
+}
+
+/* ---------- the captain's own picture ---------- */
+const INTEL_SAVED = { player: {} };
+function ihOf(p) {
+  if (!p) return null; if (p.ih) return p.ih;
+  const h = ihMake('P:' + p.id, { bloc: 'you', name: 'you', cap: 1500, hist: [] }); p.ih = h;
+  const sv = p.local && INTEL_SAVED.player && INTEL_SAVED.player.db ? INTEL_SAVED.player : null;
+  if (sv) intelUnpackHolder(h, sv); else if (RELAYS.tarsis) { ihXfer(RELAYS.tarsis.h, h); h.hist.push({ u: GC(), t: 'Charts from Tarsis Ring: who held what, as the free port last heard.', k: 'start' }); }
+  return h;
+}
+const playerFriend = B => SAVE && SAVE.standing && SAVE.standing[B] >= 0 && !(G && G.provoked && G.provoked[B]);
+/* What changed in a captain's picture, said once. */
+function intelNotice(h, got, via) {
+  const now = GC(), lines = [];
+  for (const n of got) {
+    const r = n.r, sys = r.d.sys && SYSTEMS[r.d.sys] ? SYSTEMS[r.d.sys].name : '', ago = ' (' + agoS(now - r.u) + ', ' + via + ')';
+    if (r.c === 'control' && n.prev && n.prev.d.o !== r.d.o) { const m = sys + ' has changed hands: ' + ownName(n.prev.d.o) + ' → ' + ownName(r.d.o) + '.'; h.hist.push({ u: r.u, t: m, k: 'flip', sys: r.d.sys, via }); lines.push(m + ago); }
+    else if (r.c === 'battle' && (!n.prev || n.prev.d.ph !== r.d.ph)) { const m = r.d.ph === 'battle' ? 'Battle at ' + sys + ': ' + r.d.cc + ' Concord capital' + (r.d.cc > 1 ? 's' : '') + ' against ' + r.d.cd + ' Dominion.' : (r.d.w ? BLOCS[r.d.w].name + ' won the battle at ' + sys + '.' : 'The battle at ' + sys + ' is over.'); h.hist.push({ u: r.u, t: m, k: r.d.ph === 'battle' ? 'battle' : 'result', sys: r.d.sys, via }); lines.push(m + ago); }
+    else if (r.c === 'fleet' && r.d.st && !n.prev) { const m = BLOCS[r.d.b].name + ' fleet massing at ' + sys + '.'; h.hist.push({ u: r.u, t: m, k: 'stage', sys: r.d.sys, via }); lines.push(m + ago); }
+    else if (r.c === 'agent' && r.d.st === 'destroyed' && (!n.prev || n.prev.d.st !== 'destroyed')) { const m = 'The ' + BLOCS[r.d.b].short + ' ' + agRole({ kind: r.d.k }) + ' ' + r.d.n + ' was destroyed at ' + sys + '.'; h.hist.push({ u: r.u, t: m, k: 'loss', sys: r.d.sys, via }); }
+    else if (r.c === 'install' && n.prev && n.prev.d.b !== r.d.b) { const m = 'The ' + RELAY_TYPES[r.d.ty].name.toLowerCase() + ' at ' + sys + ' now answers to ' + BLOCS[r.d.b].name + '.'; h.hist.push({ u: r.u, t: m, k: 'flip', sys: r.d.sys, via }); }
+  }
+  if (h.hist.length > 250) h.hist.splice(0, h.hist.length - 250);
+  return lines;
+}
+const ownName = o => o === 'orrin' ? 'free port' : o === 'architect' ? 'no one' : (FACTIONS[o] || {}).name || o;
+const agoS = s => s < 45 ? 'just now' : s < 5400 ? Math.round(s / 60) + ' min ago' : s < 172800 ? Math.round(s / 3600) + ' h ago' : Math.round(s / 86400) + ' days ago';
+/* In the field: see what is in front of you, and sync with any relay that will talk to you. */
+function intelPlayer(p, dtAcc) {
+  const h = ihOf(p); if (!SITE || !p.G || p.G.phase !== 'play') return;
+  withP(p, () => {
+    const before = h.ver; ihObserve(h, SITE.sys, { close: true, src: 'you' });
+    const seen = [...h.db.values()].filter(e => e.sv > before);
+    const said = intelNotice(h, seen.filter(e => e.r.c !== 'battle' || SITE.sys === e.r.d.sys), 'your sensors');
+    for (const r of RELAYS_IN[SITE.sys] || []) {
+      if (!relayUp(r)) continue;
+      const pub = r.bloc === 'orrin';
+      if (!pub && RELAY_TYPES[r.type].range === 'site' && SITE.id !== 'relay') continue;
+      if (!pub && !playerFriend(r.bloc)) { if (!p.relayWarned || p.relayWarned !== r.sid) { p.relayWarned = r.sid; say('ops', 'The ' + r.h.name + ' will not talk to us: ' + BLOCS[r.bloc].name + ' do not trust us enough.', ''); } continue; }
+      const f = pub ? x => !!INTEL_PUBLIC[x.c] : null, up = ihXfer(h, r.h, f), down = ihXfer(r.h, h, f);
+      if (!up.length && !down.length) continue;
+      let pay = 0; if (!pub) for (const n of up) { const d = n.r.d, foe = OTHER_BLOC[r.bloc]; if (n.r.src === 'you' || n.cap) if (d.b === foe || (d.o && BLOC_OF(d.o) === foe) || n.r.c === 'battle' || n.r.c === 'fleet') pay += 6; }
+      pay = Math.min(150, pay); if (pay && G.rep) G.rep[r.bloc] += pay;
+      const lines = intelNotice(h, down, r.h.name);
+      say('ops', 'Relay handshake with the ' + r.h.name + ': ' + up.length + ' report' + (up.length === 1 ? '' : 's') + ' up, ' + down.length + ' down.' + (pay ? ' ' + BLOCS[r.bloc].short + ' intelligence logs what we brought (standing +' + pay + ').' : ''), 'ok');
+      for (const l of lines.slice(0, 3)) say('ops', l, 'warn');
+    }
+    for (const l of said.slice(0, 2)) say('sens', l, 'warn');
+  });
+}
+/* Docked at Tarsis: the free port's news, both ways. */
+function intelDocked(p) { const h = ihOf(p); if (!h || !RELAYS.tarsis) return []; const f = x => !!INTEL_PUBLIC[x.c]; ihObserve(h, 'tarsis', { close: true, src: 'you' }); ihXfer(h, RELAYS.tarsis.h, f); const got = ihXfer(RELAYS.tarsis.h, h, f); return intelNotice(h, got, 'Tarsis Ring'); }
+/* Stripping a wreck's data core: whatever she knew is ours, unconfirmed. */
+function intelCapture(s) {
+  const db = s.intelDb || (s.agent && (AGENTS.find(a => a.id === s.agent) || {}).h) || (s.relay && RELAYS[s.relay] && RELAYS[s.relay].h); if (!db || s.coreTaken) return;
+  s.coreTaken = true; const h = ihOf(CUR), got = ihXfer(db, h, null, true);
+  say('ops', 'Pulled the data core from the ' + s.name + ': ' + got.length + ' record' + (got.length === 1 ? '' : 's') + ' of ' + (BLOC_OF(s.fac) ? BLOCS[BLOC_OF(s.fac)].short : '') + ' intelligence. Their side will want it back; the other side will pay for it in standing at one of its relays.', 'ok');
+}
+
+/* ---------- the tick ---------- */
+const INT = { acc: 0, robs: 0, pacc: 0, saveAcc: 0, pend: [] };
+function intelStep(dt) {
+  WAR.clock = (WAR.clock || 0) + dt; const now = GC();
+  for (const a of AGENTS) agStep(a, now);
+  INT.robs += dt; if (INT.robs >= 20) { INT.robs = 0; for (const r of Object.values(RELAYS)) if (!r.dead && r.bloc !== 'orrin') ihObserve(r.h, r.sid); }
+  for (const r of Object.values(RELAYS)) if (r.dead && now >= r.rebuildAt && sysBloc(r.sid) && sysBloc(r.sid) === r.bloc && !(SITE && SITE.sys === r.sid && fieldPlayers().length)) { r.dead = false; r.gen++; r.fac = WAR.own[r.sid]; relayShip(r); }
+  intelPend(); cmdTick();
+}
+function intelTick(dt) {
+  if (NET.mode === 'client') return;
+  INT.acc += dt; if (INT.acc < 1) return; const step = INT.acc; INT.acc = 0;
+  intelStep(step);
+  // what happened in front of us: ships of the network killed, relays knocked out, captures waiting to be swapped
+  for (const a of AGENTS) if (a.ship && a.state !== 'dead' && !isLive(a.ship)) agDie(a, 'destroyed in combat at ' + SYSTEMS[a.sys].name);
+  for (const r of Object.values(RELAYS)) {
+    if (!r.ship) continue;
+    if (!isLive(r.ship) && !r.dead) relayKilled(r, 'combat');
+    else if (NPCS.includes(r.ship) && !fn(r.ship, 'SENSORS') && r.ship.mods.SENSORS && r.ship.mods.SENSORS.hp <= 0) r.downUntil = Math.max(r.downUntil, GC() + 900);
+    if (r.swap && !(SITE && SITE.sys === r.sid && fieldPlayers().length)) { r.swap = false; relayShip(r); }
+  }
+  INT.pacc += step; if (INT.pacc >= 5) { INT.pacc = 0; for (const p of fieldPlayers()) intelPlayer(p); }
+  INT.saveAcc += step; if (INT.saveAcc >= 60) { INT.saveAcc = 0; intelSave(); }
+}
+/* The war while you were away, in steps: the network keeps carrying. */
+function intelFF(secs) { const n = Math.ceil(secs / 20); for (let i = 0; i < n; i++) intelStep(secs / n); }
+/* A battle fought with nobody watching still has witnesses: the system's relay, and the attackers' own reports home. */
+function intelAwayBattle(f, win) {
+  const c = { id: 'away' + (++FPS.n), sys: f.sys, site: (siteFlash(f.sys) || { id: 'line' }).id, phase: 'aftermath', att: f.att, defB: sysBloc(f.sys), caps: { concord: 1 + (rand() < 0.4 ? 1 : 0), dominion: 1 + (rand() < 0.4 ? 1 : 0) }, winner: win };
+  const d = { sys: c.sys, site: c.site, ph: 'aftermath', att: c.att, def: c.defB, cc: c.caps.concord, cd: c.caps.dominion, w: win };
+  for (const r of RELAYS_IN[f.sys] || []) if (!r.dead && r.bloc !== 'orrin') ihSee(r.h, 'fp:' + c.id, 'battle', d, 0.95);
+  const home = f.from && (RELAYS_IN[f.from] || []).find(r => !r.dead && r.bloc === f.att); if (home) ihSee(home.h, 'fp:' + c.id, 'battle', d, 0.9);
+}
+
+/* ---------- saving: one copy of each record, and who holds it ---------- */
+const INTEL_KEY = 'valk-intel';
+function intelPackHolder(h, idx) { return { db: [...h.db.values()].map(e => [idx(e.r), e.h, Math.round(e.rx), e.sent ? 1 : 0, e.cap ? 1 : 0]), hist: h.hist || undefined }; }
+function intelUnpackHolder(h, o, recs) {
+  recs = recs || INTEL_SAVED.recs || [];
+  for (const a of o.db || []) { const r = recs[a[0]]; if (!r) continue; h.db.set(r.s, { r, h: a[1], rx: a[2], sent: !!a[3], cap: !!a[4], sv: ++h.ver }); }
+  if (o.hist) h.hist = o.hist.slice(-250);
+}
+function intelSave() {
+  if (NET.mode === 'client' || WAR.remote) return;
+  const ri = new Map(), recs = [], idx = r => { let i = ri.get(r); if (i == null) { i = recs.length; ri.set(r, i); recs.push([r.s, r.c, r.t0, r.u, r.d, r.src, r.cf, r.b]); } return i; };
+  const out = { v: 1, n: AG_N, st: STAGE_N, relays: {}, agents: [], player: null };
+  for (const r of Object.values(RELAYS)) out.relays[r.sid] = { type: r.type, bloc: r.bloc, fac: r.fac, dead: r.dead ? 1 : 0, rebuildAt: r.rebuildAt, downUntil: r.downUntil, gen: r.gen, lastVisit: r.lastVisit, h: intelPackHolder(r.h, idx) };
+  for (const a of AGENTS) out.agents.push({ id: a.id, kind: a.kind, bloc: a.bloc, fac: a.fac, name: a.name, home: a.home, sys: a.sys, site: a.site, state: a.state === 'travel' || a.state === 'pass' ? 'dwell' : a.state, until: a.until, respawnAt: a.respawnAt, gen: a.gen, stops: a.stops, post: a.post, h: intelPackHolder(a.h, idx) });
+  const L = LOCAL && LOCAL.ih; if (L) out.player = intelPackHolder(L, idx);
+  out.recs = recs;
+  try { localStorage.setItem(INTEL_KEY, JSON.stringify(out)); } catch (e) {
+    if (out.player) { out.player.db = out.player.db.slice(-600); try { localStorage.setItem(INTEL_KEY, JSON.stringify(out)); } catch (_) {} }
+  }
+}
+function intelLoad() {
+  let d = null; try { d = JSON.parse(localStorage.getItem(INTEL_KEY) || 'null'); } catch (_) {}
+  if (!d || d.v !== 1 || !d.relays) return false;
+  const recs = (d.recs || []).map(a => ({ s: a[0], c: a[1], t0: a[2], u: a[3], d: a[4], k: recKey(a[4]), src: a[5], cf: a[6], b: a[7] }));
+  INTEL_SAVED.recs = recs; AG_N = d.n || 0; STAGE_N = d.st || 0;
+  for (const sid in RELAY_AT) {
+    const o = d.relays[sid], r = relayInit(sid, RELAY_AT[sid]); if (!o) continue;
+    Object.assign(r, { dead: !!o.dead, rebuildAt: o.rebuildAt || 0, downUntil: o.downUntil || 0, gen: o.gen || 0, lastVisit: o.lastVisit || 0 });
+    const own = WAR.own[sid]; r.fac = own; r.bloc = own === 'orrin' ? 'orrin' : BLOC_OF(own); r.h.bloc = r.bloc;
+    intelUnpackHolder(r.h, o.h, recs);
+  }
+  for (const o of d.agents || []) { const a = agMake({ kind: o.kind, bloc: o.bloc, fac: o.fac, name: o.name, home: o.home }); a.id = o.id; IH.delete(a.h.id); a.h = ihMake('A:' + a.id, { bloc: a.bloc, name: a.name, cap: 400 }); intelUnpackHolder(a.h, o.h, recs);
+    Object.assign(a, { state: o.state, until: o.until || 0, respawnAt: o.respawnAt || 0, gen: o.gen || 0, stops: o.stops || 0, post: o.post || null }); a.sys = o.sys; a.site = o.site; }
+  INTEL_SAVED.player = d.player || {};
+  return true;
+}
+function intelFresh() {
+  for (const sid in RELAY_AT) relayInit(sid, RELAY_AT[sid]);
+  // everyone starts knowing the map as it stands, and where the great relays are
+  for (const r of Object.values(RELAYS)) {
+    for (const sid of SYS_IDS) { const own = WAR.own[sid], B = BLOC_OF(own); ihSee(r.h, 'ctl:' + sid, 'control', { sys: sid, o: own, hold: B ? Math.round(WAR.hold[sid] / 5) * 5 : null }, B === r.bloc || r.bloc === 'orrin' ? 0.95 : 0.85, 'pre-war charts'); }
+    for (const q of Object.values(RELAYS)) if (q.bloc !== 'orrin' && (q.bloc === r.bloc || q.type !== 'local')) ihSee(r.h, 'rel:' + q.sid, 'install', { sys: q.sid, b: q.bloc, ty: q.type, up: 1, dead: 0 }, 0.9, 'pre-war charts');
+  }
+  const used = new Set(WORLD.map(w => w.name));
+  for (const r of Object.values(RELAYS)) {
+    if (r.bloc === 'orrin') { if (r.sid === 'tarsis') for (let i = 0; i < 2; i++) agMake({ kind: 'trader', bloc: 'orrin', fac: 'orrin', name: ['Long Ledger', 'Quiet Margin'][i], home: 'tarsis', sys: 'tarsis' }); continue; }
+    const B = r.bloc, mk = (kind, fac) => agMake({ kind, bloc: B, fac, name: fpName(fac, used), home: r.sid, sys: r.sid, site: 'relay' });
+    if (r.type === 'strategic') { mk('carrier', r.fac); mk('carrier', r.fac); mk('picket', AG_RACE[B].picket); mk('picket', AG_RACE[B].picket); if (r.sid === 'vashkar') mk('picket', AG_RACE[B].picket); }
+    if (r.type === 'regional') mk('regional', r.fac);
+    if (r.type === 'military') mk('courier', AG_RACE[B].courier);
+  }
+}
+function intelBoot() {
+  for (const k of [...IH.keys()]) IH.delete(k); AGENTS.length = 0; for (const k in RELAYS) delete RELAYS[k]; for (const k in RELAYS_IN) delete RELAYS_IN[k];
+  if (!intelLoad()) intelFresh();
+  for (const r of Object.values(RELAYS)) relayShip(r);
+  for (const a of AGENTS) if (a.state !== 'dead') { const sys = a.sys || a.home, site = a.site; a.sys = null; a.ship = null; agShipTo(a, sys, a.bloc === 'orrin' ? null : site || 'relay'); }
+}
+/* Docking resets the world's ships; put the network's ships back where the network says they are. */
+function intelPlaceShips() {
+  WORLD = WORLD.filter(w => !w.agentGone);
+  for (const r of Object.values(RELAYS)) { if (r.dead) continue; if (!r.ship || !WORLD.includes(r.ship)) relayShip(r); else { r.ship.sys = r.sid; r.ship.site = 'relay'; } }
+  for (const a of AGENTS) if (a.ship) { if (a.state === 'travel') { a.ship.site = null; } else { a.ship.sys = a.sys; a.ship.site = a.site; } a.ship.placed = false; }
+}
+
+/* ---------- multiplayer: each friend gets their own picture from the host ---------- */
+const CI = { h: null };
+const myIH = () => NET.mode === 'client' ? (CI.h || (CI.h = ihMake('P:me', { bloc: 'you', name: 'you', cap: 1500, hist: [] }))) : ihOf(CUR || LOCAL);
+function intelNetOut() {
+  for (const p of PLAYERS) {
+    if (p.local || !p.ih) continue; const h = p.ih, since = p.ihSent || 0; if (h.ver === since && (h.hist || []).length === (p.ihHist || 0)) continue;
+    const es = [...h.db.values()].filter(e => e.sv > since).slice(-300).map(e => [e.r.s, e.r.c, e.r.t0, e.r.u, e.r.d, e.r.src, e.r.cf, e.h, e.rx, e.cap ? 1 : 0]);
+    const hist = (h.hist || []).slice(p.ihHist || 0);
+    netTo(p, { t: 'intel', k: GC(), e: es, hist }); p.ihSent = h.ver; p.ihHist = (h.hist || []).length;
+  }
+}
+function intelNetIn(m) {
+  const h = myIH(); WAR.clock = m.k || WAR.clock;
+  for (const a of m.e || []) { const r = { s: a[0], c: a[1], t0: a[2], u: a[3], d: a[4], k: recKey(a[4]), src: a[5], cf: a[6] }, o = h.db.get(r.s); h.db.set(r.s, { r, h: a[7], rx: a[8], cap: !!a[9], sv: ++h.ver, prev: o ? o.r : null }); }
+  if (m.hist && m.hist.length) h.hist = (h.hist || []).concat(m.hist).slice(-250);
+  warDirty();
+}
+
+/* ---------- reading a captain's picture for the map and the station ---------- */
+function knowOf(h) {
+  h = h || myIH(); const now = GC(), out = { own: {}, cls: {}, age: {}, src: {}, hold: {}, fp: [], relays: [], agents: [], now };
+  for (const sid of SYS_IDS) {
+    const e = h && h.db.get('ctl:' + sid);
+    if (e) { out.own[sid] = e.r.d.o; out.cls[sid] = intelClass(e, now); out.age[sid] = now - e.r.u; out.src[sid] = e.r.src; out.hold[sid] = e.r.d.hold; }
+    else { out.own[sid] = SYSTEMS[sid].owner0; out.cls[sid] = 'historical'; out.age[sid] = Infinity; out.src[sid] = 'old charts'; out.hold[sid] = null; }
+  }
+  if (h) for (const e of h.db.values()) {
+    const r = e.r, cl = intelClass(e, now);
+    if (r.c === 'battle' && cl !== 'historical') out.fp.push({ id: r.s.slice(3), sys: r.d.sys, site: r.d.site, phase: r.d.ph, caps: { concord: r.d.cc, dominion: r.d.cd }, winner: r.d.w, att: r.d.att, def: r.d.def, age: now - r.u, cls: cl, src: r.src, h: e.h });
+    else if (r.c === 'install') out.relays.push({ sys: r.d.sys, b: r.d.b, ty: r.d.ty, up: r.d.up, dead: r.d.dead, age: now - r.u, cls: cl });
+    else if (r.c === 'agent' && cl !== 'historical') out.agents.push({ sys: r.d.sys, b: r.d.b, k: r.d.k, n: r.d.n, st: r.d.st, age: now - r.u, cls: cl });
+  }
+  out.fp.sort((a, b) => a.age - b.age);
+  return out;
+}
+/* A flash point as this captain knows it: live if it is in this system, otherwise the last report. */
+function fpSeen(sys, site) {
+  if (SITE && SITE.sys === sys) return fpOf(sys, site);
+  const k = knowOf().fp.find(f => f.sys === sys && f.site === site && f.phase !== 'staging');
+  return k ? Object.assign({ rep: k }, k) : null;
+}
+function fpSeenLatest() {
+  const live = SITE && FPS.list.find(c => c.sys === SITE.sys); if (live) return live;
+  const k = knowOf().fp.find(f => f.phase === 'battle') || knowOf().fp[0]; return k ? Object.assign({ rep: k }, k) : null;
+}
+const repNote = c => c && c.rep ? ' Reported ' + agoS(c.rep.age) + (c.rep.cls === 'outdated' ? ', so it may be over by now' : '') + ', by ' + c.rep.src + '.' : '';
 /* ---------- the Remnants: First Architect machines ----------
    Some flash points have one lying between the fleets: a dark octahedral structure older than the Seraphine. It is
    dormant, and it drinks. Every shot fired near it and every reactor that dies feeds it, the way the war is slowly
@@ -5238,6 +5785,7 @@ function stripList(s) {
   return out.sort((a, b) => (b.kind === 'part') - (a.kind === 'part') || b.val - a.val);
 }
 function startStrip(s) {
+  if (s.intelDb || s.agent || s.relay) intelCapture(s);
   if (!fn(US, 'HOLD') && US.mods.HOLD.hp <= 40) { say('ops', 'Our hold is breached. Nowhere to put anything.', 'bad'); return; }
   G.strip = { uid: s.uid, t: 2.5 }; G.speedIdx = 0; US.m.wp = null; say('ops', 'Cutting crews across to the ' + s.name + '. Fittable parts first.', 'ok');
 }
@@ -5270,12 +5818,13 @@ function refreshUs() {
   freshShip(US); US.m.turn = OUR.turn(); US.model.msl.visible = !!F().msl; US.model.pd.visible = !!F().pd; US.model.damp.visible = !!F().damp;
 }
 function homeDest() { const s = siteOf('tarsis', 'ring'); return { sys: 'tarsis', site: 'ring', pos: s.pos.clone(), arrive: V(0, 0, 260) }; }
-function resetWorld() { for (const s of WORLD) { freshShip(s); s.site = s.home; s.wake = null; s.model.g.traverse(o => { if (o.isSprite) o.visible = true; }); } }
+function resetWorld() { WORLD = WORLD.filter(w => !w.agentGone); for (const s of WORLD) { freshShip(s); s.site = s.home; s.wake = null; s.model.g.traverse(o => { if (o.isSprite) o.visible = true; }); } intelPlaceShips(); }
 function dockedNow(towed) {
   G.phase = 'docked'; G.script = null; G.strip = null; G.pursue = null; G.salvQ = []; scene.remove(US.model.g);
   const data = sortieData(towed);
+  if (NET.mode !== 'client') intelDocked(CUR);
   if (!fieldPlayers().length) {
-    for (const s of WORLD) if (s.status === 'dead') { scene.remove(s.model.g); s.model = makeModel(s.fac, s.cls); s.m.g = s.model.g; }
+    for (const s of WORLD) if (s.status === 'dead') { scene.remove(s.model.g); s.model = makeModel(s.fac, s.cls, s.relayType); s.m.g = s.model.g; }
     resetWorld(); loadSite(homeDest()); REINF = []; FLEET = null;
   }
   if (CUR.local) dockLocal(data); else netTo(CUR, { t: 'docked', d: data });
@@ -5461,13 +6010,14 @@ function renderStation() {
   for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-selected', String(b.dataset.tab === TAB));
   { const tb = $('#st-tut'); tb.disabled = NET.mode !== 'solo'; tb.title = NET.mode !== 'solo' ? 'The tutorial runs in solo play' : 'A guided first mission against a practice target'; tb.textContent = SAVE.tut && (SAVE.tut.done || SAVE.tut.off) ? 'Replay the first sortie' : 'First sortie (tutorial)'; }
   for (const k of ['missions', 'factions', 'fitting', 'war']) $('#tab-' + k).hidden = k !== TAB;
-  if (TAB === 'war') { if (warVisit == null) { warVisit = WAR.seenAt || 0; WAR.seenAt = Date.now(); warSave(); } warRender(); } else warVisit = null;
+  if (NET.mode !== 'client' && CUR && G && G.phase === 'docked') intelDocked(CUR);
+  if (TAB === 'war') { const hh = myIH(); if (warVisit == null) { warVisit = hh.seenU || 0; hh.seenU = GC(); } warRender(); } else warVisit = null;
   const rc = $('#receipt');
   if (lastReceipt) { rc.hidden = false; rc.innerHTML = receiptHtml(lastReceipt); }
   else if (!SAVE.seen) { rc.hidden = false; rc.innerHTML = '<p class="eyebrow">Captain\'s notes</p><p>The Magpie is a salvage cutter at Tarsis Ring, neutral ground between two powers: the Concord, benign overlords led by the Seraphine Lattice, and the Dominion, the Vorrakai Autarch\'s dictatorship. Your ship runs on human 5th-tier parts. The only way up is to beat a ship of a higher tier and strip its parts. Start with the 5th-tier ships near home: the Dominion\'s Rust Widow in the Outer belt, or the Concord\'s Lantern Moth above Tarsis III.</p>' + (NET.mode === 'solo' && !SAVE.tut ? '<div class="row"><button class="btn big" type="button" data-tut-start>Fly a guided first sortie</button><span class="hint">Eight short steps, one practice target. Skip any time.</span></div>' : ''); }
   else rc.hidden = true;
-  const fpc = fpBattle() || FPS.list[0], fps = fpStatus(fpc);
-  $('#board').innerHTML = shardBoardHtml() + warBoardHtml() + (fps ? '<li class="m-group fp-note" style="--bc:' + (fps.kind === 'battle' ? '#ff8552' : '#f2b84b') + '"><h3>' + (fps.kind === 'battle' ? 'Flash point' : 'After the battle') + '<span>' + esc(siteOf(fpc.sys, fpc.site).name + ', ' + SYSTEMS[fpc.sys].name + ' · ' + lyDist('tarsis', fpc.sys).toFixed(1) + ' ly') + '</span></h3><p class="b-desc">' + esc(fps.long) + ' Ships of a side that trusts you more than the other will treat you as an ally there; the other side will shoot.</p></li>' : '') + ['concord', 'dominion'].map(B => {
+  const fpc = fpSeenLatest(), fps = fpStatus(fpc);
+  $('#board').innerHTML = shardBoardHtml() + warBoardHtml() + (fps ? '<li class="m-group fp-note" style="--bc:' + (fps.kind === 'battle' ? '#ff8552' : '#f2b84b') + '"><h3>' + (fps.kind === 'battle' ? 'Flash point' : 'After the battle') + '<span>' + esc(siteOf(fpc.sys, fpc.site).name + ', ' + SYSTEMS[fpc.sys].name + ' · ' + lyDist('tarsis', fpc.sys).toFixed(1) + ' ly') + '</span></h3><p class="b-desc">' + esc(fps.long + repNote(fpc)) + ' Ships of a side that trusts you more than the other will treat you as an ally there; the other side will shoot.</p></li>' : '') + ['concord', 'dominion'].map(B => {
     const BB = BLOCS[B], other = B === 'concord' ? 'dominion' : 'concord';
     return '<li class="m-group" style="--bc:' + BB.col + '"><h3>Missions from ' + esc(BB.name) + '<span>' + esc(BB.kind) + ' · you are ' + rankOf(B) + '</span></h3><ul>' + CONTRACTS.filter(c => c.by === B).map(c => {
       const locked = c.needs && (SAVE.standing[B] < -1000 || rankNum(peakOf(B)) < c.needs);
@@ -5576,61 +6126,6 @@ let warDirtyN = 0;
 function warDirty() { warDirtyN++; if (typeof $ === 'function' && $('#station') && !$('#station').hidden && TAB === 'war') warRender(); }
 const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; };
 const ownCol = f => f === 'orrin' ? '#8f9aa8' : f === 'architect' ? '#c8b8ff' : (FACTIONS[f] || {}).col || '#888';
-function terrLayer(cv, W, H, V) {
-  const own = SYS_IDS.map(s => WAR.own[s]).join(), key = own + '|' + V.cx.toFixed(3) + ',' + V.cy.toFixed(3) + ',' + V.k.toFixed(3) + '|' + W + 'x' + H;
-  let T0 = TERR.get(cv); if (T0 && T0.key === key) return T0.cv;
-  const off = T0 ? T0.cv : document.createElement('canvas'); off.width = W; off.height = H; const c = off.getContext('2d'); c.clearRect(0, 0, W, H);
-  const cs = 3, nx = Math.ceil(W / cs), ny = Math.ceil(H / cs), grid = new Int16Array(nx * ny).fill(-1), P = SYS_IDS.map(s => SYSTEMS[s].ly);
-  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
-    const x = V.cx + ((i + 0.5) * cs - W / 2) / V.k, y = V.cy - ((j + 0.5) * cs - H / 2) / V.k; let best = -1, bd = TERR_R * TERR_R;
-    for (let s = 0; s < P.length; s++) { const dx = P[s][0] - x, dy = P[s][1] - y, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = s; } }
-    grid[j * nx + i] = best;
-  }
-  const own2 = SYS_IDS.map(s => WAR.own[s]), bl = own2.map(BLOC_OF);
-  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const g = grid[j * nx + i]; if (g < 0) continue; const o = own2[g]; c.fillStyle = hexA(ownCol(o), bl[g] ? 0.25 : 0.08); c.fillRect(i * cs, j * cs, cs, cs); }
-  // borders: between races thin, between the powers the front
-  const seg = (front) => { c.beginPath(); for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const g = grid[j * nx + i]; if (g < 0) continue;
-    for (const [di, dj] of [[1, 0], [0, 1]]) { const i2 = i + di, j2 = j + dj; if (i2 >= nx || j2 >= ny) continue; const h = grid[j2 * nx + i2]; if (h < 0 || h === g) continue;
-      const isFront = bl[g] && bl[h] && bl[g] !== bl[h], isRace = own2[g] !== own2[h]; if (front ? !isFront : (isFront || !isRace)) continue;
-      if (di) { c.moveTo(i2 * cs, j * cs); c.lineTo(i2 * cs, (j + 1) * cs); } else { c.moveTo(i * cs, j2 * cs); c.lineTo((i + 1) * cs, j2 * cs); } } } c.stroke(); };
-  c.lineWidth = 1; c.strokeStyle = 'rgba(255,240,220,.22)'; seg(false);
-  c.save(); c.shadowColor = 'rgba(255,90,40,.9)'; c.shadowBlur = 10; c.lineWidth = 2.6; c.strokeStyle = 'rgba(255,110,60,.95)'; seg(true); c.restore();
-  TERR.set(cv, { key, cv: off }); return off;
-}
-function drawGalaxy(ctx, W, H, V, o) {
-  o = o || {};
-  ctx.clearRect(0, 0, W, H); ctx.fillStyle = '#070605'; ctx.fillRect(0, 0, W, H);
-  ctx.drawImage(terrLayer(ctx.canvas, W, H, V), 0, 0);
-  const fs = clamp(V.k * 0.62, 10.5, 16), now = performance.now();
-  // the three great fronts, faintly
-  ctx.textAlign = 'center'; ctx.font = '700 ' + Math.round(fs * 0.95) + 'px "Rajdhani","Bahnschrift",sans-serif';
-  for (const rg in REGION_AT) { const [px, py] = gxy(V, W, H, REGION_AT[rg][0], REGION_AT[rg][1]); ctx.fillStyle = 'rgba(255,226,189,.3)'; ctx.fillText(REGIONS[rg].toUpperCase().split('').join('\u200a'), px, py); }
-  // lanes: a hop of up to seven light years
-  for (const a of SYS_IDS) for (const b of NEAR[a]) if (a < b) {
-    const [x1, y1] = sxy(V, W, H, a), [x2, y2] = sxy(V, W, H, b), ba = sysBloc(a), bb = sysBloc(b), hot = ba && bb && ba !== bb;
-    ctx.strokeStyle = hot ? 'rgba(255,110,60,.35)' : 'rgba(255,155,47,.12)'; ctx.lineWidth = hot ? 1.5 : 1; ctx.setLineDash(hot ? [4, 4] : []); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-  }
-  ctx.setLineDash([]);
-  if (o.range && o.here) { const [cx, cy] = sxy(V, W, H, o.here); ctx.setLineDash([8, 6]); ctx.strokeStyle = 'rgba(197,140,255,.75)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, o.range * V.k, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
-  for (const sid of SYS_IDS) {
-    const S = SYSTEMS[sid], [x, y] = sxy(V, W, H, sid), inR = o.here && lyDist(o.here, sid) <= (o.range || 0), sel = o.sel === sid, oc = ownCol(S.owner);
-    if (x < -40 || y < -40 || x > W + 40 || y > H + 40) continue;
-    const g = ctx.createRadialGradient(x, y, 0, x, y, 13); g.addColorStop(0, '#' + S.star.col.toString(16).padStart(6, '0')); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 13, 0, 7); ctx.fill();
-    ctx.strokeStyle = oc; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 6.5, 0, 7); ctx.stroke();
-    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fill();
-    if (S.cap) { ctx.fillStyle = oc; ctx.beginPath(); ctx.moveTo(x, y - 15); ctx.lineTo(x + 4, y - 10.5); ctx.lineTo(x, y - 6); ctx.lineTo(x - 4, y - 10.5); ctx.closePath(); ctx.fill(); }
-    if (sel) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 11, 0, 7); ctx.stroke(); }
-    if (sid === o.here) { ctx.strokeStyle = '#5fd6ff'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x, y, 15, 0, 7); ctx.stroke(); }
-    const fpc = FPS.list.find(c => c.sys === sid && c.phase === 'battle');
-    if (fpc) { ctx.strokeStyle = 'rgba(255,75,58,.9)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 19 + 3 * Math.sin(now / 300), 0, 7); ctx.stroke(); }
-    ctx.textAlign = 'center'; ctx.font = '600 ' + Math.round(fs) + 'px "Rajdhani","Bahnschrift",sans-serif'; ctx.fillStyle = sel || sid === o.here ? '#fff1dc' : inR || !o.range ? '#ffe2bd' : '#9a7a58'; ctx.fillText(S.name.toUpperCase(), x, y + 13 + fs);
-    if (V.k >= 20 || sel) { ctx.font = '500 ' + Math.round(fs * 0.78) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = oc; ctx.fillText(S.label || FACTIONS[S.owner].name, x, y + 14 + fs * 1.9); }
-    if (fpc) { ctx.font = '600 ' + Math.round(fs * 0.78) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = '#ffd23f'; ctx.fillText('FLASH POINT', x, y - 22); }
-    else if (o.range && sid !== o.here && (inR || sel) && V.k >= 15) { ctx.font = '500 ' + Math.round(fs * 0.75) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = inR ? '#c58cff' : '#8a6a4a'; ctx.fillText(lyDist(o.here, sid).toFixed(1) + ' ly', x, y - 19); }
-    const n = o.contracts ? o.contracts(sid) : 0;
-    if (n) { ctx.fillStyle = '#ffd23f'; ctx.beginPath(); ctx.arc(x + 13, y - 11, 7, 0, 7); ctx.fill(); ctx.fillStyle = '#200c03'; ctx.font = '600 11px "IBM Plex Mono",monospace'; ctx.fillText(String(n), x + 13, y - 7); }
-  }
-}
 /* Drag to pan, wheel to zoom, click to pick a system. */
 function galInteract(cv, getV, setV, pick, redraw) {
   let drag = null;
@@ -5653,39 +6148,177 @@ function galTools(el, cv, getV, setV, centre, redraw) {
     redraw(); });
 }
 /* What the map and the station say about a system's place in the war. */
+function terrLayer(cv, W, H, V, ownMap) {
+  const own2 = SYS_IDS.map(s => ownMap ? ownMap[s] : WAR.own[s]), key = own2.join() + '|' + V.cx.toFixed(3) + ',' + V.cy.toFixed(3) + ',' + V.k.toFixed(3) + '|' + W + 'x' + H;
+  let T0 = TERR.get(cv); if (T0 && T0.key === key) return T0.cv;
+  const off = T0 ? T0.cv : document.createElement('canvas'); off.width = W; off.height = H; const c = off.getContext('2d'); c.clearRect(0, 0, W, H);
+  const cs = 3, nx = Math.ceil(W / cs), ny = Math.ceil(H / cs), grid = new Int16Array(nx * ny).fill(-1), P = SYS_IDS.map(s => SYSTEMS[s].ly);
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
+    const x = V.cx + ((i + 0.5) * cs - W / 2) / V.k, y = V.cy - ((j + 0.5) * cs - H / 2) / V.k; let best = -1, bd = TERR_R * TERR_R;
+    for (let s = 0; s < P.length; s++) { const dx = P[s][0] - x, dy = P[s][1] - y, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = s; } }
+    grid[j * nx + i] = best;
+  }
+  const bl = own2.map(BLOC_OF);
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const g = grid[j * nx + i]; if (g < 0) continue; const o = own2[g]; c.fillStyle = hexA(ownCol(o), bl[g] ? 0.25 : 0.08); c.fillRect(i * cs, j * cs, cs, cs); }
+  const seg = (front) => { c.beginPath(); for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const g = grid[j * nx + i]; if (g < 0) continue;
+    for (const [di, dj] of [[1, 0], [0, 1]]) { const i2 = i + di, j2 = j + dj; if (i2 >= nx || j2 >= ny) continue; const h = grid[j2 * nx + i2]; if (h < 0 || h === g) continue;
+      const isFront = bl[g] && bl[h] && bl[g] !== bl[h], isRace = own2[g] !== own2[h]; if (front ? !isFront : (isFront || !isRace)) continue;
+      if (di) { c.moveTo(i2 * cs, j * cs); c.lineTo(i2 * cs, (j + 1) * cs); } else { c.moveTo(i * cs, j2 * cs); c.lineTo((i + 1) * cs, j2 * cs); } } } c.stroke(); };
+  c.lineWidth = 1; c.strokeStyle = 'rgba(255,240,220,.22)'; seg(false);
+  c.save(); c.shadowColor = 'rgba(255,90,40,.9)'; c.shadowBlur = 10; c.lineWidth = 2.6; c.strokeStyle = 'rgba(255,110,60,.95)'; seg(true); c.restore();
+  TERR.set(cv, { key, cv: off }); return off;
+}
+/* The galaxy as a captain knows it (o.know), never as it is: territory, the front line, battles and the relay
+   network are all last reports, and the older a report the fainter and more broken it is drawn. */
+function drawGalaxy(ctx, W, H, V, o) {
+  o = o || {}; const K = o.know || null, ownOf = sid => K ? K.own[sid] : WAR.own[sid], blocOf = sid => BLOC_OF(ownOf(sid));
+  ctx.clearRect(0, 0, W, H); ctx.fillStyle = '#070605'; ctx.fillRect(0, 0, W, H);
+  ctx.drawImage(terrLayer(ctx.canvas, W, H, V, K ? K.own : null), 0, 0);
+  const fs = clamp(V.k * 0.62, 10.5, 16), now = performance.now();
+  ctx.textAlign = 'center'; ctx.font = '700 ' + Math.round(fs * 0.95) + 'px "Rajdhani","Bahnschrift",sans-serif';
+  for (const rg in REGION_AT) { const [px, py] = gxy(V, W, H, REGION_AT[rg][0], REGION_AT[rg][1]); ctx.fillStyle = 'rgba(255,226,189,.3)'; ctx.fillText(REGIONS[rg].toUpperCase().split('').join(' '), px, py); }
+  for (const a of SYS_IDS) for (const b of NEAR[a]) if (a < b) {
+    const [x1, y1] = sxy(V, W, H, a), [x2, y2] = sxy(V, W, H, b), ba = blocOf(a), bb = blocOf(b), hot = ba && bb && ba !== bb;
+    ctx.strokeStyle = hot ? 'rgba(255,110,60,.35)' : 'rgba(255,155,47,.12)'; ctx.lineWidth = hot ? 1.5 : 1; ctx.setLineDash(hot ? [4, 4] : []); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  }
+  ctx.setLineDash([]);
+  if (o.range && o.here) { const [cx, cy] = sxy(V, W, H, o.here); ctx.setLineDash([8, 6]); ctx.strokeStyle = 'rgba(197,140,255,.75)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, o.range * V.k, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
+  for (const sid of SYS_IDS) {
+    const S = SYSTEMS[sid], [x, y] = sxy(V, W, H, sid), inR = o.here && lyDist(o.here, sid) <= (o.range || 0), sel = o.sel === sid, own = ownOf(sid), oc = ownCol(own), cl = K ? K.cls[sid] : 'recent', old = cl === 'outdated' || cl === 'historical';
+    if (x < -40 || y < -40 || x > W + 40 || y > H + 40) continue;
+    ctx.globalAlpha = cl === 'historical' ? 0.55 : 1;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, 13); g.addColorStop(0, '#' + S.star.col.toString(16).padStart(6, '0')); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 13, 0, 7); ctx.fill();
+    ctx.strokeStyle = oc; ctx.lineWidth = 2; ctx.setLineDash(old ? [3, 3] : []); ctx.beginPath(); ctx.arc(x, y, 6.5, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fill();
+    if (S.cap) { ctx.fillStyle = oc; ctx.beginPath(); ctx.moveTo(x, y - 15); ctx.lineTo(x + 4, y - 10.5); ctx.lineTo(x, y - 6); ctx.lineTo(x - 4, y - 10.5); ctx.closePath(); ctx.fill(); }
+    ctx.globalAlpha = 1;
+    if (sel) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 11, 0, 7); ctx.stroke(); }
+    if (sid === o.here) { ctx.strokeStyle = '#5fd6ff'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x, y, 15, 0, 7); ctx.stroke(); }
+    // battles as reported: a live one pulses, an old report is dashed, a finished one is amber
+    const fk = K ? K.fp.find(f => f.sys === sid) : FPS.list.find(c => c.sys === sid);
+    if (fk) {
+      const live = fk.phase === 'battle', stale = K && (fk.cls === 'outdated' || fk.cls === 'unconfirmed');
+      ctx.strokeStyle = live ? 'rgba(255,75,58,.9)' : 'rgba(242,184,75,.75)'; ctx.lineWidth = 2; ctx.setLineDash(stale ? [4, 4] : []);
+      ctx.beginPath(); ctx.arc(x, y, 19 + (live && !stale ? 3 * Math.sin(now / 300) : 0), 0, 7); ctx.stroke(); ctx.setLineDash([]);
+      ctx.font = '600 ' + Math.round(fs * 0.74) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = live ? '#ffd23f' : '#f2b84b';
+      ctx.fillText((live ? 'BATTLE' : 'WRECKS') + (K && fk.age > 45 ? ' · ' + agoS(fk.age).replace(' ago', '') : ''), x, y - 22);
+    } else if (o.range && sid !== o.here && (inR || sel) && V.k >= 15) { ctx.font = '500 ' + Math.round(fs * 0.75) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = inR ? '#c58cff' : '#8a6a4a'; ctx.fillText(lyDist(o.here, sid).toFixed(1) + ' ly', x, y - 19); }
+    ctx.textAlign = 'center'; ctx.font = '600 ' + Math.round(fs) + 'px "Rajdhani","Bahnschrift",sans-serif'; ctx.fillStyle = sel || sid === o.here ? '#fff1dc' : inR || !o.range ? '#ffe2bd' : '#9a7a58'; ctx.fillText(S.name.toUpperCase(), x, y + 13 + fs);
+    if (V.k >= 20 || sel) { ctx.font = '500 ' + Math.round(fs * 0.78) + 'px "IBM Plex Mono",monospace'; ctx.fillStyle = oc; ctx.fillText((S.label && !BLOC_OF(own) ? S.label : FACTIONS[own].name) + (K && old && K.age[sid] < Infinity ? ' · ' + agoS(K.age[sid]) : ''), x, y + 14 + fs * 1.9); }
+    // the relay, as last reported
+    const rl = K ? K.relays.find(r => r.sys === sid) : null;
+    if (rl) { const rx = x + 14, ry = y + 6, bc = BLOCS[rl.b] ? BLOCS[rl.b].col : '#aaa';
+      ctx.fillStyle = rl.dead ? 'rgba(0,0,0,.6)' : rl.up ? bc : 'rgba(0,0,0,.6)'; ctx.strokeStyle = bc; ctx.lineWidth = 1.3; ctx.fillRect(rx - 5, ry - 5, 10, 10); ctx.strokeRect(rx - 5, ry - 5, 10, 10);
+      ctx.font = '700 8px "IBM Plex Mono",monospace'; ctx.fillStyle = rl.dead || !rl.up ? bc : '#140e08'; ctx.fillText(rl.dead ? '×' : RELAY_TYPES[rl.ty].short, rx, ry + 3); }
+    // network ships seen here recently
+    const ags = K ? K.agents.filter(a => a.sys === sid && a.st !== 'destroyed' && a.age < 1800) : [];
+    ags.slice(0, 3).forEach((a, i) => { const ax = x - 14 - i * 7, ay = y + 6; ctx.fillStyle = BLOCS[a.b] ? BLOCS[a.b].col : '#aaa'; ctx.beginPath(); ctx.moveTo(ax, ay - 4); ctx.lineTo(ax + 3.5, ay + 3); ctx.lineTo(ax - 3.5, ay + 3); ctx.closePath(); ctx.fill(); });
+    const n = o.contracts ? o.contracts(sid) : 0;
+    if (n) { ctx.fillStyle = '#ffd23f'; ctx.beginPath(); ctx.arc(x + 13, y - 11, 7, 0, 7); ctx.fill(); ctx.fillStyle = '#200c03'; ctx.font = '600 11px "IBM Plex Mono",monospace'; ctx.fillText(String(n), x + 13, y - 7); }
+  }
+}
+/* What the map and the station say about a system: always as last reported, with how old and from whom. */
 function warRows(sid) {
-  const S = SYSTEMS[sid], B = sysBloc(sid), rows = [];
-  rows.push(['Held by', S.label ? S.label + (S.owner === 'architect' ? '' : ' (neutral)') : FACTIONS[S.owner].name + ' · ' + BLOCS[B].name + (S.cap ? ' · their capital' : '')]);
+  const K = knowOf(), S = SYSTEMS[sid], own = K.own[sid], B = BLOC_OF(own), rows = [], cl = K.cls[sid];
+  const when = K.age[sid] === Infinity ? 'old charts' : agoS(K.age[sid]) + ', ' + K.src[sid];
+  rows.push(['Held by', (S.label && !B ? S.label : ownName(own) + (B ? ' · ' + BLOCS[B].name : '') + (S.cap ? ' · their capital' : '')) + ' (' + INTEL_CLS[cl][0].toLowerCase() + ': ' + when + ')']);
   rows.push(['Region', REGIONS[S.region] || '']);
-  if (B) { const foes = warFoes(sid); rows.push(['Front', foes.length ? 'Borders ' + BLOCS[OTHER_BLOC[B]].short + ' space at ' + foes.map(f => SYSTEMS[f].name).join(', ') + '. Hold ' + Math.round(WAR.hold[sid]) + '%' + (S.cap ? '; a capital never falls.' : '.') : 'Behind the lines. Hold ' + Math.round(WAR.hold[sid]) + '%.']); }
-  const gar = WORLD.filter(w => w.gar === sid && isLive(w)); if (gar.length) rows.push(['Holding fleet', gar.map(w => w.name + ' (' + CLASSES[w.cls].name.toLowerCase() + ')').join(', ') + ', at ' + siteOf(sid, 'post').name + '.']);
+  if (B) { const foes = NEAR[sid].filter(n => BLOC_OF(K.own[n]) && BLOC_OF(K.own[n]) !== B); rows.push(['Front', (foes.length ? 'Borders ' + BLOCS[OTHER_BLOC[B]].short + ' space at ' + foes.map(f => SYSTEMS[f].name).join(', ') + '.' : 'Behind the lines.') + (K.hold[sid] != null ? ' Hold ' + K.hold[sid] + '% when last reported.' : '') + (S.cap ? ' A capital never falls.' : '')]); }
+  const h = myIH(), g = h && h.db.get('gar:' + sid); if (g) rows.push(['Holding fleet', (g.r.d.n ? g.r.d.n + ' ship' + (g.r.d.n > 1 ? 's' : '') + ' (' + g.r.d.cls.replace(/,/g, ', ') + ')' : 'none seen') + ', ' + agoS(K.now - g.r.u) + '.']);
+  const rl = K.relays.find(r => r.sys === sid);
+  if (rl) rows.push(['Relay', RELAY_TYPES[rl.ty].name + ', ' + BLOCS[rl.b].short + (rl.dead ? ', destroyed' : rl.up ? ', up' : ', down') + ' (' + agoS(rl.age) + '). ' + RELAY_TYPES[rl.ty].blurb]);
+  else if (RELAY_AT[sid] && SYSTEMS[sid].owner0 === 'orrin') rows.push(['Relay', 'Free-port news exchange: public news, both ways, for anyone.']);
+  const ags = K.agents.filter(a => a.sys === sid); if (ags.length) rows.push(['Network ships', ags.map(a => BLOCS[a.b].short + ' ' + agRole({ kind: a.k }) + ' ' + a.n + ', ' + a.st + ' (' + agoS(a.age) + ')').join('; ')]);
   return rows;
 }
-const agoTxt = t => { const s = Math.max(0, (Date.now() - t) / 1000); return s < 90 ? 'just now' : s < 5400 ? Math.round(s / 60) + ' min ago' : s < 129600 ? Math.round(s / 3600) + ' h ago' : Math.round(s / 86400) + ' days ago'; };
+const agoTxt = t => agoS(Math.max(0, (Date.now() - t) / 1000));
 function warBoardHtml() {
-  const fresh = WAR.news.filter(n => n.kind === 'flip' && n.t > (WAR.seenAt || 0)).slice(-3).reverse(); if (!fresh.length) return '';
-  return '<li class="m-group fp-note" style="--bc:#ff6a3a"><h3>The front has moved<span>' + fresh.length + (fresh.length > 1 ? ' systems have' : ' system has') + ' changed hands</span></h3><ul class="war-mini">' + fresh.map(n => '<li>' + esc(n.msg) + ' <small>' + agoTxt(n.t) + (n.away ? ', while you were away' : '') + '</small></li>').join('') + '</ul><p class="b-desc">The map is on the <b>War</b> tab.</p></li>';
+  const h = myIH(); if (!h || !h.hist) return '';
+  const fresh = h.hist.filter(n => (n.k === 'flip' || n.k === 'stage' || n.k === 'battle') && n.u > (h.seenU || 0)).slice(-4).reverse(); if (!fresh.length) return '';
+  return '<li class="m-group fp-note" style="--bc:#ff6a3a"><h3>News from the front<span>' + fresh.length + ' new report' + (fresh.length > 1 ? 's' : '') + ' reached Tarsis</span></h3><ul class="war-mini">' + fresh.map(n => '<li>' + esc(n.t) + ' <small>' + agoS(GC() - n.u) + ', via ' + esc(n.via || 'charts') + '</small></li>').join('') + '</ul><p class="b-desc">Everything here is as old as it says. The map and the full log are on the <b>War</b> tab.</p></li>';
 }
-/* ---------- the War tab at the station ---------- */
-let WV = null, WSEL = null;
+/* ---------- the War tab ---------- */
+let WV = null, WSEL = null, WFILT = 'all';
 function warRender() {
   const cv = $('#warmap'); if (!cv) return; const c = cv.getContext('2d'); if (!WV) WV = galView(cv.width, cv.height);
-  drawGalaxy(c, cv.width, cv.height, WV, { sel: WSEL, here: null });
+  const K = knowOf(), h = myIH(), now = K.now;
+  drawGalaxy(c, cv.width, cv.height, WV, { sel: WSEL, here: null, know: K });
   const sel = $('#war-sel');
   if (WSEL) { const S = SYSTEMS[WSEL]; sel.innerHTML = '<h3>' + esc(S.name) + ' <small>' + esc(S.star.kind) + ' · ' + lyDist('tarsis', WSEL).toFixed(1) + ' ly from Tarsis</small></h3><p>' + esc(S.blurb) + '</p><dl class="kv">' + warRows(WSEL).map(r => '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>').join('') + '</dl>'; }
-  else sel.innerHTML = '<p class="hint">Pick a system on the map to see who holds it. Drag to pan, scroll to zoom.</p>';
-  const races = Object.keys(FACTIONS).filter(f => BLOC_OF(f));
-  const tot = B => blocCount(B), cc = tot('concord'), dd = tot('dominion');
+  else sel.innerHTML = '<p class="hint">Pick a system to see what you know about it, and how old that is. Drag to pan, scroll to zoom.</p>';
+  const races = Object.keys(FACTIONS).filter(f => BLOC_OF(f)), cnt = B => SYS_IDS.filter(s => BLOC_OF(K.own[s]) === B).length, cc = cnt('concord'), dd = cnt('dominion');
+  const ages = SYS_IDS.map(s => K.age[s]).filter(a => a < Infinity).sort((a, b) => a - b), med = ages.length ? ages[Math.floor(ages.length / 2)] : Infinity;
+  $('#war-asof').textContent = 'Your picture · half of it is older than ' + (med === Infinity ? 'the old charts' : agoS(med).replace(' ago', ''));
   $('#war-terr').innerHTML = '<div class="war-bar"><span style="flex:' + cc + ';background:' + BLOCS.concord.col + '">' + BLOCS.concord.short + ' ' + cc + '</span><span style="flex:' + dd + ';background:' + BLOCS.dominion.col + '">' + dd + ' ' + BLOCS.dominion.short + '</span></div>'
-    + ['concord', 'dominion'].map(B => '<ul class="war-races">' + races.filter(f => BLOC_OF(f) === B).sort((a, b) => FACTIONS[b].t - FACTIONS[a].t).map(f => { const n = SYS_IDS.filter(s => WAR.own[s] === f).length, n0 = SYS_IDS.filter(s => WAR_START[s] === f).length, cap = SYS_IDS.find(s => WAR_START[s] === f && SYSTEMS[s].cap);
+    + ['concord', 'dominion'].map(B => '<ul class="war-races">' + races.filter(f => BLOC_OF(f) === B).sort((a, b) => FACTIONS[b].t - FACTIONS[a].t).map(f => { const n = SYS_IDS.filter(s => K.own[s] === f).length, n0 = SYS_IDS.filter(s => WAR_START[s] === f).length, cap = SYS_IDS.find(s => WAR_START[s] === f && SYSTEMS[s].cap);
       return '<li><i style="background:' + FACTIONS[f].col + '"></i><span>' + esc(FACTIONS[f].name) + '<small>' + esc(cap ? SYSTEMS[cap].name : '') + '</small></span><b>' + n + (n !== n0 ? ' <em class="' + (n > n0 ? 'up' : 'down') + '">' + (n > n0 ? '+' : '') + (n - n0) + '</em>' : '') + '</b></li>'; }).join('') + '</ul>').join('');
-  $('#war-news').innerHTML = WAR.news.slice().reverse().map(n => '<li data-k="' + n.kind + '"' + (n.t > (warVisit != null ? warVisit : WAR.seenAt || 0) && n.kind === 'flip' ? ' class="new"' : '') + '><span>' + esc(n.msg) + '</span><small>' + agoTxt(n.t) + (n.away ? ' · while you were away' : '') + '</small></li>').join('') || '<li><span>Quiet, for now.</span></li>';
+  const hist = (h && h.hist || []).slice().reverse();
+  $('#war-news').innerHTML = hist.map(n => '<li data-k="' + (n.k === 'result' || n.k === 'battle' ? 'hold' : n.k) + '"' + ((n.k === 'flip' || n.k === 'stage') && n.u > (warVisit || 0) ? ' class="new"' : '') + '><span>' + esc(n.t) + '</span><small>' + agoS(now - n.u) + (n.via ? ' · via ' + esc(n.via) : '') + '</small></li>').join('') || '<li><span>Nothing has reached you yet.</span></li>';
+  // every record, with what kind of knowledge it is
+  const rows = h ? [...h.db.values()].filter(e => e.r.c !== 'install' || WFILT !== 'all').map(e => ({ e, cl: intelClass(e, now) })) : [];
+  const shown = rows.filter(x => WFILT === 'all' || x.cl === WFILT).sort((a, b) => b.e.r.u - a.e.r.u).slice(0, 160);
+  const tally = {}; for (const x of rows) tally[x.cl] = (tally[x.cl] || 0) + 1;
+  $('#intel-f').innerHTML = ['all', 'observed', 'recent', 'outdated', 'historical', 'unconfirmed'].map(k => '<button type="button" class="chip' + (WFILT === k ? ' on' : '') + '" data-f="' + k + '" data-cl="' + k + '">' + (k === 'all' ? 'All' : INTEL_CLS[k][0]) + ' <b>' + (k === 'all' ? rows.length : tally[k] || 0) + '</b></button>').join('');
+  $('#intel-t').innerHTML = '<thead><tr><th>Status</th><th>What</th><th>Where</th><th>As of</th><th>Source</th><th>Hands</th><th>Trust</th></tr></thead><tbody>' + shown.map(({ e, cl }) => '<tr data-cl="' + cl + '"><td><span class="ic" data-cl="' + cl + '" title="' + esc(INTEL_CLS[cl][1]) + '">' + INTEL_CLS[cl][0] + '</span></td><td>' + esc(intelWhat(e.r)) + '</td><td>' + esc(e.r.d.sys ? SYSTEMS[e.r.d.sys].name : '') + '</td><td>' + agoS(now - e.r.u) + '</td><td>' + esc(e.cap ? 'captured: ' + e.r.src : e.r.src) + '</td><td>' + e.h + '</td><td>' + Math.round(intelConf(e, now) * 100) + '%</td></tr>').join('') + '</tbody>';
+  const rel = K.relays.slice().sort((a, b) => (a.b > b.b ? 1 : -1) || ('SMRL'.indexOf(RELAY_TYPES[a.ty].short) - 'SMRL'.indexOf(RELAY_TYPES[b.ty].short)));
+  $('#intel-net').innerHTML = ['concord', 'dominion'].map(B => '<div class="net-col"><h3 style="color:' + BLOCS[B].col + '">' + esc(BLOCS[B].name) + '</h3><ul>' + rel.filter(r => r.b === B).map(r => '<li><span class="rt" style="--c:' + BLOCS[B].col + '">' + RELAY_TYPES[r.ty].short + '</span>' + esc(SYSTEMS[r.sys].name) + ' <small>' + (r.dead ? 'destroyed' : r.up ? 'up' : 'down') + ', ' + agoS(r.age) + '</small></li>').join('') + '</ul><p class="hint">Network ships seen: ' + (K.agents.filter(a => a.b === B && a.st !== 'destroyed' && a.age < 3600).map(a => a.n + ' at ' + SYSTEMS[a.sys].name).join(', ') || 'none recently') + '</p></div>').join('');
+}
+function intelWhat(r) {
+  const d = r.d;
+  if (r.c === 'control') return (d.o === 'orrin' ? 'Free port' : d.o === 'architect' ? 'Held by no one' : 'Held by ' + ownName(d.o)) + (d.hold != null ? ', hold ' + d.hold + '%' : '');
+  if (r.c === 'battle') return d.ph === 'battle' ? 'Battle: ' + d.cc + ' Concord v ' + d.cd + ' Dominion capitals' : 'Battle over' + (d.w ? ': ' + BLOCS[d.w].short + ' won' : '');
+  if (r.c === 'fleet') return d.st ? BLOCS[d.b].short + ' fleet massing (' + d.caps + ' capital group' + (d.caps > 1 ? 's' : '') + ')' : 'Fleet';
+  if (r.c === 'recon') return 'Holding fleet: ' + (d.n ? d.n + ' (' + d.cls.replace(/,/g, ', ') + ')' : 'none');
+  if (r.c === 'install') return RELAY_TYPES[d.ty].name + ' (' + BLOCS[d.b].short + '), ' + (d.dead ? 'destroyed' : d.up ? 'up' : 'down');
+  if (r.c === 'agent') return BLOCS[d.b].short + ' ' + agRole({ kind: d.k }) + ' ' + d.n + ', ' + d.st;
+  if (r.c === 'remnant') return 'A Remnant awake';
+  return r.c;
 }
 function warInitUi() {
   const cv = $('#warmap'); if (!cv) return;
   galInteract(cv, () => WV || (WV = galView(cv.width, cv.height)), v => { WV = v; }, sid => { WSEL = sid; warRender(); }, warRender);
   galTools($('#war-tools'), cv, () => WV || (WV = galView(cv.width, cv.height)), v => { WV = v; }, () => WSEL || 'tarsis', warRender);
+  $('#intel-f').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; WFILT = b.dataset.f; warRender(); });
 }
+/* ---------- the relay stations themselves ---------- */
+const LAYOUT_RELAY = { WPN1: [0, 0.62, -0.45, 0.2], SENSORS: [0, 0.78, 0.5, 0.34], BUS_F: [0, 0.05, 0, 0.18], REACTOR: [0, -0.6, 0, 0.3] };
+function buildRelay8(fac, type) {
+  const R = RACE[fac] || RACE.vashkar, K = R.mats(), g = new T.Group(), body = new T.Group(); g.add(body);
+  const sc = (RELAY_TYPES[type] || RELAY_TYPES.regional).size, col = parseInt(((FACTIONS[fac] || {}).col || '#ffb36b').slice(1), 16), glow = glowMat(col, 1.5);
+  const sec = K.sec || K.main, dk = K.dark || sec, solar = std(0x1b2a4a, { roughness: 0.25, metalness: 0.85, emissive: 0x0a1a3a, emissiveIntensity: 0.5 });
+  const E = { x: 17 * sc, y: 15 * sc, z: 17 * sc }, m = { g, engines: [], lights: [], spinners: [], turrets: [], sys: {}, hull: K.main, dark: dk, K, L: 34 * sc, fac, cls: 'pds' };
+  body.scale.setScalar(sc);
+  M(body, gCylY(3.4, 3.4, 22, 12), K.main, 0, 0, 0); M(body, gCylY(6.5, 7.5, 3, 16), sec, 0, -6.5, 0); M(body, gCylY(5.5, 5.5, 2, 16), sec, 0, 4.5, 0);
+  M(body, gTorus(12.5, 0.7, 8, 56), dk, 0, -1, 0, HP, 0, 0); M(body, gTorus(12.5, 0.28, 6, 56), glow, 0, -0.2, 0, HP, 0, 0);
+  for (let k = 0; k < 6; k++) { const a = k / 6 * TAU, cx = Math.cos(a) * 12.5, cz = Math.sin(a) * 12.5; rod(body, dk, V(0, -1, 0), V(cx, -1, cz), 0.32, 6); M(body, gBox(2.6, 1.6, 2.6), sec, cx, -1, cz); M(body, gBox(0.9, 0.9, 0.9), glow, cx, 0.2, cz); }
+  for (const s of [-1, 1]) { rod(body, dk, V(s * 3.4, -6.5, 0), V(s * 15, -6.5, 0), 0.3, 6); for (const z of [-3.2, 3.2]) M(body, gBox(9, 0.22, 5.4), solar, s * 13, -6.5, z); }
+  greeble(body, dk, mulberry32(hstr(fac + type)), 10, -4, 4, -8, 6, 2.2, 0.8, 1);
+  mergeStatic(body);
+  staticSystems(m, fac, 'pds', E, LAYOUT_RELAY, {
+    sensors(c) { const { g: q, r } = c; M(q, gCylY(r * 1.25, r * 0.18, r * 0.42, 24), sec, 0, 0, 0, -0.5, 0, 0); M(q, gCylY(r * 0.08, r * 0.08, r * 0.9, 6), dk, 0, r * 0.25, r * 0.28, -0.5, 0, 0); M(q, gSph(r * 0.16), glowMat(col, 2), 0, r * 0.6, r * 0.55); },
+    gun(c) { const { g: q, r } = c; M(q, gCylY(r * 0.9, r * 1.05, r * 0.5, 10), sec, 0, 0, 0); M(q, gCylZ(r * 0.16, r * 0.2, r * 2.2, 8), dk, 0, r * 0.35, r * 0.9); },
+    reactor(c) { const { g: q, r } = c; M(q, gSph(r * 0.7, 14, 10), glowMat(col, 1.3), 0, 0, 0); M(q, gCylY(r * 0.95, r * 0.55, r * 0.8, 10), dk, 0, r * 0.5, 0); },
+    bus(c) { const { g: q, r } = c; M(q, gTorus(r * 0.9, r * 0.18, 6, 20), dk, 0, 0, 0, HP, 0, 0); },
+  });
+  const l = sprite(col, 3 * sc); l.position.set(0, 13 * sc, 0); g.add(l); m.lights.push(l);
+  m.core = glowMat(col, 0.1); m.envelope = E; return m;
+}
+function sayIn(sys, who, msg, kind) { if (SITE && SITE.sys === sys) sayAll(who, msg, kind); }
+/* When a battle ends the fleets report home: the attackers to their staging system's relay, the defenders to the nearest of theirs. */
+function intelFpEnd(c, winner) {
+  const d = { sys: c.sys, site: c.site, ph: 'aftermath', att: c.att || null, def: c.defB || null, cc: c.caps.concord, cd: c.caps.dominion, w: winner };
+  INT.pend.push({ at: GC() + 120, bloc: c.att, near: c.from || c.sys, s: 'fp:' + c.id, d });
+  if (c.defB && !(RELAYS_IN[c.sys] || []).some(r => r.bloc === c.defB && !r.dead)) INT.pend.push({ at: GC() + 150, bloc: c.defB, near: c.sys, s: 'fp:' + c.id, d });
+}
+function intelPend() {
+  const now = GC();
+  for (const p of INT.pend.slice()) if (now >= p.at) {
+    INT.pend.splice(INT.pend.indexOf(p), 1); if (!p.bloc) continue;
+    const r = Object.values(RELAYS).filter(x => x.bloc === p.bloc && !x.dead).sort((a, b) => lyDist(p.near, a.sid) - lyDist(p.near, b.sid))[0];
+    if (r) ihSee(r.h, p.s, 'battle', p.d, 0.9, 'fleet report');
+  }
+}
+const intelNet = B => { const rs = Object.values(RELAYS).filter(r => r.bloc === B), ag = AGENTS.filter(a => a.bloc === B); return (rs.filter(r => !r.dead).length / Math.max(1, rs.length) + ag.filter(a => a.state !== 'dead').length / Math.max(1, ag.length)) / 2; };
 let warVisit = null;
 /* ---------- the jump plot ---------- */
 const gal = $('#galaxy'), gg = gal.getContext('2d'), sm = $('#sysmap'), sg = sm.getContext('2d');
@@ -5700,7 +6333,7 @@ function contractsAt(sys, site) { return SAVE.accepted.map(id => CONTRACTS.find(
 function drawMap() {
   const spec = OUR.jump();
   const gw = gal.width, gh = gal.height;
-  drawGalaxy(gg, gw, gh, gvGet(), { range: spec.ly, here: SITE.sys, sel: MAP.sys, contracts: sid => SAVE.accepted.filter(id => { const s = WORLD.find(w => w.uid === CONTRACTS.find(c => c.id === id).uid); return s.sys === sid && isLive(s); }).length });
+  drawGalaxy(gg, gw, gh, gvGet(), { know: knowOf(), range: spec.ly, here: SITE.sys, sel: MAP.sys, contracts: sid => SAVE.accepted.filter(id => { const s = WORLD.find(w => w.uid === CONTRACTS.find(c => c.id === id).uid); return s.sys === sid && isLive(s); }).length });
   // the system
   const S = SYSTEMS[MAP.sys]; $('#sys-title').textContent = S.name + ' · ' + S.star.kind;
   sg.clearRect(0, 0, 900, 600); sg.fillStyle = '#070605'; sg.fillRect(0, 0, 900, 600);
@@ -5722,7 +6355,7 @@ function drawMap() {
     if (MAP.plot && MAP.plot.sys === MAP.sys && MAP.plot.site === s.id) { sg.strokeStyle = '#c58cff'; sg.lineWidth = 3; sg.beginPath(); sg.arc(0, 0, 17, 0, 7); sg.stroke(); }
     sg.restore();
     sg.font = '600 17px "Rajdhani","Bahnschrift",sans-serif'; sg.fillStyle = '#ffe2bd'; sg.fillText(s.name.toUpperCase(), x + 16, y - 6);
-    sg.font = '500 12px "IBM Plex Mono",monospace'; sg.fillStyle = tg.length ? '#ffd23f' : s.kind === 'flash' && fpOf(MAP.sys, s.id) ? (fpOf(MAP.sys, s.id).phase === 'battle' ? '#ffd23f' : '#f2b84b') : hostile ? '#ff4b3a' : '#8a6a4a'; sg.fillText(tg.length ? 'Target: ' + tg.map(t => t.name).join(', ') : s.kind === 'station' ? 'Free port' : s.kind === 'base' ? 'Fleet base · damping field' : s.kind === 'flash' ? (fpStatus(fpOf(MAP.sys, s.id)) || { short: 'Contested · quiet' }).short : hostile ? 'Hostiles reported' : 'Nothing reported', x + 16, y + 10);
+    sg.font = '500 12px "IBM Plex Mono",monospace'; sg.fillStyle = tg.length ? '#ffd23f' : s.kind === 'flash' && fpSeen(MAP.sys, s.id) ? (fpSeen(MAP.sys, s.id).phase === 'battle' ? '#ffd23f' : '#f2b84b') : hostile ? '#ff4b3a' : '#8a6a4a'; sg.fillText(tg.length ? 'Target: ' + tg.map(t => t.name).join(', ') : s.kind === 'station' ? 'Free port' : s.kind === 'base' ? 'Fleet base · damping field' : s.kind === 'flash' ? (fpStatus(fpSeen(MAP.sys, s.id)) || { short: 'Contested · quiet' }).short : hostile ? 'Hostiles reported' : 'Nothing reported', x + 16, y + 10);
   }
   if (MAP.sys === SITE.sys) { const [x, y] = sysXY(MAP.sys, SITE.pos); sg.fillStyle = '#5fd6ff'; sg.beginPath(); sg.moveTo(x, y - 9); sg.lineTo(x + 7, y + 6); sg.lineTo(x - 7, y + 6); sg.closePath(); sg.fill(); sg.font = '600 13px "IBM Plex Mono",monospace'; sg.fillText('YOU', x - 14, y + 22); }
   if (MAP.plot && MAP.plot.sys === MAP.sys && !MAP.plot.site) { const [x, y] = sysXY(MAP.sys, MAP.plot.pos); sg.strokeStyle = '#c58cff'; sg.lineWidth = 2; sg.beginPath(); sg.moveTo(x - 10, y); sg.lineTo(x + 10, y); sg.moveTo(x, y - 10); sg.lineTo(x, y + 10); sg.stroke(); sg.beginPath(); sg.arc(x, y, 14, 0, 7); sg.stroke(); }
@@ -5736,7 +6369,7 @@ function drawMap() {
   const rows = [['Destination', destName(p)], ['Distance', chk.here ? 'You are here' : chk.text + (chk.ok ? ' · in range' : ' · beyond our ' + chk.limit)], ['Drive', spec.charge + ' s charge, ' + spec.spool + ' s spool']];
   if (p.sys !== SITE.sys) rows.push(...warRows(p.sys));
   if (site && site.kind === 'base') rows.push(['Damping field', 'Strength 1.6 at the base. The wormhole will open at its edge, about ' + km(arrivalPoint(site).length()) + ' out.']);
-  if (site && site.kind === 'flash') { const fs = fpStatus(fpOf(p.sys, p.site)); rows.push(['Flash point', fs ? fs.long : 'Quiet for now. The war flares up somewhere along the front, one battle at a time.']); if (fs && fs.kind === 'battle') rows.push(['Your side', ['concord', 'dominion'].map(B => BLOCS[B].short + ': ' + (fpFriend(B) && !(G.provoked && G.provoked[B]) ? 'will treat you as an ally' : 'will shoot at you')).join(' · ')]); }
+  if (site && site.kind === 'flash') { const fc = fpSeen(p.sys, p.site), fs0 = fpStatus(fc), fs = fs0 && Object.assign({}, fs0, { long: fs0.long + repNote(fc) }); rows.push(['Flash point', fs ? fs.long : 'Quiet for now. The war flares up somewhere along the front, one battle at a time.']); if (fs && fs.kind === 'battle') rows.push(['Your side', ['concord', 'dominion'].map(B => BLOCS[B].short + ': ' + (fpFriend(B) && !(G.provoked && G.provoked[B]) ? 'will treat you as an ally' : 'will shoot at you')).join(' · ')]); }
   if (site) rows.push(['Known there', site.desc + (tg.length ? ' Contract target: ' + tg.map(t => t.name).join(', ') + '.' : '')]);
   const wakes = WORLD.filter(w => w.wake && w.sys === p.sys && w.site === p.site && isLive(w)); if (wakes.length) rows.push(['Wake', wakes.map(w => w.name).join(', ') + ' jumped here.']);
   if (fieldAt(US.m.pos, US) > 0.02) { const f = fieldAt(US.m.pos, US); rows.push(['Field here', f >= 1 ? f.toFixed(2) + ': too strong to jump. Get clear first.' : f.toFixed(2) + ': tear risk ' + pct(tearRisk(f, ourJumpHp(), 1)) + ' at full spool']); }
@@ -6007,7 +6640,7 @@ function hudTick() {
   const rows = [];
   if (tgt) {
     const tr = trOf(tgt), kn = known(tgt), R = tgt.Fa, d = US.m.pos.distanceTo(tgt.CL.static || tgt.status !== 'active' ? tgt.m.pos : tr.est), J = tgt.jump.state;
-    name = kn ? tgt.name : 'Contact ' + tgt.tag; sub = kn ? R.name + ' · ' + R.tier + ' · ' + CLASSES[tgt.cls].name : 'Unclassified';
+    name = kn ? tgt.name : 'Contact ' + tgt.tag; sub = kn ? R.name + ' · ' + R.tier + ' · ' + clsName(tgt) : 'Unclassified';
     if (tgt.status === 'struck') chip = ['Struck', 'ok']; else if (tgt.status === 'dead') chip = ['Wreck', 'warn']; else if (tgt.cls === 'remnant') chip = remChip(tgt); else if (tgt.CL.static) chip = [fn(tgt, 'WPN1') || tgt.cls === 'base' ? 'Charted' : 'Silenced', fn(tgt, 'WPN1') || tgt.cls === 'base' ? 'fire' : 'ok']; else if (tr.q > 0) chip = kn ? (peaceful(tgt) ? ['Ally', 'ok'] : ['Tracking', 'fire']) : ['Faint', 'warn']; else chip = ['Lost', 'warn'];
     if (tgt.CL.static || tr.q > 0 || tgt.status !== 'active') {
       rows.push(['Range', km(d) + ' · light ' + ls(d)]);
@@ -6170,7 +6803,7 @@ function overviewHtml(list, tgt) {
     else if (s.cls === 'remnant') [state, sk] = remOverview(s);
     else state = s.CL.static ? (s.cls === 'pds' && !fn(s, 'WPN1') ? 'Silenced' : 'Charted') : pct(tr.q);
     const ag = !s.CL.static && s.status === 'active' && tr.q > 0 ? ageOf(s) : null;
-    return '<button type="button" class="ov-row" data-uid="' + s.uid + '" data-s="' + (s.CL.static && st !== 'ally' ? 'static' : st) + '" aria-pressed="' + (tgt === s) + '"><i></i><b>' + esc(kn ? s.name : 'Contact ' + s.tag) + '</b><span>' + esc(kn ? SHORT_CLS[s.cls] || CLASSES[s.cls].name : 'Unknown') + '</span><span>' + km(d) + '</span><span class="st-' + sk + '">' + esc(state) + '</span><span class="ov-age" data-lv="' + (ag != null ? AGE_LV(ag) : '') + '">' + (ag != null ? ageTxt(ag) : '') + '</span></button>';
+    return '<button type="button" class="ov-row" data-uid="' + s.uid + '" data-s="' + (s.CL.static && st !== 'ally' ? 'static' : st) + '" aria-pressed="' + (tgt === s) + '"><i></i><b>' + esc(kn ? s.name : 'Contact ' + s.tag) + '</b><span>' + esc(kn ? (s.relayType ? 'Relay' : SHORT_CLS[s.cls] || CLASSES[s.cls].name) : 'Unknown') + '</span><span>' + km(d) + '</span><span class="st-' + sk + '">' + esc(state) + '</span><span class="ov-age" data-lv="' + (ag != null ? AGE_LV(ag) : '') + '">' + (ag != null ? ageTxt(ag) : '') + '</span></button>';
   }).join('');
 }
 function navTick() {
@@ -6461,7 +7094,7 @@ function netSend(o) { if (NET.ws && NET.ws.readyState === 1) NET.ws.send(JSON.st
 function netTo(p, o) { o.to = p.id; netSend(o); }
 function netCmd(c, a) { netSend({ t: 'cmd', c, a: ser(a) }); return true; }
 const packSave = () => ({ name: LOCAL.name, followKm: SAVE.followKm || 0, shardHeat: SAVE.shardHeat || 0, infamy: SAVE.infamy || 0, fit: SAVE.fit, tmog: SAVE.tmog, accepted: SAVE.accepted, standing: SAVE.standing, peak: SAVE.peak, buffs: SAVE.buffs, done: SAVE.done });
-const VALK_VERSION = '0.18.0';
+const VALK_VERSION = '0.19.0';
 const NET_CID = (() => { try { let c = localStorage.getItem('valk-cid'); if (!c) { c = Math.random().toString(36).slice(2, 12) + Date.now().toString(36); localStorage.setItem('valk-cid', c); } return c; } catch (_) { return 'c' + Math.random().toString(36).slice(2, 12); } })();
 const NET_GRACE = () => (window.VALK_GRACE || 90);   // seconds the host holds a dropped captain's ship
 function netConnect() {
@@ -6505,13 +7138,14 @@ function onNet(m) {
     if (m.t === 'cmd' && CMD0[m.c] && p.G && inField(p) && !p.lost) { try { withP(p, () => CMD0[m.c](...des(m.a || []))); } catch (e) { console.warn(e); } }
     return;
   }
+  if (m.t === 'intel') { intelNetIn(m); return; }
   if (m.t === 'roster') { if (m.war) warApply(m.war); const mine = (m.list || []).find(x => x.id === NET.id); if (mine && mine.phase === 'docked' && G.phase !== 'docked') { G.phase = 'docked'; $('#hud').hidden = true; openStation(null); }
     NET.roster = m.list; NET.hostOnline = true; if (/Waiting|closed|Reconnecting/.test(NET.status)) NET.status = 'Joined ' + (m.host || 'the host') + '\'s game.'; renderMP(); return; }
   if (m.t === 'hostgone') { NET.hostOnline = false; NET.status = 'The host has closed the game.'; renderMP(); if (G.phase !== 'docked') { G.phase = 'docked'; $('#hud').hidden = true; openStation(null); } return; }
   if (m.t === 'snap') { applySnap(m.d); return; }
   if (m.t === 'docked') { applyEvents(m.ev || []); dockLocal(m.d); return; }
 }
-function rosterOut() { if (NET.mode !== 'host') return; netSend({ t: 'roster', to: 'all', war: warPack(), host: LOCAL.name, list: PLAYERS.map(p => ({ id: p.id, name: p.name, phase: p.lost ? 'nolink' : p.G ? p.G.phase : 'docked', host: p.local })) }); }
+function rosterOut() { if (NET.mode !== 'host') return; intelNetOut(); netSend({ t: 'roster', to: 'all', war: warPack(), host: LOCAL.name, list: PLAYERS.map(p => ({ id: p.id, name: p.name, phase: p.lost ? 'nolink' : p.G ? p.G.phase : 'docked', host: p.local })) }); }
 const PHASE_WORD = { nolink: 'link lost, reconnecting', play: 'in the field', launching: 'launching', docking: 'docking', lost: 'crippled', jumping: 'jumping', docked: 'docked', towing: 'being towed' };
 /* Copy to the clipboard: through the app when there is one, the browser otherwise. */
 function copyText(t) {
@@ -6563,7 +7197,7 @@ function snapFor(p) {
         pingCd: G.pingCd, mslAmmo: G.mslAmmo, afterglow: G.afterglow, strip: G.strip ? { uid: G.strip.uid } : null, expo: G.expo, expoWho: G.expoWho ? G.expoWho.uid : null, expoKind: G.expoKind, flash: G.flash, stats: G.stats, provoked: G.provoked, hail: G.hail || null, shardHeat: G.shardHeat || 0 },
       log: logs.map(l => [l.who, l.msg, l.kind, l.t]),
       others: PLAYERS.filter(q => q !== p && inField(q)).map(q => [q.id, q.name, ship(q.ship), q.G.afterglow, q.ship.lookSig || '{}']),
-      npcs: NPCS.map(x => ({ uid: x.uid, fp: x.fp || 0, fac: x.fac, cls: x.cls, name: x.name, tag: x.tag, st: x.status, state: x.state, j: [x.jump.state, Math.round(x.jump.charge), Math.round(x.jump.spool), x.jump.stalled ? 1 : 0], str: Math.round(x.struct), ms: x.maxStruct, res: Math.round(x.resolve), dmp: x.dampOn ? 1 : 0, rem: x.rem ? [Math.round(x.rem.charge), x.rem.awake ? 1 : 0] : 0, hs: x.hullStripped ? 1 : 0, ss: x.skinStripped ? 1 : 0, m: mods(x), s: ship(x), tr: trk(trOf(x)) })),
+      npcs: NPCS.map(x => ({ uid: x.uid, fp: x.fp || 0, rt: x.relayType || 0, fac: x.fac, cls: x.cls, name: x.name, tag: x.tag, st: x.status, state: x.state, j: [x.jump.state, Math.round(x.jump.charge), Math.round(x.jump.spool), x.jump.stalled ? 1 : 0], str: Math.round(x.struct), ms: x.maxStruct, res: Math.round(x.resolve), dmp: x.dampOn ? 1 : 0, rem: x.rem ? [Math.round(x.rem.charge), x.rem.awake ? 1 : 0] : 0, hs: x.hullStripped ? 1 : 0, ss: x.skinStripped ? 1 : 0, m: mods(x), s: ship(x), tr: trk(trOf(x)) })),
       bolts: bolts.map(b => [b.id, va(b.pos), va(b.dir), b.kind === 'maser' ? 1 : 0, b.shooter.isUs ? 1 : 0, b.shooter.fac, b.speed, b.W.dmg > 20 ? 1 : 0, b.kind === 'lance' ? 1 : 0]),
       msl: missiles.filter(m => !m.dead).map(m => [m.id, va(m.pos), va(m.dir), m.us ? 1 : 0, r1(m.speed), m.tgt && m.tgt.isUs ? 1 : 0]),
       pulses: pulses.map(pl => [pl.id, va(pl.from), pl.t0, pl.range, pl.us ? 1 : 0, pl.ping ? 1 : 0, (pl.us || trOf(pl.src).q > 0 || pl.reached.has('p' + p.id)) ? 1 : 0]),
@@ -6630,8 +7264,8 @@ function applySnap(d) {
   for (const e of d.npcs) {
     let x = NPCS.find(n => n.uid === e.uid);
     if (!x) {
-      x = WORLD.find(w => w.uid === e.uid) || CRAFT[e.uid] || (CRAFT[e.uid] = makeShip({ uid: e.uid, name: e.name, fac: e.fac, cls: e.cls, sys: SITE.sys, site: SITE.id }));
-      if (x.wrecked && e.st === 'active') { scene.remove(x.model.g); x.model = makeModel(x.fac, x.cls); x.m.g = x.model.g; x.wrecked = false; x.spin = null; for (const id in x.mods) x.mods[id].fx = null; }
+      x = WORLD.find(w => w.uid === e.uid) || CRAFT[e.uid] || (CRAFT[e.uid] = makeShip({ uid: e.uid, name: e.name, fac: e.fac, cls: e.cls, sys: SITE.sys, site: SITE.id, relayType: e.rt || undefined }));
+      if (x.wrecked && e.st === 'active') { scene.remove(x.model.g); x.model = makeModel(x.fac, x.cls, x.relayType); x.m.g = x.model.g; x.wrecked = false; x.spin = null; for (const id in x.mods) x.mods[id].fx = null; }
       scene.add(x.model.g); x.model.g.visible = false;
       if (!x.marks) x.marks = { ghost: new T.Mesh(WIRE_GEO, basic(0xff8552, { wireframe: true, opacity: 0.22 })), blip: sprite(0xff8552, 46, 0.6), lag: sprite(0xff8552, 16, 0.5), field: new T.Mesh(WIRE_GEO, basic(0xc58cff, { wireframe: true, opacity: 0.07 })) };
       for (const k in x.marks) { x.marks[k].visible = false; scene.add(x.marks[k]); }
@@ -6698,6 +7332,7 @@ function netFrame(real) {
 if ((navigator.maxTouchPoints || 0) > 0 && window.matchMedia && matchMedia('(pointer: coarse)').matches) $('#hint').textContent = 'Drag to look around the Magpie · pinch to zoom · tap to set a course · tap one of her systems to call a shot';
 WORLD = ROSTER.map(r => makeShip(r));
 warBoot();
+window.__intel = { RELAYS, AGENTS, IH, GC, ihOf, myIH, knowOf, intelStep, intelFF, agDie, relayKilled, stageTick, intelClass, intelSave, intelBoot, cmdKnows, get STAGE() { return STAGE; }, set STAGE(v) { STAGE = v; }, intelPlayer, intelDocked, ihObserve, ihSee, ihXfer, INT, relayUp, agRoute };
 window.__war = { WAR, warResult, warCatchUp, warPick, warFronts, garBuild, SYS_IDS, NEAR, FPS, fpStart, fpEnd, drawGalaxy, warPack, warApply, sysBloc, warSave, WAR_START, GAR };
 LOCAL = makePlayer(0, (() => { try { return localStorage.getItem('valk-name'); } catch (_) { return null; } })() || 'Captain ' + (100 + Math.floor(rand() * 900)), SAVE, true); setCtx(LOCAL);
 refreshUs(); newSortie(); G.phase = 'docked';
