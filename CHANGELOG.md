@@ -2,6 +2,31 @@
 
 What changed in each version of Valkyrie, newest first. Dates are Brisbane time.
 
+## 0.20.0 (2026-11-24): builders, spies, and fleets you can see coming
+
+- **Relays are built.** Every ten minutes or so each power's high command picks one project:
+  - rebuild a destroyed relay (destroyed relays no longer reappear on their own);
+  - raise a listening post at the Elysian Gate, a military relay over the dead star that whoever loses a battle there loses with it;
+  - upgrade a front-line local relay to military, while it has fewer than four military relays;
+  - upgrade a local relay to regional where no hub is within three hops.
+
+  A construction ship (Tessari for the Concord, Krell for the Dominion) flies out from the nearest strategic relay and builds for five minutes. Destroy it and the project fails. An upgraded relay brings its ships: a courier for a military relay, a star carrier for a regional one.
+- **Pay for one yourself.** At the War tab, pick a system of a power that trusts you (Trusted, 3,000 standing):
+  - local → military, ¢50,000
+  - local → regional, ¢40,000
+  - rebuild, ¢25,000
+  - an Elysian listening post, ¢80,000
+
+  Their construction ship does the work, and when it is built you gain 1,500 standing. Lose the ship and the money is gone.
+- **Leaks.** Myrr guild brokers at Descant sell Concord reports to the Dominion, and Dustborn cells at Cinderhome pass Dominion reports to the Concord, every ten to twenty minutes. Each leak is carried by a blockade runner you can intercept. Leaked reports arrive marked as leaks.
+- **Tap a relay.** Target a relay of a power that won't talk to you, press **Tap relay**, and stay within 80 km for 45 seconds. Running Silent makes it far less likely they notice. Bigger relays watch harder. If they catch you, every gun of theirs there turns on you and standing drops. A clean tap copies everything the relay holds.
+- **Plant a false report** in a relay you have just tapped: tell them a front system of the other side is strongly or barely held. The lie spreads through their network like any report and steers where they attack next, until a true report overtakes it (about half an hour).
+- **The Orrin broker** at Tarsis (War tab) buys your reports on either power: fleets, holding fleets, network ships, relays and Remnants. Fresh reports pay more, and anything tapped or pulled from a data core pays half again.
+- **Attack fleets mass where you can see them.** For four minutes before a flash point, the attackers' capital groups and escorts gather in one of their systems next to the target, at its picket or in its rock field. Fly in and you'll see them. Break their capital ships and the attack never comes; kill escorts and they don't arrive.
+- **The Orrin traders are real ships** (Ilk-built freighters) you can meet in any system they pass through. They are neutral until fired on.
+- **Friends keep their picture.** In a hosted game the host saves each friend's intelligence by captain name, and gives it back when they rejoin, even after the host restarts.
+- Network protocol 10: everyone needs 0.20.0 to play together.
+
 ## 0.19.0 (2026-11-24): nothing is known until it is carried
 
 - **Information travels like cargo.** Every relay station, star carrier, picket, courier, trader and captain keeps
