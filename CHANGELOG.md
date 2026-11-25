@@ -2,6 +2,43 @@
 
 What changed in each version of Valkyrie, newest first. Dates are Brisbane time.
 
+## 0.21.0 (2026-11-25): a second sortie, and a war that moves
+
+- **Second sortie (relays)**, a new tutorial at the station. It takes you to the nearest relay that will talk to you:
+  1. See how old your picture of the war is in the War tab.
+  2. Jump to the relay and sync with it.
+  3. Watch the map catch up.
+  4. Tap the relay for what it keeps back.
+  5. Sell that to the Orrin broker at Tarsis.
+
+  It pays ¢300. Like the first sortie, you can skip, end or replay it.
+- **Relays and neutral captains.** A power's relays, star carriers, couriers, pickets and construction ships now leave a captain in good standing (Neutral or better, not provoked) alone. Contacts label them *Neutral*, not *Ally*.
+  - At Neutral, relays share public news only: who holds what, the battles, and the relays.
+  - From Known (1,000 standing), they share everything.
+  - Below Known you can tap them. The Target window offers **Tap relay** on any relay that won't share everything.
+- **The Orrin war wire** (War tab, ¢200 for an hour of flying):
+  - Five Orrin correspondents' cutters watch the front and race home to Tarsis with whatever flares up, including fleets they see massing.
+  - Subscribers hear it as soon as a cutter docks, docked or anywhere in the Tarsis system. Everyone else gets it from the free port ten minutes later.
+  - In long test runs a subscriber's first word of a battle came a median 6½ minutes after it started (often during the massing). Without the wire it was 16½ minutes.
+- **Orrin traders** now swap public news with every relay they pass, so Tarsis hears of every battle. There are four traders now.
+- **The front moves.** The numbers were checked in 12-hour runs of the real game. Before this version no system changed hands in eight hours.
+  - Holds recover by themselves only up to 70%, at a quarter point a minute. Higher than that takes won defences, which now add 15, not 25.
+  - A defeat costs 45 to 75.
+  - Attackers go for the systems their reports say are weakest, and more often bring a second capital ship.
+  - A defending command sends its reserve only to a battle where its side is outnumbered.
+  - Results: a battle about every 15 minutes of play, and defenders win about 6 in 10. A system changes hands about once every 80 minutes of play, more often in the first hours of a contested system.
+- **Faster network.** Battle results now count as urgent news for couriers and star carriers, and star carriers fly faster (85 s a hop plus 10 s a light year).
+- **The Orrin broker** buys real intelligence: fleets ¢300, Remnants ¢400, network ships ¢45 and holding fleets ¢30 each, scaled by freshness and trust. Installations are public news and are worth nothing now. A clean tap typically sells for ¢900–1,800.
+- Tapping odds are unchanged. Silent, for 45 seconds, the chance of being caught is:
+  - local relay: 7%
+  - regional: 10%
+  - military: 16%
+  - strategic: 18%
+
+  Loud, it is 36–74%.
+- Every tuning number now lives in one `BAL` table in the source.
+- Network protocol 10, unchanged.
+
 ## 0.20.1 (2026-11-25): problem reports are live
 
 - **Report a problem** (in Orders and at the station) now sends the report straight to the developer through the

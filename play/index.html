@@ -582,6 +582,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
         </div>
         <button class="btn big" type="button" id="b-launch">Auto launch</button><span class="hint">Undock and take the helm. Fly back within 7.5 km of the ring to dock again.</span>
         <button class="btn quiet" type="button" id="st-tut" data-tut-start>First sortie (tutorial)</button>
+        <button class="btn quiet" type="button" id="st-tut2" data-tut-start="net">Second sortie (relays)</button>
         <button class="btn quiet" type="button" id="st-news">What's new</button>
         <button class="btn quiet" type="button" id="st-report">Report a problem</button><span class="hint ver-tag"></span>
         <div id="st-bootn"></div>
@@ -590,7 +591,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
       <section class="receipt mp" id="mp" hidden aria-label="Multiplayer"></section>
       <section class="receipt" id="receipt" hidden aria-label="Docking receipt"></section>
       <section class="tabpane" id="tab-missions" role="tabpanel"><p class="hint">Both powers keep liaisons on the Ring. Take up to three missions at once; bounties are paid when you dock, and every mission moves your standing: up with the side that pays, down with the side you hit. Orrin also pays a standing bounty on any warship you capture or kill.</p><ul id="board"></ul></section>
-      <section class="tabpane" id="tab-war" role="tabpanel" hidden><div class="war-grid"><div class="war-map"><h2 class="gal-h">The War of Shattered Stars <span class="gal-tools" id="war-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button></span></h2><canvas id="warmap" width="760" height="640" aria-label="The galaxy, tinted by who holds each system, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to see who holds it."></canvas><p class="map-legend"><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital: never falls</span><span><i style="border:2px solid #ff4b3a"></i>Battle as reported</span><span><b style="font-weight:700">■</b> Relay S/M/R/L</span><span>Dashed or faded: old news</span></p><div id="war-sel" class="war-sel"></div><div id="war-act" class="war-act"></div></div><div class="war-side"><p class="eyebrow" id="war-asof"></p><h2>Who holds what <small>as far as you know</small></h2><div id="war-terr"></div><h2>From the front</h2><ol id="war-news" class="war-news"></ol><div id="war-broker" class="war-broker"></div><p class="hint">Nothing here is live. Every report was carried: by a star carrier between relays, by a picket coming home, by an Orrin trader to Tarsis, or by you. The map shows each system as last reported; dashed and faded means old news.</p></div></div><div class="intel-wrap"><h2 class="gal-h">Intelligence <span class="intel-f" id="intel-f"></span></h2><div class="intel-scroll"><table class="intel-t" id="intel-t"></table></div><h2>Relay networks <small>as far as you know</small></h2><div id="intel-net" class="intel-net"></div><p class="hint"><b>Local</b> relays connect their own system and sync only at the relay. <b>Regional</b> relays run a star carrier round the locals near them. <b>Strategic</b> relays are high command, joined by long-haul star carriers. <b>Military</b> relays take reports from pickets first, send a courier to high command with anything urgent, and can order reinforcements. Fly into range of a relay of a power that trusts you and you swap reports automatically: they pay in standing for news of the other side. Destroy a star carrier or a picket and its reports die with it, unless you strip its data core. A captured relay's whole database goes to the side that took it.</p></div></section>
+      <section class="tabpane" id="tab-war" role="tabpanel" hidden><div class="war-grid"><div class="war-map"><h2 class="gal-h">The War of Shattered Stars <span class="gal-tools" id="war-tools"><button class="btn quiet" type="button" data-z="in" aria-label="Zoom in">+</button><button class="btn quiet" type="button" data-z="out" aria-label="Zoom out">−</button><button class="btn quiet" type="button" data-z="fit">Whole galaxy</button></span></h2><canvas id="warmap" width="760" height="640" aria-label="The galaxy, tinted by who holds each system, with the front line between the two powers. Drag to pan, scroll to zoom, click a system to see who holds it."></canvas><p class="map-legend"><span><b style="color:#ff6e3c;font-weight:700">━</b> Front line</span><span><b style="font-weight:700">◆</b> Capital: never falls</span><span><i style="border:2px solid #ff4b3a"></i>Battle as reported</span><span><b style="font-weight:700">■</b> Relay S/M/R/L</span><span>Dashed or faded: old news</span></p><div id="war-sel" class="war-sel"></div><div id="war-act" class="war-act"></div></div><div class="war-side"><p class="eyebrow" id="war-asof"></p><h2>Who holds what <small>as far as you know</small></h2><div id="war-terr"></div><h2>From the front</h2><ol id="war-news" class="war-news"></ol><div id="war-wire" class="war-broker"></div><div id="war-broker" class="war-broker"></div><p class="hint">Nothing here is live. Every report was carried: by a star carrier between relays, by a picket coming home, by an Orrin trader to Tarsis, or by you. The map shows each system as last reported; dashed and faded means old news.</p></div></div><div class="intel-wrap"><h2 class="gal-h">Intelligence <span class="intel-f" id="intel-f"></span></h2><div class="intel-scroll"><table class="intel-t" id="intel-t"></table></div><h2>Relay networks <small>as far as you know</small></h2><div id="intel-net" class="intel-net"></div><p class="hint"><b>Local</b> relays connect their own system and sync only at the relay. <b>Regional</b> relays run a star carrier round the locals near them. <b>Strategic</b> relays are high command, joined by long-haul star carriers. <b>Military</b> relays take reports from pickets first, send a courier to high command with anything urgent, and can order reinforcements. Fly into range of a relay of a power that trusts you and you swap reports automatically: they pay in standing for news of the other side. Destroy a star carrier or a picket and its reports die with it, unless you strip its data core. A captured relay's whole database goes to the side that took it.</p></div></section>
       <section class="tabpane" id="tab-factions" role="tabpanel" hidden><div class="fx-grid" id="factions"></div></section>
       <section class="tabpane" id="tab-fitting" role="tabpanel" hidden><div class="shipname"><label for="ship-name">Ship name</label><input id="ship-name" maxlength="24" autocomplete="off" spellcheck="false"><span class="hint" id="ship-class"></span></div><p class="note" id="wright-note"></p><p class="hint">Nothing here is for sale. Every upgrade is a part stripped from a wreck or a prize, carrying the tier of the ship it came from and its condition. Two parts of the same type and the same tier combine by adding their condition; different tiers will not mate. The yard can repair human-made (5th tier) parts only.</p><ul id="refit"></ul></section>
       <details class="how">
@@ -854,6 +855,7 @@ function crashPrompt() {
 
 /* ---------- What's new: shown once after an update, and any time from the station ---------- */
 const NEWS = [
+  { v: '0.21.0', title: 'A second sortie, and a war that moves', items: ['<b>Second sortie (relays)</b> at the station: jump to the nearest relay, sync with it, watch your map catch up, tap it, and sell what you took.', 'Relays and network ships leave a captain in good standing alone. At Neutral they share public news only; at Known (1,000) they share everything. Below that, you can tap them.', '<b>The Orrin war wire</b> (War tab, ¢200 an hour): five correspondents\' cutters watch the front and race home to Tarsis. Subscribers typically hear of a battle within about six minutes of it starting, sometimes before it starts, while its fleets are still massing. Everyone else hears ten minutes after them.', 'Orrin traders now swap public news with every relay they pass, so Tarsis hears of every battle. There are four of them now.', 'The front moves: a system you lose ground on stays weak for hours, and attackers go for the weak points their reports tell them about. Expect a system to change hands about once an hour of play.', 'The Orrin broker pays for real intelligence (fleets, network ships, holding fleets, Remnants), not for public news.'] },
   { v: '0.20.1', title: 'Problem reports are live', items: ['<b>Report a problem</b> now sends straight to the developer. Put an email in the name box if you would like a reply.'] },
   { v: '0.20.0', title: 'Builders, spies, and fleets you can see coming', items: [
     'Relays are <b>built</b>: each power sends construction ships to rebuild destroyed relays, upgrade front-line relays to military, restore lost regional hubs, and raise listening posts at the Elysian Gate. Kill the ship and the project fails. Trusted captains can pay for one at the War tab.',
@@ -3035,19 +3037,23 @@ const TUT = [
 ];
 const tutOn = () => SAVE.tut && !SAVE.tut.done && !SAVE.tut.off && NET.mode === 'solo';
 let tutShip = null, tutNote = '';
-function tutStart() {
+function tutStart(kind) {
   if (NET.mode !== 'solo') return;
-  SAVE.tut = { step: G.phase === 'docked' ? 0 : 1, done: false, off: false, hold0: 0 }; store(); tutShip = null; tutNote = '';
+  kind = kind === 'net' ? 'net' : 'first';
+  SAVE.tut = { kind, step: G.phase === 'docked' ? 0 : kind === 'net' ? 2 : 1, done: false, off: false, hold0: 0 }; store(); tutShip = null; tutNote = '';
+  if (kind === 'net') { const r = tutNetRelay(); SAVE.tut.sid = r ? r.sid : null; store(); }
   if (G.phase === 'docked') { TAB = 'missions'; renderStation(); }
   tutRender();
 }
 function tutEnd(done) {
   if (!SAVE.tut) return; SAVE.tut.off = !done; SAVE.tut.done = !!done;
-  if (done) { SAVE.credits += 500; say('ops', 'First sortie complete. The Ring pays ¢500 for the deserter\'s papers. The board is yours: try a contract next.', 'ok'); }
+  const kind = SAVE.tut.kind || 'first'; if (done) { SAVE.tutDone = Object.assign({}, SAVE.tutDone, { [kind]: true }); }
+  if (done && kind === 'net') { SAVE.credits += 300; say('ops', 'Second sortie complete. The Ring pays ¢300 for a captain who knows how the news moves. From here on, what you know is what you have flown for.', 'ok'); }
+  else if (done) { SAVE.credits += 500; say('ops', 'First sortie complete. The Ring pays ¢500 for the deserter\'s papers. The board is yours: try a contract next, or the second sortie to learn how news of the war travels.', 'ok'); }
   store(); if (tutShip && isLive(tutShip) && G.phase === 'play') tutShip.tut = 'free';
   tutRender(); if (G.phase === 'docked') renderStation();
 }
-function tutNext(note) { SAVE.tut.step++; tutNote = note || ''; if (SAVE.tut.step >= TUT.length) { tutEnd(true); return; } store(); tutRender(); }
+function tutNext(note) { SAVE.tut.step++; tutNote = note || ''; if (SAVE.tut.step >= TL().length) { tutEnd(true); return; } store(); tutRender(); }
 /* the deserter: a 5th tier picket whose jump drive is already dead, with tired guns, kept near the ring */
 function tutSpawn() {
   const home = (STATION ? STATION.port.clone() : V()).add(V(-700, 40, 650));
@@ -3059,6 +3065,7 @@ function tutSpawn() {
 }
 function tutTick() {
   if (!tutOn()) { tutHi([]); return; }
+  if (SAVE.tut.kind === 'net') { tutNetTick(); tutRender(); return; }
   const st = TUT[SAVE.tut.step], ph = G.phase;
   if (ph === 'lost') { SAVE.tut.step = 0; tutNote = 'The Magpie was towed home. Launch again: Scrapjaw is still out there.'; store(); tutShip = null; }
   // the deserter exists while there is something to do with her
@@ -3101,7 +3108,7 @@ const TUT_SHOW = [
 const TUT_GRP = ['helm', 'emis', 'gun', 'ship', 'help', 'view'];
 let tutShown = '';
 function tutStage() {   // which windows the tutorial wants on screen right now, or null for all of them
-  if (!tutOn() || G.phase === 'docked' || !SAVE.tut) return null;
+  if (!tutOn() || G.phase === 'docked' || !SAVE.tut || SAVE.tut.kind === 'net') return null;
   const step = SAVE.tut.step, ids = new Set(), grps = new Set(), news = [];
   for (const s of TUT_SHOW) if (step >= s.at) { s.ids.forEach(i => ids.add(i)); s.grps.forEach(g => grps.add(g)); if (step === s.at || (s.at === 1 && step < 2)) news.push(...s.say); }
   if (step >= 5) return null;   // strip, dock, refit: the whole cockpit
@@ -3134,7 +3141,7 @@ function ageRender(tgt) {
   setT($('#t-age-note'), tr.q > 0 ? (drift > 5 ? 'At her last speed she has moved about ' + km(drift) + ' since.' : 'She was sitting still when that light left her.') : 'Track lost: this is where she was. She could be anywhere near.');
 }
 
-function tutRefit() { if (tutOn() && TUT[SAVE.tut.step].id === 'refit') tutNext(); }
+function tutRefit() { if (tutOn() && TL()[SAVE.tut.step].id === 'refit') tutNext(); }
 function tutHi(sels) {
   const want = new Set(); for (const q of sels) for (const el of document.querySelectorAll(q)) want.add(el);
   for (const el of document.querySelectorAll('.tut-hi')) if (!want.has(el)) el.classList.remove('tut-hi');
@@ -3144,22 +3151,22 @@ let tutLastHtml = '';
 function tutRender() {
   const el = $('#tut'); if (!el) return;
   if (!tutOn()) { el.hidden = true; tutHi([]); tutLastHtml = ''; tutReveal(); return; }
-  const i = SAVE.tut.step, st = TUT[i], mini = !!SAVE.tut.mini;
-  const where = (i >= 1 && i <= 5 && G.phase === 'play' && SITE.id !== 'ring') ? '<p class="tut-note">Scrapjaw is at Tarsis Ring. Jump home to carry on.</p>' : '';
+  const i = SAVE.tut.step, net = SAVE.tut.kind === 'net', L = TL(), st = L[i], mini = !!SAVE.tut.mini;
+  const where = !net && (i >= 1 && i <= 5 && G.phase === 'play' && SITE.id !== 'ring') ? '<p class="tut-note">Scrapjaw is at Tarsis Ring. Jump home to carry on.</p>' : '';
   const stage = tutReveal(), news = stage && G.phase === 'play' && !mini ? stage.news.map(t => '<p class="tut-new-l">New on screen · ' + t + '</p>').join('') : '';
-  const html = '<p class="eyebrow">First sortie · ' + (i + 1) + ' of ' + TUT.length + '</p><h3>' + st.title + '</h3>' + (mini ? '' : '<p>' + st.text + '</p>' + (tutNote ? '<p class="tut-note">' + esc(tutNote) + '</p>' : '') + where + news)
-    + '<div class="row"><button class="btn quiet" type="button" data-tut="skip">' + (st.id === 'refit' ? 'Finish' : 'Skip step') + '</button><button class="btn quiet" type="button" data-tut="end">End tutorial</button><button class="btn quiet" type="button" data-tut="mini" aria-label="' + (mini ? 'Expand' : 'Shrink') + '">' + (mini ? '+' : '–') + '</button></div>';
+  const html = '<p class="eyebrow">' + (net ? 'Second sortie' : 'First sortie') + ' · ' + (i + 1) + ' of ' + L.length + '</p><h3>' + st.title + '</h3>' + (mini ? '' : '<p>' + (net ? tutNetFill(st.text) : st.text) + '</p>' + (tutNote ? '<p class="tut-note">' + esc(tutNote) + '</p>' : '') + where + news)
+    + '<div class="row"><button class="btn quiet" type="button" data-tut="skip">' + (st.id === 'refit' || st.id === 'home' ? 'Finish' : 'Skip step') + '</button><button class="btn quiet" type="button" data-tut="end">End tutorial</button><button class="btn quiet" type="button" data-tut="mini" aria-label="' + (mini ? 'Expand' : 'Shrink') + '">' + (mini ? '+' : '–') + '</button></div>';
   if (html !== tutLastHtml) { el.innerHTML = html; tutLastHtml = html; }
   el.hidden = false; el.classList.toggle('docked', G.phase === 'docked'); tutHi(mini ? [] : st.hi);
 }
 function tutInit() {
   $('#tut').addEventListener('click', e => {
     const b = e.target.closest('[data-tut]'); if (!b) return; const a = b.dataset.tut;
-    if (a === 'skip') { if (TUT[SAVE.tut.step].id === 'strike' && tutShip && isLive(tutShip)) strike(tutShip); tutNext(); }
+    if (a === 'skip') { if (SAVE.tut.kind !== 'net' && TUT[SAVE.tut.step].id === 'strike' && tutShip && isLive(tutShip)) strike(tutShip); tutNext(); }
     else if (a === 'end') tutEnd(false);
     else if (a === 'mini') { SAVE.tut.mini = !SAVE.tut.mini; store(); tutRender(); }
   });
-  document.addEventListener('click', e => { if (e.target.closest('[data-tut-start]')) tutStart(); });
+  document.addEventListener('click', e => { const b = e.target.closest('[data-tut-start]'); if (b) tutStart(b.dataset.tutStart); });
   tutRender();
 }
 
@@ -3295,7 +3302,7 @@ const rankNum = v => Math.max(0, rankIdx(v) - 2);   // 0 neutral, 1 known, 2 tru
 /* Rank is earned and kept (like a syndicate rank); standing is the currency you spend and the mood they are in now. */
 const peakOf = B => Math.max(SAVE.peak ? SAVE.peak[B] || 0 : 0, SAVE.standing[B]);
 const rankOf = B => SAVE.standing[B] < -1000 ? rankName(SAVE.standing[B]) : RANKS[rankIdx(peakOf(B))][1];
-const peaceful = s => s.trader ? !s.traderAngry : s.hunt ? !!s.hunt.calm : !s.isUs && s.Fa.bloc && ((peakOf(s.Fa.bloc) >= 3000 && SAVE.standing[s.Fa.bloc] >= 1000) || (!!s.fp && fpFriend(s.Fa.bloc))) && !(G && G.provoked && G.provoked[s.Fa.bloc]);
+const peaceful = s => s.trader ? !s.traderAngry : (s.relay || s.netShip) && s.Fa && s.Fa.bloc && playerFriend(s.Fa.bloc) ? true : s.hunt ? !!s.hunt.calm : !s.isUs && s.Fa.bloc && ((peakOf(s.Fa.bloc) >= 3000 && SAVE.standing[s.Fa.bloc] >= 1000) || (!!s.fp && fpFriend(s.Fa.bloc))) && !(G && G.provoked && G.provoked[s.Fa.bloc]);
 const REWARDS = {
   concord: [
     { id: 'gift', rank: 1, cost: 1500, name: 'Uplift gift', desc: 'A Concord part from the highest tier your rank allows: 5th at Known, up to 2nd when Exalted. Given at 35 to 60 percent.' },
@@ -4189,6 +4196,23 @@ const FP_NAMES = {
   krell: [['Maw', 'Brood', 'Spore', 'Gut', 'Hask'], ['Mother', 'ling', 'Swarm', 'Eater', 'Bloom']], grael: [['Bastion', 'Slab', 'Rampart', 'Keep', 'Wall'], ['of Teeth', 'Nine', 'Unbroken', 'Grim', 'of Iron']],
   vashkar: [['VHS Tarn', 'VHS Kor', 'VHS Mesk', 'VHS Dral', 'VHS Ost'], ['', '', ' II', ' III', '']], vorrakai: [['Edict', 'Decree', 'Writ', 'Mandate', 'Sentence'], ['of Ash', 'Absolute', 'Unspoken', 'of Night', 'Final']],
 };
+/* 0.21.0: the war's and the network's numbers, measured in long runs of the real game (test/v3/bal24.js). */
+const BAL = Object.assign({
+  gap: [80, 100],       // seconds of quiet after a battle before the next strike starts massing
+  stage: 240,           // how long attackers mass in plain sight
+  attCap: 0.45,         // attackers who mass on purpose bring a second capital ship more often
+  holdWin: 15, holdLoss: [45, 30],   // a defence won shores the hold up; a defeat knocks it down
+  awayDef: 0.45,        // defenders' odds in battles fought while you are away
+  resUrgent: 1,         // battle results count as urgent news for couriers and carriers
+  carrier: [85, 10, 40, 30],          // star carriers: s per hop, s per ly, dwell, passing
+  traders: 4, traderPub: 1,           // Orrin traders, and whether they swap public news with the powers' relays
+  wire: 5, wireDelay: 600, wireCost: 200, wireWatch: 180,
+  weakPull: 40,         // attackers go for systems their reports say are weak: weight 1 + ((100 - hold) / weakPull)^2
+  regen: 0.25, regenTo: 70,   // holds recover this much a minute, but only up to this; above it takes defence wins
+  brokerP: { fleet: 300, agent: 45, recon: 30, remnant: 400 },   // the Orrin broker's base prices; public news (installations too) is worth nothing
+  reinfOut: 1,          // a command sends its reserve only to a battle where its side is outnumbered
+  relayTrust: 1000      // standing at which a power's relays share everything, not just public news
+}, (typeof window !== 'undefined' && window.VALK_BAL) || {});
 const FPS = { list: [], n: 0, nextAt: 75, last: null };
 const fpOf = (sys, site) => FPS.list.find(c => c.sys === sys && c.site === site) || null;
 const fpBattle = () => FPS.list.find(c => c.phase === 'battle') || null;
@@ -4253,7 +4277,7 @@ function fpEnd(c, winner) {
   for (const s of fpShips(c, winner)) { s.state = 'patrol'; s.m.wp = null; s.foe = null; }
   sayIn(c.sys, 'ops', BLOCS[winner].name + ' hold ' + st.name + '. ' + BLOCS[loser].name + ' are broken and running. The wreck field is there for the taking until the victors move on.', 'warn');
   for (const p of fieldPlayers()) withP(p, () => { if (here && G.phase === 'play' && fpFriend(winner) && !(G.provoked && G.provoked[winner])) { G.rep[winner] += 400; say('xo', 'We stood with ' + BLOCS[winner].name + ' at ' + st.name + '. They will remember it.', 'ok'); } });
-  FPS.nextAt = WT + 150 + rand() * 150;
+  FPS.nextAt = WT + BAL.gap[0] + rand() * BAL.gap[1];
   intelFpEnd(c, winner);
   warResult(c, winner);
 }
@@ -4304,7 +4328,7 @@ function warFronts() {
     if (sid === 'elysian') { out.push({ sys: sid, att: rand() < 0.5 ? 'concord' : 'dominion', from: null, w: 1.3 }); continue; }
     const foes = warFoes(sid); if (!foes.length) continue;
     const S = SYSTEMS[sid];
-    out.push({ sys: sid, att: OTHER_BLOC[sysBloc(sid)], from: foes[Math.floor(rand() * foes.length)], w: (S.cap ? 0.4 : 1) * (1 + (100 - intelHoldGuess(OTHER_BLOC[sysBloc(sid)], sid)) / 70) * (1 + 0.2 * (foes.length - 1)) });
+    out.push({ sys: sid, att: OTHER_BLOC[sysBloc(sid)], from: foes[Math.floor(rand() * foes.length)], w: (S.cap ? 0.4 : 1) * (1 + Math.pow((100 - intelHoldGuess(OTHER_BLOC[sysBloc(sid)], sid)) / BAL.weakPull, 2)) * (1 + 0.2 * (foes.length - 1)) });
   }
   return out;
 }
@@ -4318,7 +4342,7 @@ const warCapOdds = B => clamp(0.45 + 0.07 * blocLost(B), 0.3, 0.8);
 /* The odds the defenders win a battle fought with nobody watching (the war while you are away). */
 function warDefOdds(f) {
   const D = sysBloc(f.sys); if (!D) return 0.5;
-  const S = SYSTEMS[f.sys]; let p = 0.5 + 0.07 * (blocLost(D) - blocLost(f.att)) + (S.cap ? 0.15 : 0);
+  const S = SYSTEMS[f.sys]; let p = BAL.awayDef + 0.07 * (blocLost(D) - blocLost(f.att)) + (S.cap ? 0.15 : 0);
   if (S.region === 'ashen') p += D === 'dominion' ? 0.06 : -0.06;   // the Dominion is winning the Ashen Frontier
   if (S.region === 'reach') p += D === 'concord' ? 0.08 : -0.04;    // and the Seraphine keep their best ships in the Reach
   p += 0.08 * (intelNet(D) - intelNet(f.att));   // a side whose network is in pieces reacts late
@@ -4334,9 +4358,9 @@ function warNews(msg, kind, sys, away) { WAR.news.push({ t: Date.now(), msg, kin
 function warResult(c, winner, away) {
   const sid = c.sys, S = SYSTEMS[sid], D = sysBloc(sid), W = BLOCS[winner]; let msg, kind = 'push';
   if (!D) { msg = W.name + ' hold the ' + (siteFlash(sid) || { name: 'line' }).name + ' at ' + S.name + ', for now.'; kind = 'gate'; }
-  else if (winner === D) { WAR.hold[sid] = Math.min(100, WAR.hold[sid] + 25); msg = FACTIONS[S.owner].name + ' held ' + S.name + ' against ' + BLOCS[OTHER_BLOC[D]].name + '. Hold ' + Math.round(WAR.hold[sid]) + '%.'; kind = 'hold'; }
+  else if (winner === D) { WAR.hold[sid] = Math.min(100, WAR.hold[sid] + BAL.holdWin); msg = FACTIONS[S.owner].name + ' held ' + S.name + ' against ' + BLOCS[OTHER_BLOC[D]].name + '. Hold ' + Math.round(WAR.hold[sid]) + '%.'; kind = 'hold'; }
   else {
-    WAR.hold[sid] -= 40 + rand() * 25;
+    WAR.hold[sid] -= BAL.holdLoss[0] + rand() * BAL.holdLoss[1];
     if (S.cap) { WAR.hold[sid] = Math.max(15, WAR.hold[sid]); msg = W.name + ' broke a fleet over ' + S.name + ', but the ' + FACTIONS[S.owner].name + ' capital holds.'; }
     else if (WAR.hold[sid] <= 0) {
       const prev = S.owner, nu = warTaker(sid, winner, c.from); WAR.own[sid] = nu; WAR.hold[sid] = 45; WAR.gen[sid] = (WAR.gen[sid] || 0) + 1; garSwap(sid); relayCapture(sid, nu);
@@ -4403,7 +4427,7 @@ function warTick(dt) {
     if (!WORLD.some(x => x.gar === sid && isLive(x))) GAR.regrow[sid] = WT + 480;
   }
   for (const sid in GAR.regrow) if (WT >= GAR.regrow[sid] && !garHere(sid)) { delete GAR.regrow[sid]; garBuild(sid); }
-  GAR.hold += dt; if (GAR.hold >= 60) { GAR.hold = 0; for (const sid of SYS_IDS) if (sysBloc(sid) && WAR.hold[sid] < 100 && !FPS.list.some(c => c.sys === sid && c.phase === 'battle')) WAR.hold[sid] = Math.min(100, WAR.hold[sid] + 1); WAR.ver++; warSave(); }
+  GAR.hold += dt; if (GAR.hold >= 60) { GAR.hold = 0; for (const sid of SYS_IDS) if (sysBloc(sid) && WAR.hold[sid] < BAL.regenTo && !FPS.list.some(c => c.sys === sid && c.phase === 'battle')) WAR.hold[sid] = Math.min(BAL.regenTo, WAR.hold[sid] + BAL.regen); WAR.ver++; warSave(); }
 }
 function warBoot() { warLoad(); for (const sid of SYS_IDS) garBuild(sid); intelBoot(); warCatchUp(); }
 /* What the flash point announcement adds: who is attacking whom. */
@@ -4437,8 +4461,8 @@ const GC = () => WAR.clock || 0;
 const clsName = s => s.relayType ? RELAY_TYPES[s.relayType].name : CLASSES[s.cls].name;
 const INTEL_AGE = { fleet: [600, 3600], agent: [600, 3600], battle: [900, 5400], remnant: [600, 3600], recon: [1200, 7200], control: [1800, 10800], install: [1800, 14400] };
 const INTEL_PUBLIC = { control: 1, battle: 1, install: 1 };
-const INTEL_URGENT = r => (r.c === 'battle' && r.d.ph === 'battle') || (r.c === 'fleet' && r.d.st) || (r.c === 'remnant');
-const AG_SPEED = { carrier: [110, 12, 45, 40], regional: [110, 12, 45, 40], courier: [40, 5, 15, 10], picket: [65, 8, 25, 15], trader: [140, 14, 60, 40], builder: [130, 14, 30, 40], smuggler: [80, 9, 40, 20] };   // per hop s, per ly s, dwell s, passing s
+const INTEL_URGENT = r => (r.c === 'battle' && (r.d.ph === 'battle' || BAL.resUrgent)) || (r.c === 'fleet' && r.d.st) || (r.c === 'remnant');
+const AG_SPEED = { carrier: BAL.carrier, regional: BAL.carrier, wire: [45, 6, 30, 20], courier: [40, 5, 15, 10], picket: [65, 8, 25, 15], trader: [140, 14, 60, 40], builder: [130, 14, 30, 40], smuggler: [80, 9, 40, 20] };   // per hop s, per ly s, dwell s, passing s
 const AG_RACE = { concord: { picket: 'ilk', courier: 'myrr' }, dominion: { picket: 'grael', courier: 'vashkar' } };
 
 /* ---------- holders and records ---------- */
@@ -4491,7 +4515,7 @@ function ihObserve(h, sid, opts) {
     ihSee(h, 'fp:' + c.id, 'battle', { sys: sid, site: c.site, ph: c.phase, att: c.att || null, def: c.defB || null, cc: c.caps.concord, cd: c.caps.dominion, w: c.winner || null }, 0.95, src);
     if (!pub && c.rem && c.rem.awake) ihSee(h, 'rem:' + c.id, 'remnant', { sys: sid, site: c.site, awake: 1 }, 0.9, src);
   }
-  if (!pub && STAGE && STAGE.from === sid && STAGE.att !== h.bloc) ihSee(h, 'st:' + STAGE.id, 'fleet', { sys: sid, st: 1, b: STAGE.att, caps: STAGE.caps[STAGE.att], tgt: STAGE.sys }, opts.close ? 0.85 : 0.7, src);
+  if ((!pub || opts.close) && STAGE && STAGE.from === sid && STAGE.att !== h.bloc) ihSee(h, 'st:' + STAGE.id, 'fleet', { sys: sid, st: 1, b: STAGE.att, caps: STAGE.caps[STAGE.att], tgt: STAGE.sys }, opts.close ? 0.85 : 0.7, src);
   for (const r of RELAYS_IN[sid] || []) if (r.bloc !== 'orrin') ihSee(h, 'rel:' + r.sid, 'install', { sys: sid, b: r.bloc, ty: r.type, up: relayUp(r) ? 1 : 0, dead: r.dead ? 1 : 0 }, 0.95, src);
   if (!pub) for (const a of AGENTS) if (a.sys === sid && a.bloc !== h.bloc && a.bloc !== 'orrin' && a.state !== 'travel' && a.state !== 'dead') {
     if (a.kind === 'picket' && !opts.close && rand() > 0.25) continue;   // pickets are hard to spot
@@ -4537,12 +4561,13 @@ function agMake(o) {
 }
 /* Where a ship passing through, or a picket on watch, waits: in the system's rock field if it has one. */
 const agField = sid => { const S = SYSTEMS[sid], f = S.sites.find(x => x.kind === 'field') || S.sites.find(x => x.kind === 'empty' && !x.relay) || S.sites.find(x => x.kind !== 'station' && x.kind !== 'body'); return f ? f.id : null; };
+const ORRIN_SHIP = a => a.kind === 'trader' || a.kind === 'wire';
 const agCls = a => a.kind === 'carrier' || a.kind === 'regional' || a.kind === 'builder' ? 'carrier' : a.kind === 'trader' || a.kind === 'smuggler' ? 'frigate' : 'picket';
-const agRole = a => ({ carrier: 'long-haul star carrier', regional: 'regional star carrier', courier: 'relay courier', picket: 'picket', trader: 'Orrin trader', builder: 'construction ship', smuggler: 'blockade runner' })[a.kind];
+const agRole = a => ({ carrier: 'long-haul star carrier', regional: 'regional star carrier', courier: 'relay courier', picket: 'picket', trader: 'Orrin trader', wire: 'Orrin correspondent', builder: 'construction ship', smuggler: 'blockade runner' })[a.kind];
 function agShipTo(a, sys, site) {
   a.sys = sys; a.site = site;
-  if (a.bloc === 'orrin' && a.kind !== 'trader') return;
-  if (!a.ship) { if (!sys) return; const s = makeShip({ uid: 'ag-' + a.id + '-' + a.gen, name: a.kind === 'trader' ? 'Orrin trader ' + a.name : a.name, fac: a.kind === 'trader' ? 'ilk' : a.fac, cls: agCls(a), sys, site }); s.agent = a.id; if (a.kind === 'trader') s.trader = true; a.ship = s; WORLD.push(s); }
+  if (a.bloc === 'orrin' && !ORRIN_SHIP(a)) return;
+  if (!a.ship) { if (!sys) return; const s = makeShip({ uid: 'ag-' + a.id + '-' + a.gen, name: a.kind === 'trader' ? 'Orrin trader ' + a.name : a.kind === 'wire' ? 'Orrin cutter ' + a.name : a.name, fac: ORRIN_SHIP(a) ? 'ilk' : a.fac, cls: agCls(a), sys, site }); s.agent = a.id; s.netShip = a.kind !== 'smuggler'; if (ORRIN_SHIP(a)) s.trader = true; a.ship = s; WORLD.push(s); }
   const s = a.ship, loaded = NPCS.includes(s);
   if (loaded && (s.sys !== sys || s.site !== site)) {   // she jumps away in front of us
     const pos = s.m.pos.clone(); later(US.m.pos.distanceTo(pos) / C, () => jumpFx(pos, s.model.len * 1.2));
@@ -4602,6 +4627,8 @@ function agNext(a) {
       const m = mine.filter(r => r.type === 'military').sort((x, y) => hopsTo(a.sys, x.sid) - hopsTo(a.sys, y.sid))[0] || mine.sort((x, y) => hopsTo(a.sys, x.sid) - hopsTo(a.sys, y.sid))[0];
       dest = m ? m.sid : null; a.post = null;
     } else { a.post = picketPost(a); dest = a.post; }
+  } else if (a.kind === 'wire') {
+    if (a.sys !== 'tarsis' && (urgent || a.stops >= 2)) { dest = 'tarsis'; a.stops = 0; } else dest = wirePost(a);
   } else if (a.kind === 'trader') {
     if (a.stops >= 3) { dest = 'tarsis'; a.stops = 0; }
     else { const T = RELAYS.tarsis.h; let best = -1e9; for (const sid of SYS_IDS) { if (sid === a.sys || FPS.list.some(c => c.sys === sid && c.phase === 'battle')) continue; const e = T.db.get('ctl:' + sid), sc = (now - (e ? e.r.u : -9999)) - 200 * hopsTo(a.sys, sid) + rand() * 120; if (sc > best) { best = sc; dest = sid; } } }
@@ -4629,7 +4656,7 @@ function picketPost(a) {
 /* She arrives in a system: she sees it, meets whoever of her side is there, and may not survive it. */
 function agArrive(a, sid) {
   const final = !a.path.length, r = (RELAYS_IN[sid] || []).find(x => x.bloc === a.bloc && !x.dead);
-  const site = a.kind === 'trader' || a.kind === 'smuggler' ? agField(sid) : a.bloc === 'orrin' ? null : final && a.kind === 'builder' && siteOf(sid, 'relay') ? 'relay' : final && r && a.kind !== 'picket' ? 'relay' : agField(sid);
+  const site = a.kind === 'smuggler' ? agField(sid) : ORRIN_SHIP(a) ? (final && siteOf(sid, 'relay') && (RELAYS_IN[sid] || []).some(x => x.bloc !== 'orrin' && !x.dead) ? 'relay' : agField(sid)) : a.bloc === 'orrin' ? null : final && a.kind === 'builder' && siteOf(sid, 'relay') ? 'relay' : final && r && a.kind !== 'picket' ? 'relay' : agField(sid);
   agShipTo(a, sid, site);
   const loaded = a.ship && NPCS.includes(a.ship);
   if (!loaded && a.bloc !== 'orrin') {
@@ -4640,18 +4667,20 @@ function agArrive(a, sid) {
   ihObserve(a.h, sid, { close: a.kind === 'picket' });
   agMeet(a, sid);
   if (final && agFinal(a, sid)) return;
-  if (final) { a.stops++; if (a.kind === 'picket' && a.post === sid) { a.state = 'watch'; a.until = GC() + 420; a.watchSeen = 0; } else { a.state = 'dwell'; a.until = GC() + AG_SPEED[a.kind][2]; } if (a.kind === 'courier' && a.task === sid) a.task = null; }
+  if (final) { a.stops++; if (a.kind === 'picket' && a.post === sid) { a.state = 'watch'; a.until = GC() + 420; a.watchSeen = 0; } else if (a.kind === 'wire' && sid !== 'tarsis') { a.state = 'watch'; a.until = GC() + BAL.wireWatch; a.watchT = 0; } else { a.state = 'dwell'; a.until = GC() + AG_SPEED[a.kind][2]; } if (a.kind === 'courier' && a.task === sid) a.task = null; }
   else { a.state = 'pass'; a.until = GC() + AG_SPEED[a.kind][3]; }
 }
 function agMeet(a, sid) {
   if (a.kind === 'smuggler') return;
   const pubF = a.bloc === 'orrin' ? r => !!INTEL_PUBLIC[r.c] : null;
   for (const r of RELAYS_IN[sid] || []) {
-    if (r.bloc !== a.bloc || !relayUp(r)) continue;
-    if (RELAY_TYPES[r.type].range === 'site' && a.site !== 'relay' && a.bloc !== 'orrin') continue;
-    ihXfer(a.h, r.h, pubF); ihXfer(r.h, a.h, pubF); r.lastVisit = GC();
+    const merchant = a.bloc === 'orrin' && r.bloc !== 'orrin' && BAL.traderPub;   // the powers trade public news with Orrin hulls
+    if ((r.bloc !== a.bloc && !merchant) || !relayUp(r)) continue;
+    if (RELAY_TYPES[r.type].range === 'site' && a.site !== 'relay' && (a.bloc !== 'orrin' || merchant)) continue;
+    if (a.kind === 'wire') { ihXfer(r.h, a.h, pubF); if (sid === 'tarsis' && r.bloc === 'orrin' && WIREH) ihXfer(a.h, WIREH, WIRE_F); continue; }   // a correspondent sells only to the wire
+    ihXfer(a.h, r.h, pubF); ihXfer(r.h, a.h, pubF); if (!merchant) r.lastVisit = GC();
   }
-  for (const b of AGENTS) if (b !== a && b.bloc === a.bloc && b.sys === sid && b.kind !== 'smuggler' && b.state !== 'travel' && b.state !== 'dead') { ihXfer(a.h, b.h, pubF); ihXfer(b.h, a.h, pubF); }
+  for (const b of AGENTS) if (b !== a && b.bloc === a.bloc && b.sys === sid && b.kind !== 'smuggler' && b.state !== 'travel' && b.state !== 'dead') { if (a.kind !== 'wire') ihXfer(a.h, b.h, pubF); if (b.kind !== 'wire') ihXfer(b.h, a.h, pubF); }
 }
 function agStep(a, now) {
   if (a.state === 'dead') { if (now >= a.respawnAt) agRespawn(a); return; }
@@ -4661,7 +4690,7 @@ function agStep(a, now) {
     if (now - (a.watchT || 0) >= 30) {
       a.watchT = now; const before = a.h.ver; ihObserve(a.h, a.sys, { close: true }); agMeet(a, a.sys);
       const loaded = a.ship && NPCS.includes(a.ship);
-      if (!loaded) { const g = garBy(a.sys).length, r = RELAYS[a.sys], p = (0.01 + 0.004 * g + (r && r.type === 'military' && r.bloc !== a.bloc ? 0.012 : 0)) * 0.5; if (rand() < p) { agDie(a, 'found and destroyed watching ' + SYSTEMS[a.sys].name); return; } }
+      if (!loaded && a.bloc !== 'orrin') { const g = garBy(a.sys).length, r = RELAYS[a.sys], p = (0.01 + 0.004 * g + (r && r.type === 'military' && r.bloc !== a.bloc ? 0.012 : 0)) * 0.5; if (rand() < p) { agDie(a, 'found and destroyed watching ' + SYSTEMS[a.sys].name); return; } }
       if (a.h.ver !== before && [...a.h.db.values()].some(e => e.sv > before && INTEL_URGENT(e.r))) { agNext(a); return; }   // something worth running home with
     }
     if (now >= a.until) agNext(a);
@@ -4703,6 +4732,7 @@ function cmdTick() {
   const now = GC();
   for (const c of FPS.list) {
     if (c.phase !== 'battle' || !c.defB || c.reinf) continue;
+    if (BAL.reinfOut && c.caps[c.defB] >= c.caps[c.att || OTHER_BLOC[c.defB]]) continue;   // not outnumbered: the reserve stays home
     const k = cmdKnows(c.defB, 'fp:' + c.id); if (!k) continue;
     c.reinf = { at: WT + 30 + 70 * hopsTo(k.r.sid, c.sys), by: k.r.sid };
   }
@@ -4728,6 +4758,7 @@ function ihOf(p) {
   return h;
 }
 const playerFriend = B => SAVE && SAVE.standing && SAVE.standing[B] >= 0 && !(G && G.provoked && G.provoked[B]);
+const playerTrust = B => playerFriend(B) && SAVE.standing[B] >= BAL.relayTrust;   // Known and up: the whole database
 /* What changed in a captain's picture, said once. */
 function intelNotice(h, got, via) {
   const now = GC(), lines = [];
@@ -4756,7 +4787,10 @@ function intelPlayer(p, dtAcc) {
       const pub = r.bloc === 'orrin';
       if (!pub && RELAY_TYPES[r.type].range === 'site' && SITE.id !== 'relay') continue;
       if (!pub && !playerFriend(r.bloc)) { if (!p.relayWarned || p.relayWarned !== r.sid) { p.relayWarned = r.sid; say('ops', 'The ' + r.h.name + ' will not talk to us: ' + BLOCS[r.bloc].name + ' do not trust us enough.', ''); } continue; }
-      const f = pub ? x => !!INTEL_PUBLIC[x.c] : null, up = ihXfer(h, r.h, f), down = ihXfer(r.h, h, f);
+      const tier = pub || playerTrust(r.bloc) ? null : x => !!INTEL_PUBLIC[x.c];   // a neutral captain gets public news only
+      const f = pub ? x => !!INTEL_PUBLIC[x.c] : null, up = ihXfer(h, r.h, f), down = ihXfer(r.h, h, f || tier);
+      if (pub && r.sid === 'tarsis' && wireOn() && WIREH) down.push(...ihXfer(WIREH, h, WIRE_F));
+      if (!p.lastSync || p.lastSync.sid !== r.sid || GC() - p.lastSync.t > 300) p.lastSync = { sid: r.sid, up: up.length, down: down.length, t: GC() };   // the first handshake of a visit, for the tutorial
       if (!up.length && !down.length) continue;
       let pay = 0; if (!pub) for (const n of up) { const d = n.r.d, foe = OTHER_BLOC[r.bloc]; if (n.r.src === 'you' || n.cap) if (d.b === foe || (d.o && BLOC_OF(d.o) === foe) || n.r.c === 'battle' || n.r.c === 'fleet') pay += 6; }
       pay = Math.min(150, pay); if (pay && G.rep) G.rep[r.bloc] += pay;
@@ -4768,7 +4802,7 @@ function intelPlayer(p, dtAcc) {
   });
 }
 /* Docked at Tarsis: the free port's news, both ways. */
-function intelDocked(p) { const h = ihOf(p); if (!h || !RELAYS.tarsis) return []; const f = x => !!INTEL_PUBLIC[x.c]; ihObserve(h, 'tarsis', { close: true, src: 'you' }); ihXfer(h, RELAYS.tarsis.h, f); const got = ihXfer(RELAYS.tarsis.h, h, f); return intelNotice(h, got, 'Tarsis Ring'); }
+function intelDocked(p) { const h = ihOf(p); if (!h || !RELAYS.tarsis) return []; const f = x => !!INTEL_PUBLIC[x.c]; ihObserve(h, 'tarsis', { close: true, src: 'you' }); ihXfer(h, RELAYS.tarsis.h, f); const got = ihXfer(RELAYS.tarsis.h, h, f); if (wireOn() && WIREH) got.push(...ihXfer(WIREH, h, WIRE_F)); return intelNotice(h, got, 'Tarsis Ring'); }
 /* Stripping a wreck's data core: whatever she knew is ours, unconfirmed. */
 function intelCapture(s) {
   const db = s.intelDb || (s.agent && (AGENTS.find(a => a.id === s.agent) || {}).h) || (s.relay && RELAYS[s.relay] && RELAYS[s.relay].h); if (!db || s.coreTaken) return;
@@ -4782,7 +4816,7 @@ function intelStep(dt) {
   WAR.clock = (WAR.clock || 0) + dt; const now = GC();
   for (const a of AGENTS) agStep(a, now);
   INT.robs += dt; if (INT.robs >= 20) { INT.robs = 0; for (const r of Object.values(RELAYS)) if (!r.dead && r.bloc !== 'orrin') ihObserve(r.h, r.sid); }
-  projTick();
+  projTick(); wireTick();
   intelPend(); cmdTick();
 }
 function intelTick(dt) {
@@ -4859,7 +4893,7 @@ function intelFresh() {
   }
   const used = new Set(WORLD.map(w => w.name));
   for (const r of Object.values(RELAYS)) {
-    if (r.bloc === 'orrin') { if (r.sid === 'tarsis') for (let i = 0; i < 2; i++) agMake({ kind: 'trader', bloc: 'orrin', fac: 'orrin', name: ['Long Ledger', 'Quiet Margin'][i], home: 'tarsis', sys: 'tarsis' }); continue; }
+    if (r.bloc === 'orrin') continue;   // the Orrin fleet is made by orrinFleet()
     const B = r.bloc, mk = (kind, fac) => agMake({ kind, bloc: B, fac, name: fpName(fac, used), home: r.sid, sys: r.sid, site: 'relay' });
     if (r.type === 'strategic') { mk('carrier', r.fac); mk('carrier', r.fac); mk('picket', AG_RACE[B].picket); mk('picket', AG_RACE[B].picket); if (r.sid === 'vashkar') mk('picket', AG_RACE[B].picket); }
     if (r.type === 'regional') mk('regional', r.fac);
@@ -4869,8 +4903,9 @@ function intelFresh() {
 function intelBoot() {
   for (const k of [...IH.keys()]) IH.delete(k); AGENTS.length = 0; for (const k in RELAYS) delete RELAYS[k]; for (const k in RELAYS_IN) delete RELAYS_IN[k];
   if (!intelLoad()) intelFresh();
+  orrinFleet();
   for (const r of Object.values(RELAYS)) relayShip(r);
-  for (const a of AGENTS) if (a.state !== 'dead') { const sys = a.sys || a.home, site = a.site; a.sys = null; a.ship = null; agShipTo(a, sys, a.bloc === 'orrin' && a.kind !== 'trader' ? null : site || (a.kind === 'trader' ? agField(sys) : 'relay')); }
+  for (const a of AGENTS) if (a.state !== 'dead') { const sys = a.sys || a.home, site = a.site; a.sys = null; a.ship = null; agShipTo(a, sys, a.bloc === 'orrin' && !ORRIN_SHIP(a) ? null : site || (ORRIN_SHIP(a) ? agField(sys) : 'relay')); }
   leakSpawn();
 }
 /* Docking resets the world's ships; put the network's ships back where the network says they are. */
@@ -5078,7 +5113,7 @@ function stageTick() {
   if (!STAGE) {
     const f = warPick(FPS.last && FPS.last[0]); let from = f.from;
     if (!from) { const own = SYS_IDS.filter(s => sysBloc(s) === f.att).sort((x, y) => lyDist(f.sys, x) - lyDist(f.sys, y)); from = own[0] || null; }
-    STAGE = Object.assign({}, f, { id: 'st' + (++STAGE_N), from, at: WT + 240, caps: { [f.att]: 1 + (rand() < warCapOdds(f.att) ? 1 : 0) } });
+    STAGE = Object.assign({}, f, { id: 'st' + (++STAGE_N), from, at: WT + BAL.stage, caps: { [f.att]: 1 + (rand() < Math.min(0.9, warCapOdds(f.att) + BAL.attCap) ? 1 : 0) } });
     if (from) { stageMuster(STAGE); sayIn(from, 'sens', 'Heavy jump traffic here: ' + BLOCS[f.att].name + ' are massing a strike group at ' + siteOf(from, STAGE.site).name + '. ' + STAGE.caps[f.att] + ' capital ship' + (STAGE.caps[f.att] > 1 ? 's' : '') + ' so far.', 'warn'); }
     for (const r of RELAYS_IN[from] || []) if (!r.dead && r.bloc !== 'orrin') ihObserve(r.h, from);
     return;
@@ -5115,7 +5150,7 @@ function intelAct(kind, args) {
   if (kind === 'tap') {
     const r = NPCS.find(n => n.uid === args[0] && n.relay); if (!r || !isLive(r)) return;
     const R = RELAYS[r.relay]; if (!R || R.dead) return;
-    if (playerFriend(R.bloc)) { say('ops', 'The ' + R.h.name + ' already talks to us. No need to tap it.', ''); return; }
+    if (playerTrust(R.bloc)) { say('ops', 'The ' + R.h.name + ' already shares everything with us. No need to tap it.', ''); return; }
     if (!fn(r, 'SENSORS')) { say('ops', 'Its array is down: there is nothing on the band to tap.', 'warn'); return; }
     G.tap = { uid: r.uid, sid: r.relay, t: 0, need: TAP_TIME, name: R.h.name }; say('xo', 'Tapping the ' + R.h.name + '. Stay within ' + km(TAP_RANGE) + ' and keep quiet: ' + TAP_TIME + ' seconds. Silent running makes it far less likely they notice.', 'warn');
   } else if (kind === 'stoptap') { if (G.tap) { G.tap = null; say('xo', 'Tap broken off.', ''); } }
@@ -5160,7 +5195,7 @@ const spyCmd = (k, a) => NET.mode === 'client' ? netCmd('intelAct', [k, a]) : in
 function spyRender(tgt) {
   const box = $('#t-spy'); if (!box) return;
   const isRelay = !!(tgt && tgt.relay && isLive(tgt)), R = isRelay ? RELAYS[tgt.relay] : null, bloc = R ? R.bloc : null;
-  const friend = NET.mode === 'client' ? (bloc && SAVE.standing && SAVE.standing[bloc] >= 0) : bloc && playerFriend(bloc);
+  const friend = NET.mode === 'client' ? (bloc && SAVE.standing && SAVE.standing[bloc] >= BAL.relayTrust) : bloc && playerTrust(bloc);
   const show = isRelay && !friend && G.phase === 'play'; box.hidden = !show; if (!show) return;
   const T = G.tap, tapping = T && T.uid === tgt.uid, tapped = G.tapped && G.tapped.sid === tgt.relay && !G.tapped.used;
   setT($('#b-tap').firstChild, tapping ? 'Stop tap' : 'Tap relay');
@@ -5176,7 +5211,7 @@ function spyInitHud() {
 }
 
 /* ---------- at the station: the broker, and paying for construction ---------- */
-const BROKER_P = { fleet: 300, recon: 120, agent: 150, remnant: 400, install: 80 };
+const BROKER_P = BAL.brokerP;
 function brokerLot() {
   const h = myIH(); if (!h) return { n: 0, pay: 0 }; const now = GC(); let n = 0, pay = 0;
   for (const e of h.db.values()) { const p = BROKER_P[e.r.c]; if (!p || e.sold || e.r.src === 'pre-war charts') continue; if (e.r.d && e.r.d.b === 'you') continue; n++; pay += p * intelConf(e, now) * (e.cap ? 1.5 : 1); }
@@ -5185,7 +5220,7 @@ function brokerLot() {
 function brokerSell() {
   if (NET.mode === 'client') return; const h = myIH(), lot = brokerLot(); if (!lot.n) return;
   for (const e of h.db.values()) if (BROKER_P[e.r.c] && !e.sold) e.sold = true;
-  SAVE.credits += lot.pay; store(); h.hist.push({ u: GC(), t: 'Sold ' + lot.n + ' reports to the Orrin broker for ' + money(lot.pay) + '.', k: 'spy', via: 'Tarsis Ring' }); renderStation();
+  SAVE.credits += lot.pay; store(); if (tutOn() && SAVE.tut.kind === 'net' && TUT_NET[SAVE.tut.step].id === 'home') tutEnd(true); h.hist.push({ u: GC(), t: 'Sold ' + lot.n + ' reports to the Orrin broker for ' + money(lot.pay) + '.', k: 'spy', via: 'Tarsis Ring' }); renderStation();
 }
 function commissionOpts(sid) {
   const out = [], K = knowOf(), B = BLOC_OF(WAR.own[sid]), r = RELAYS[sid];
@@ -5209,12 +5244,110 @@ function spyWarRender(K) {
     sel.innerHTML = (opts.length ? '<h3>Construction</h3>' + opts.map((o, i) => '<button class="btn" type="button" data-com="' + i + '"' + (SAVE.credits < o.cost ? ' disabled' : '') + '>' + esc(o.label) + ' · ' + money(o.cost) + '</button>').join('') + '<p class="hint">A construction ship flies out from their nearest strategic relay and builds for five minutes. If it is destroyed on the way, the money is gone. Done, you gain 1,500 standing.</p>' : '<p class="hint">' + (WSEL === 'elysian' ? 'Either power will build a listening post here for a captain they trust (Trusted rank, 3,000 standing).' : 'A power you are Trusted by (3,000 standing) will take your money for a relay upgrade or a rebuild in its own systems.') + '</p>') + (P.length ? '<p class="hint">Under way: ' + esc(P.join('; ')) + '.</p>' : '');
   } else sel.innerHTML = client && WSEL ? '<p class="hint">Construction and the broker are run by the host.</p>' : '';
   const lot = client ? { n: 0, pay: 0 } : brokerLot();
-  br.innerHTML = '<h2>The Orrin broker</h2><p class="hint">Buys reports about either power (fleets, holding fleets, network ships, relays, Remnants), more for fresh ones and half again for anything tapped or pulled from a data core. Public news is worth nothing here.</p>'
+  const wb = $('#war-wire'); if (wb) wb.innerHTML = wireHtml();
+  br.innerHTML = '<h2>The Orrin broker</h2><p class="hint">Buys reports about either power (massing and moving fleets, holding fleets, network ships, Remnants), more for fresh ones and half again for anything tapped or pulled from a data core. Public news, relays included, is worth nothing here.</p>'
     + (client ? '<p class="hint">Only the host can deal with the broker.</p>' : '<button class="btn" type="button" id="b-broker"' + (lot.n ? '' : ' disabled') + '>' + (lot.n ? 'Sell ' + lot.n + ' report' + (lot.n === 1 ? '' : 's') + ' for ' + money(lot.pay) : 'Nothing to sell') + '</button>');
 }
 function spyInitUi() {
   $('#war-act').addEventListener('click', e => { const b = e.target.closest('[data-com]'); if (b && WSEL) commission(WSEL, +b.dataset.com); });
   $('#war-broker').addEventListener('click', e => { if (e.target.closest('#b-broker')) brokerSell(); });
+  $('#war-wire').addEventListener('click', e => { if (e.target.closest('#b-wire')) wireBuy(); });
+}
+
+/* ---------- 0.21.0: the Orrin fleet, and the war wire ----------
+   Orrin traders call at any relay they pass and swap public news with it: control, battles, installations. That is
+   how the free ports hear of the war at all. On top of them, the Orrin keep fast correspondents' cutters that watch
+   the front and run straight home to Tarsis with anything that is happening. What they bring goes on the war wire.
+   Subscribers get the wire the moment a cutter docks. Everyone else gets it from the free port's exchange
+   BAL.wireDelay seconds later. Nothing is broadcast: a subscriber still only hears it within Tarsis. */
+let WIREH = null;
+const ORRIN_NAMES = { trader: ['Long Ledger', 'Quiet Margin', 'Fair Weight', 'Open Hand', 'Second Thought'], wire: ['Swift Rumour', 'Inkwell', 'Last Edition', 'Gadfly', 'Night Desk'] };
+function orrinFleet() {
+  WIREH = IH.get('WIRE') || ihMake('WIRE', { bloc: 'orrin', name: 'Orrin war wire', cap: 400 });
+  if (!RELAYS.tarsis) return;
+  for (const kind of ['trader', 'wire']) {
+    const want = kind === 'trader' ? BAL.traders : BAL.wire, have = AGENTS.filter(a => a.bloc === 'orrin' && a.kind === kind);
+    for (let i = have.length; i < want; i++) agMake({ kind, bloc: 'orrin', fac: 'orrin', name: ORRIN_NAMES[kind][i % ORRIN_NAMES[kind].length], home: 'tarsis', sys: 'tarsis' });
+  }
+}
+/* What the wire carries: public news, and the massing fleets its correspondents saw for themselves. */
+const WIRE_F = r => !!INTEL_PUBLIC[r.c] || (r.c === 'fleet' && !!r.d.st);
+const wireOn = () => !!(SAVE && (SAVE.wire || 0) > GC());
+/* The wire goes public at the free port once it is old enough. */
+function wireTick() {
+  if (!WIREH || !RELAYS.tarsis) return; const now = GC(), T = RELAYS.tarsis.h;
+  const f0 = WIREH.first || (WIREH.first = {});   // when the wire first heard of each subject: updates to old news go public at once
+  for (const e of WIREH.db.values()) { const s = e.r.s; if (f0[s] == null) f0[s] = e.rx; if (!e.pub && now - f0[s] >= BAL.wireDelay) { e.pub = true; ihTake(T, e, now); } }
+  for (const s in f0) if (now - f0[s] > 7200 && !WIREH.db.has(s)) delete f0[s];
+}
+/* Where a correspondent goes: a rumour of a massing fleet first, then wherever the war is likeliest to flare. */
+function wirePost(a) {
+  const now = GC();
+  for (const e of a.h.db.values()) if (e.r.c === 'fleet' && e.r.d.st && e.r.d.tgt && now - e.r.u < 400 && SYSTEMS[e.r.d.tgt] && e.r.d.tgt !== a.sys) return e.r.d.tgt;
+  const fronts = warFronts().filter(f => f.sys !== a.sys && !AGENTS.some(b => b !== a && b.kind === 'wire' && (b.dest === f.sys || b.sys === f.sys)));
+  let best = null, bs = -1e9; for (const f of fronts) { const sc = f.w * (0.5 + rand()) - 0.35 * hopsTo(a.sys, f.sys); if (sc > bs) { bs = sc; best = f.sys; } }
+  return best;
+}
+function wireBuy() {
+  if (NET.mode === 'client' || SAVE.credits < BAL.wireCost) return;
+  SAVE.credits -= BAL.wireCost; SAVE.wire = Math.max(SAVE.wire || 0, GC()) + 3600; store();
+  myIH().hist.push({ u: GC(), t: 'Paid ' + money(BAL.wireCost) + ' for an hour of the Orrin war wire.', k: 'spy', via: 'Tarsis Ring' });
+  intelDocked(CUR); if (tutOn() && SAVE.tut.kind === 'net' && TUT_NET[SAVE.tut.step].id === 'home') tutEnd(true); renderStation();
+}
+function wireHtml() {
+  const left = Math.max(0, (SAVE.wire || 0) - GC()), cut = AGENTS.filter(a => a.kind === 'wire' && a.state !== 'dead');
+  const where = cut.map(a => a.name + (a.state === 'travel' ? ' (under way)' : a.sys === 'tarsis' ? ' (in port)' : ' (watching ' + SYSTEMS[a.sys].name + ')')).join(', ');
+  return '<h2>The Orrin war wire</h2><p class="hint">' + (NET.mode === 'client' ? 'Orrin correspondents\' cutters watch the front and run home with anything that flares up.' : cut.length + ' correspondents\' cutters watch the front and run home with anything that flares up: ' + esc(where || 'none out') + '.') + ' Subscribers hear what they bring as soon as a cutter reaches Tarsis, here or anywhere in the system. Everyone else hears it ' + Math.round(BAL.wireDelay / 60) + ' minutes later from the free port\'s exchange.</p>'
+    + (NET.mode === 'client' ? '<p class="hint">The host pays for the wire. It covers every captain flying from this ring.</p>' : '<button class="btn" type="button" id="b-wire"' + (SAVE.credits < BAL.wireCost ? ' disabled' : '') + '>' + (left > 0 ? 'Paid for ' + Math.ceil(left / 60) + ' more min · add an hour, ' : 'Subscribe for an hour · ') + money(BAL.wireCost) + '</button><p class="hint">Time on the wire runs only while you are out flying: the war waits while you are docked.</p>');
+}
+
+/* ---------- Second sortie: the network (0.21.0) ----------
+   Seven steps that teach how news moves. See how old your map is, jump to the nearest relay of a power that tolerates
+   you, sync with it and watch the map change, tap it for what it will not share, and sell that at Tarsis.
+   Like the first sortie it can be skipped, ended or replayed, and it is solo play only. Nothing here is staged: the
+   relay, its news and the risk of being caught are the real ones. */
+const TUT_NET = [
+  { id: 'war', title: 'Your picture of the war', text: 'Open the <b>War</b> tab. The map shows only what has reached you, and each system says how old its news is. Nothing is broadcast: news rides on ships, so all of it is already out of date.', hi: ['[data-tab="war"]'] },
+  { id: 'launch', title: 'Undock', text: 'Press <b>Auto launch</b>.', hi: ['#b-launch'] },
+  { id: 'jump', title: 'Jump to a relay', text: 'The nearest relay that will talk to you is the <b>%RELAY%</b>, a %TYPE% of %POWER%. Press <kbd>M</kbd> for the <b>Jump plot</b>. Click <b>%SYS%</b>, then its relay station, then jump. A power\'s relays and network ships leave a captain in good standing alone.', hi: ['#b-map'] },
+  { id: 'sync', title: 'Sync with it', text: 'Close in on the relay station. %RANGE% The handshake is automatic: you hand over what you know, and it hands back what it will share. At Neutral standing that is public news only: who holds what, the battles, and the relays.', hi: [] },
+  { id: 'map', title: 'See the map change', text: 'Open the <b>Jump plot</b> (<kbd>M</kbd>) again. The systems the relay told you about now show fresher news, and the ages beside them have dropped.', hi: ['#b-map'] },
+  { id: 'tap', title: 'Listen in', text: 'Until you are Known (1,000 standing), the relay keeps its fleet sightings and patrol reports to itself. You can take them anyway. Press <kbd>5</kbd> for <b>Hold fire</b> and <kbd>Z</kbd> for <b>Silent</b>, select the relay, and press <b>Tap relay</b> in the Target window. Then stay within 80 km for 45 seconds. %ODDS% If they catch you, %POWER% will turn on you here.', hi: ['[data-roe="hold"]', '[data-emis="silent"]', '#b-tap'] },
+  { id: 'home', title: 'Sell it at Tarsis', text: 'Jump back to Tarsis and dock. In the <b>War</b> tab, the Orrin broker buys what you tapped. Beside him is the <b>war wire</b>: for ' + money(BAL.wireCost) + ' an hour, you hear of battles as soon as an Orrin correspondent brings them in.', hi: ['[data-tab="war"]', '#b-broker', '#b-wire'] },
+];
+const TL = () => SAVE.tut && SAVE.tut.kind === 'net' ? TUT_NET : TUT;
+/* The relay to learn on: the nearest one that will talk to a captain at their standing and still keeps something back. */
+function tutNetRelay() {
+  const from = (SITE && SITE.sys) || 'tarsis', ok = r => r.bloc !== 'orrin' && !r.dead && playerFriend(r.bloc) && plotCheck({ sys: r.sid, site: 'relay' }).ok;
+  const rs = Object.values(RELAYS).filter(ok).sort((a, b) => (playerTrust(a.bloc) - playerTrust(b.bloc)) || ((a.type !== 'local') - (b.type !== 'local')) || lyDist(from, a.sid) - lyDist(from, b.sid));
+  return rs[0] || null;
+}
+function tutNetFill(t) {
+  const r = SAVE.tut.sid && RELAYS[SAVE.tut.sid]; if (!r) return t.replace(/%[A-Z]+%/g, '');
+  const k = { local: 0.5, regional: 0.8, military: 1.3, strategic: 1.5 }[r.type], odds = 1 - Math.exp(-0.003 * k * TAP_TIME);
+  return t.replace(/%RELAY%/g, r.h.name).replace(/%TYPE%/g, RELAY_TYPES[r.type].name.toLowerCase()).replace(/%POWER%/g, BLOCS[r.bloc].name).replace(/%SYS%/g, SYSTEMS[r.sid].name)
+    .replace(/%RANGE%/g, RELAY_TYPES[r.type].range === 'site' ? 'A local relay only talks to ships at its own station, so stay at the relay.' : 'This relay covers the whole system.')
+    .replace(/%ODDS%/g, 'Tapping silently, a ' + RELAY_TYPES[r.type].name.toLowerCase() + ' catches you about ' + Math.max(1, Math.round(odds * 100)) + ' times in a hundred. Loud, it is far more.');
+}
+function tutNetTick() {
+  const st = TUT_NET[SAVE.tut.step], ph = G.phase, r = SAVE.tut.sid && RELAYS[SAVE.tut.sid];
+  if (ph === 'lost') { SAVE.tut.step = 1; tutNote = 'The Magpie was towed home. Launch again to carry on.'; store(); return; }
+  switch (st.id) {
+    case 'war': if (ph === 'docked' && TAB === 'war') tutNext('Every row says how old it is and who told you. Tarsis hears from Orrin traders.'); else if (ph === 'play') { SAVE.tut.step = 2; tutNote = ''; store(); } break;
+    case 'launch': if (ph === 'play') tutNext(); break;
+    case 'jump':
+      if (!r || r.dead || !playerFriend(r.bloc)) { const n = tutNetRelay(); SAVE.tut.sid = n ? n.sid : null; store(); if (!n) { tutNote = 'No relay in jump range will talk to you right now. Skip ahead, or try again later.'; break; } }
+      if (ph === 'play' && SITE.sys === SAVE.tut.sid) tutNext(SITE.id === 'relay' ? 'You are at the relay station.' : 'You are in the system. Plot a course to its relay station.');
+      break;
+    case 'sync': { const s = LOCAL && LOCAL.lastSync; if (s && s.sid === SAVE.tut.sid) tutNext(s.down ? s.down + ' report' + (s.down === 1 ? '' : 's') + ' came down, and you passed ' + s.up + ' up.' : 'Nothing new came down: the relay knew nothing Tarsis had not already told you. News moves slowly out here.'); break; }
+    case 'map': if (!$('#map').hidden) tutNext(); break;
+    case 'tap':
+      if (r && playerTrust(r.bloc)) { tutNext('This relay already shares everything with you, so there is nothing to tap.'); break; }
+      if (G.tapped && G.tapped.sid === SAVE.tut.sid) tutNext('A clean tap: everything the relay knew is in your picture now, marked unconfirmed. You could also plant a false report from the Target window.');
+      else if (r && G.provoked && G.provoked[r.bloc]) tutNext('They caught you. That power\'s ships here will fire on you now: jump out. You still copied nothing, but the lesson stands.');
+      break;
+    case 'home': break;   // finished by selling, buying the wire, or the Finish button
+  }
 }
 
 /* ---------- friends' pictures, kept by the host between sessions ---------- */
@@ -6327,7 +6460,8 @@ function renderStation() {
   $('#st-credits').textContent = money(SAVE.credits); $('#st-rating').textContent = TIERS[bestTier()] + ' tier'; $('#st-taken').textContent = SAVE.accepted.length + ' of 3';
   $('#st-con').textContent = rankOf('concord'); $('#st-dom').textContent = rankOf('dominion'); { const r = infamyRank(SAVE.infamy || 0), nx = INFAMY_RANKS[r + 1]; $('#st-inf').textContent = infamyName(r); $('#st-inf').title = Math.round(SAVE.infamy || 0) + ' infamy' + (nx ? ' · ' + nx[1] + ' at ' + nx[0] : ''); }
   for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-selected', String(b.dataset.tab === TAB));
-  { const tb = $('#st-tut'); tb.disabled = NET.mode !== 'solo'; tb.title = NET.mode !== 'solo' ? 'The tutorial runs in solo play' : 'A guided first mission against a practice target'; tb.textContent = SAVE.tut && (SAVE.tut.done || SAVE.tut.off) ? 'Replay the first sortie' : 'First sortie (tutorial)'; }
+  { const tb = $('#st-tut'); tb.disabled = NET.mode !== 'solo'; tb.title = NET.mode !== 'solo' ? 'The tutorial runs in solo play' : 'A guided first mission against a practice target'; tb.textContent = (SAVE.tutDone && SAVE.tutDone.first) || (SAVE.tut && (SAVE.tut.kind || 'first') === 'first' && (SAVE.tut.done || SAVE.tut.off)) ? 'Replay the first sortie' : 'First sortie (tutorial)';
+    const t2 = $('#st-tut2'); t2.disabled = NET.mode !== 'solo'; t2.title = NET.mode !== 'solo' ? 'The tutorial runs in solo play' : 'Relays, the out-of-date map, and tapping: a guided trip to the nearest relay'; t2.textContent = SAVE.tutDone && SAVE.tutDone.net ? 'Replay the second sortie' : 'Second sortie (relays)'; }
   for (const k of ['missions', 'factions', 'fitting', 'war']) $('#tab-' + k).hidden = k !== TAB;
   if (NET.mode !== 'client' && CUR && G && G.phase === 'docked') intelDocked(CUR);
   if (TAB === 'war') { const hh = myIH(); if (warVisit == null) { warVisit = hh.seenU || 0; hh.seenU = GC(); } warRender(); } else warVisit = null;
@@ -7107,6 +7241,8 @@ function wmInit() {
 
 /* ---------- the overview and navigation lists ---------- */
 let NAVT = -9;
+/* Leaving you alone is not the same as being on your side: traders, and a power's relays and network ships at Neutral. */
+const allyWord = s => s.trader || ((s.relay || s.netShip) && s.Fa && !(SAVE.standing[s.Fa.bloc] >= 1000)) ? 'Neutral' : 'Ally';
 function stanceOf(s) {
   if (s.status === 'dead') return 'wreck'; if (s.status === 'struck') return 'struck';
   if (peaceful(s)) return 'ally'; if (s.CL.static) return 'static';
@@ -7122,7 +7258,7 @@ function overviewHtml(list, tgt) {
     if (s.status === 'dead') { state = 'Wreck'; sk = 'warn'; } else if (s.status === 'struck') { state = 'Struck'; sk = 'ok'; }
     else if (!s.CL.static && tr.q === 0) state = Math.round(G.t - tr.seenAt) + 's ago';
     else if (kn && J && J !== 'offline' && !s.CL.static) { state = J === 'charging' ? 'Charging' : J === 'spooling' ? 'Spooling' : 'Jumping'; sk = 'bad'; }
-    else if (st === 'ally') { state = 'Ally'; sk = 'ok'; } else if (s.dampOn) { state = 'Field'; sk = 'field'; }
+    else if (st === 'ally') { state = allyWord(s); sk = 'ok'; } else if (s.dampOn) { state = 'Field'; sk = 'field'; }
     else if (s.cls === 'remnant') [state, sk] = remOverview(s);
     else state = s.CL.static ? (s.cls === 'pds' && !fn(s, 'WPN1') ? 'Silenced' : 'Charted') : pct(tr.q);
     const ag = !s.CL.static && s.status === 'active' && tr.q > 0 ? ageOf(s) : null;
@@ -7294,7 +7430,7 @@ function labels() {
       if (tr.q > 0) {
         const kn = known(s), txt = (kn ? s.name : 'Contact ' + s.tag) + ' · ' + km(d) + ' · ' + ls(d) + ' light · track ' + pct(tr.q) + (kn && J !== 'offline' ? ' · jump ' + J : '');
         if (sel) placeBox(s, s.model.g.visible ? s.model.g.position : tr.est, d, txt);
-        else { const el = tagEl(s.uid, 'plain'); const al = peaceful(s); el.dataset.k = al ? 'friend' : ''; place(el, tr.est, al && d > 400 ? '' : (kn ? s.name : 'Contact ' + s.tag) + (al ? ' · ally' : '') + ' · ' + km(d), false); }
+        else { const el = tagEl(s.uid, 'plain'); const al = peaceful(s); el.dataset.k = al ? 'friend' : ''; place(el, tr.est, al && d > 400 ? '' : (kn ? s.name : 'Contact ' + s.tag) + (al ? ' · ' + allyWord(s).toLowerCase() : '') + ' · ' + km(d), false); }
       } else if (tr.ever) { const el = tagEl(s.uid, 'plain'); el.dataset.k = 'ghost'; place(el, tr.est, 'Last known ' + (known(s) ? s.name : s.tag) + ' · ' + Math.round(G.t - tr.seenAt) + 's', sel); }
     }
     if (G.called && G.phase === 'play') { const s = NPCS.find(n => n.uid === G.called.uid); if (s && isLive(s) && s.mods[G.called.id] && (trOf(s).q > 0 || s.CL.static)) { const el = tagEl('reticle', 'reticle'); el.dataset.t = modName(s, G.called.id); place(el, s.model.g.visible ? modWorldOnModel(s, G.called.id) : modWorldEst(s, G.called.id), null, false); } }
@@ -7417,7 +7553,7 @@ function netSend(o) { if (NET.ws && NET.ws.readyState === 1) NET.ws.send(JSON.st
 function netTo(p, o) { o.to = p.id; netSend(o); }
 function netCmd(c, a) { netSend({ t: 'cmd', c, a: ser(a) }); return true; }
 const packSave = () => ({ name: LOCAL.name, followKm: SAVE.followKm || 0, shardHeat: SAVE.shardHeat || 0, infamy: SAVE.infamy || 0, fit: SAVE.fit, tmog: SAVE.tmog, accepted: SAVE.accepted, standing: SAVE.standing, peak: SAVE.peak, buffs: SAVE.buffs, done: SAVE.done });
-const VALK_VERSION = '0.20.1';
+const VALK_VERSION = '0.21.0';
 const NET_CID = (() => { try { let c = localStorage.getItem('valk-cid'); if (!c) { c = Math.random().toString(36).slice(2, 12) + Date.now().toString(36); localStorage.setItem('valk-cid', c); } return c; } catch (_) { return 'c' + Math.random().toString(36).slice(2, 12); } })();
 const NET_GRACE = () => (window.VALK_GRACE || 90);   // seconds the host holds a dropped captain's ship
 function netConnect() {
@@ -7656,7 +7792,7 @@ if ((navigator.maxTouchPoints || 0) > 0 && window.matchMedia && matchMedia('(poi
 WORLD = ROSTER.map(r => makeShip(r));
 warBoot();
 window.__spy = { PROJ, projStart, projApply, projPlan, leakSpawn, LEAKS, intelAct, spyTapTick, brokerLot, brokerSell, commission, commissionOpts, OFFLINE_P, intelPark, stageLive, agRetire, provoke };
-window.__intel = { RELAYS, AGENTS, IH, GC, ihOf, myIH, knowOf, intelStep, intelFF, agDie, relayKilled, stageTick, intelClass, intelSave, intelBoot, cmdKnows, get STAGE() { return STAGE; }, set STAGE(v) { STAGE = v; }, intelPlayer, intelDocked, ihObserve, ihSee, ihXfer, INT, relayUp, agRoute };
+window.__intel = { BAL, get WIREH() { return WIREH; }, wireOn, wireBuy, orrinFleet, playerTrust, RELAYS, AGENTS, IH, GC, ihOf, myIH, knowOf, intelStep, intelFF, agDie, relayKilled, stageTick, intelClass, intelSave, intelBoot, cmdKnows, get STAGE() { return STAGE; }, set STAGE(v) { STAGE = v; }, intelPlayer, intelDocked, ihObserve, ihSee, ihXfer, INT, relayUp, agRoute };
 window.__war = { WAR, warResult, warCatchUp, warPick, warFronts, garBuild, SYS_IDS, NEAR, FPS, fpStart, fpEnd, drawGalaxy, warPack, warApply, sysBloc, warSave, WAR_START, GAR };
 LOCAL = makePlayer(0, (() => { try { return localStorage.getItem('valk-name'); } catch (_) { return null; } })() || 'Captain ' + (100 + Math.floor(rand() * 900)), SAVE, true); setCtx(LOCAL);
 refreshUs(); newSortie(); G.phase = 'docked';
