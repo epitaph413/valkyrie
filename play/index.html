@@ -680,7 +680,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
       <div class="st-head"><div><p class="eyebrow">Help get it fixed · <span class="ver-tag"></span></p><h1 id="rep-title">Report a problem</h1></div><button class="btn" type="button" id="rep-close">Close<kbd>Esc</kbd></button></div>
       <label class="rep-f"><span>What went wrong? <em>needed</em></span><textarea id="rep-what" rows="4" maxlength="4000" placeholder="For example: my guns stopped firing after I jumped to Kessan Gap."></textarea></label>
       <label class="rep-f"><span>What were you doing just before? <em>optional</em></span><textarea id="rep-before" rows="2" maxlength="2000" placeholder="For example: following a frigate with Flank on, two friends in the game."></textarea></label>
-      <label class="rep-f"><span>Your name, or how to reach you <em>optional</em></span><input id="rep-who" maxlength="120" autocomplete="off"></label>
+      <label class="rep-f"><span>Your name, or an email for a reply <em>optional</em></span><input id="rep-who" maxlength="120" autocomplete="off"></label>
       <details class="rep-det"><summary>What gets sent: your words above plus the game's technical details</summary><pre id="rep-text"></pre></details>
       <details class="rep-det rep-priv"><summary>What is in a report, and where it goes</summary><div class="rep-privtxt"><p><b>Nothing is sent unless you press Send report.</b> Save and Copy keep it on your PC.</p><p><b>In a report:</b> what you type above; the game version and whether it runs in the app or a browser; the multiplayer state with captain names; where you are in the game, your ship and career numbers; frame rate; your graphics card's name, screen size and browser version; the last 30 comms messages; the game's own log of errors and warnings, including the end of the previous session; and in the app, the app's log of crashes.</p><p><b>Never in a report:</b> files from your PC, your saves, passwords, your PC's name, user name or address, or anything about other programs.</p><p><b>Where it goes:</b> to the developer's inbox through Formspree, a form service. Like any website, Formspree sees the internet address the report comes from. The game itself only holds the form's ID, never an email address.</p></div></details><label class="rep-chk"><input type="checkbox" id="rep-anon"> Leave captain names out (yours and other players')</label>
       <p class="hint" id="rep-nosend" hidden>This copy can't send reports by itself. Save it as a file, or copy it, and send it to whoever gave you the game.</p>
@@ -729,7 +729,7 @@ const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: 
    developer through a form service. Only that service knows where it goes: the game holds a form ID, never an
    address. Without a form ID or a connection, the player can save the report as a file or copy it instead. */
 const NET_PROTO = 10;   // bump when what host and clients send each other changes
-const REPORT_FORM = (window.VALK_REPORT_FORM || '').replace(/^__.*__$/, '');
+const REPORT_FORM = (window.VALK_REPORT_FORM || 'maeoazzg').replace(/^__.*__$/, '');
 const VLOG = { lines: [], errors: 0, t0: Date.now(), frames: [], lastNet: '' };
 const VALK_VERSION0 = (document.currentScript && (document.currentScript.textContent.match(new RegExp('const VALK_' + 'VERSION = .([0-9][^\x27]*).')) || [])[1]) || '?';
 let REP_APPLOG = '';
@@ -822,15 +822,18 @@ const repStatus = (t, kind) => { const s = $('#rep-status'); s.textContent = t; 
 async function sendReport() {
   if (!$('#rep-what').value.trim()) { repStatus('Say what went wrong first: a sentence is plenty.', 'bad'); $('#rep-what').focus(); return; }
   const text = reportText(), b = $('#rep-send'); $('#rep-text').textContent = text; b.disabled = true; repStatus('Sending…');
-  const payload = { _subject: 'Valkyrie ' + VALK_VERSION + ' problem report: ' + $('#rep-what').value.trim().slice(0, 70), name: $('#rep-who').value.trim() || 'anonymous', version: VALK_VERSION, message: text };
+  const who = $('#rep-who').value.trim(), mail = (who.match(/[^\s<>()@,;]+@[^\s<>()@,;]+\.[a-z]{2,}/i) || [])[0];
+  const payload = { _subject: 'Valkyrie ' + VALK_VERSION + ' problem report: ' + $('#rep-what').value.trim().slice(0, 70), name: who || 'anonymous', version: VALK_VERSION, message: text };
+  if (mail) payload.email = mail;   // Formspree makes this the reply-to address
   let r;
   try {
     if (window.valkApp && valkApp.report) r = await valkApp.report(REPORT_FORM, payload);
-    else { const res = await fetch('https://formspree.io/f/' + REPORT_FORM, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) }); r = { ok: res.ok, status: res.status }; }
+    else { const res = await fetch('https://formspree.io/f/' + REPORT_FORM, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) }); r = { ok: res.ok, status: res.status, body: await res.text().catch(() => '') }; }
   } catch (e) { r = { ok: false, error: e.message }; }
   b.disabled = false; vlog('info', 'report send: ' + (r.ok ? 'ok' : 'failed ' + (r.status || r.error)));
   if (r.ok) { repStatus('Sent. Thank you, that really helps.', 'ok'); $('#rep-what').value = ''; $('#rep-before').value = ''; setTimeout(() => { if (!$('#report').hidden) closeReport(); }, 1800); }
-  else repStatus('Couldn\'t send it' + (r.status === 429 ? ': too many reports this month' : r.status ? ' (error ' + r.status + ')' : ': no connection') + '. Save it as a file instead and send it to whoever gave you the game.', 'bad');
+  else { let why = ''; try { const j = JSON.parse(r.body || '{}'); why = (j.errors && j.errors[0] && j.errors[0].message) || j.error || ''; } catch (_) {}
+    repStatus('Couldn\'t send it' + (r.status === 429 ? ': too many reports this month' : why ? ': ' + why : r.status ? ' (error ' + r.status + ')' : ': no connection') + '. Save it as a file instead and send it to whoever gave you the game.', 'bad'); }
 }
 async function saveReport() {
   const text = reportText(), name = 'Valkyrie report ' + new Date().toISOString().slice(0, 16).replace('T', ' ').replace(':', '') + '.txt';
@@ -851,6 +854,7 @@ function crashPrompt() {
 
 /* ---------- What's new: shown once after an update, and any time from the station ---------- */
 const NEWS = [
+  { v: '0.20.1', title: 'Problem reports are live', items: ['<b>Report a problem</b> now sends straight to the developer. Put an email in the name box if you would like a reply.'] },
   { v: '0.20.0', title: 'Builders, spies, and fleets you can see coming', items: [
     'Relays are <b>built</b>: each power sends construction ships to rebuild destroyed relays, upgrade front-line relays to military, restore lost regional hubs, and raise listening posts at the Elysian Gate. Kill the ship and the project fails. Trusted captains can pay for one at the War tab.',
     '<b>Spying</b>: Myrr guild brokers sell Concord reports to the Dominion and Dustborn cells pass Dominion reports to the Concord, each carried by a blockade runner you can intercept. You can <b>tap</b> a hostile relay, <b>plant</b> a false report in it to steer where that side attacks, and sell what you learn to the <b>Orrin broker</b> at Tarsis.',
@@ -7413,7 +7417,7 @@ function netSend(o) { if (NET.ws && NET.ws.readyState === 1) NET.ws.send(JSON.st
 function netTo(p, o) { o.to = p.id; netSend(o); }
 function netCmd(c, a) { netSend({ t: 'cmd', c, a: ser(a) }); return true; }
 const packSave = () => ({ name: LOCAL.name, followKm: SAVE.followKm || 0, shardHeat: SAVE.shardHeat || 0, infamy: SAVE.infamy || 0, fit: SAVE.fit, tmog: SAVE.tmog, accepted: SAVE.accepted, standing: SAVE.standing, peak: SAVE.peak, buffs: SAVE.buffs, done: SAVE.done });
-const VALK_VERSION = '0.20.0';
+const VALK_VERSION = '0.20.1';
 const NET_CID = (() => { try { let c = localStorage.getItem('valk-cid'); if (!c) { c = Math.random().toString(36).slice(2, 12) + Date.now().toString(36); localStorage.setItem('valk-cid', c); } return c; } catch (_) { return 'c' + Math.random().toString(36).slice(2, 12); } })();
 const NET_GRACE = () => (window.VALK_GRACE || 90);   // seconds the host holds a dropped captain's ship
 function netConnect() {

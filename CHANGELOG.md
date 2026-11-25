@@ -2,6 +2,14 @@
 
 What changed in each version of Valkyrie, newest first. Dates are Brisbane time.
 
+## 0.20.1 (2026-11-25): problem reports are live
+
+- **Report a problem** (in Orders and at the station) now sends the report straight to the developer through the
+  game's Formspree form. Save as a file and Copy still work, and nothing is sent unless you press Send report.
+- If you put an email address in the name box, it becomes the reply-to address, so the developer can write back.
+- If a report can't be sent, the dialog says why (Formspree's own message, or no connection).
+- Network protocol 10, unchanged: 0.20.0 and 0.20.1 can play together.
+
 ## 0.20.0 (2026-11-24): builders, spies, and fleets you can see coming
 
 - **Relays are built.** Every ten minutes or so each power's high command picks one project:
