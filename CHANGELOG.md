@@ -2,6 +2,39 @@
 
 What changed in each version of Valkyrie, newest first. Dates are Brisbane time.
 
+## 0.22.0 (2026-11-27): Old Void, New Threats
+
+- **A bigger galaxy:** 72 systems, up from 32.
+  - Every race has two or three more systems. The Concord grows west and north, and the Dominion east and north.
+  - Four new neutral worlds: Farhaven (Outer Collective), Lastlight (independent), Ironvale (Free Companies) and Sable (the Unaligned).
+  - 58 relays now, and the front is much longer.
+  - Every system can still be reached on a starter drive. All the old systems keep their places, so saved wars carry over.
+- **The Old Void.** A dark about sixteen light years across in the south, where nobody can hold ground. Its skies have almost no stars.
+  - Eight **Architect wardens** stand round it, each in its own exclusion zone, at First Fence, Pale Fence, Quietus, Sentinel Deep, Last Ward, Hush, Graveline and Lockstone. Together they are the cage.
+  - Inside are five deep systems: Umbra, Stillwater, Nadir, Gloam, and the Hollow, where something the size of a moon is breathing in the dark.
+- **Void fauna**, hostile to everyone, quiet, and they never run or surrender:
+  - **motes**, hunting in shoals
+  - **stalkers**, long eels with mandibles and spitting glands
+  - **Maws**, leviathans with a gravity frill that holds you in place, which shed **brood**
+
+  They live in every exclusion zone and deep system, and come back 15 minutes after you clear them. Inside the cage your sensors work at 70%. All of them are new Blender models: mote, stalker, Maw, brood and the warden pylon.
+- **Breaches.** Every battle the war fights drains the wardens, because the waking Elysian Gate draws its power down the same network.
+  - A weakened warden lets fauna **breach** into the inhabited system next door, where they attack its holding fleet. This happens about every 18 minutes of play, sooner as the cage weakens.
+  - If the fauna win, the hold there drops 18–32% and the warden loses 4. No one gains ground, but the next attack finds the system weaker.
+  - If the fleet wins, the warden gains 6.
+  - Powers keep heavier fleets by a failing warden, and a warden below 40 flickers back very slowly.
+  - Measured over 12-hour runs: fauna win about a third of breaches, and the cage drifts down slowly without collapsing.
+- **Rewards.** The Orrin pay ¢1,000 to any captain present when a breach is shut. They also pay a bounty on every fauna kill: ¢150 a mote, ¢600 a stalker, ¢4,000 a Maw. A kill in an exclusion zone lets that warden settle.
+- **Where to see it:**
+  - Breaches are public news, carried like any other report. The wire and the Orrin traders bring them to Tarsis.
+  - The map shows the dark, the cage, each warden's percentage, and breaches (BREACH, SHUT or OVERRUN).
+  - The War tab has a **cage** panel.
+- **War balance on the bigger map** (12-hour runs):
+  - a battle every ~14 minutes, and defenders win ~60%;
+  - a system changes hands every 40–60 minutes of play.
+  - Holds now recover by themselves only up to 60%.
+- Multiplayer protocol 11: everyone needs 0.22.0.
+
 ## 0.21.0 (2026-11-25): a second sortie, and a war that moves
 
 - **Second sortie (relays)**, a new tutorial at the station. It takes you to the nearest relay that will talk to you:
