@@ -2,6 +2,34 @@
 
 What changed in each version of Valkyrie, newest first. Dates are Brisbane time.
 
+## 0.23.0 (2026-11-27): The Tarsis board
+
+- **The mission board rotates.** Every two hours of real time the Orrin post a fresh board at Tarsis, with a countdown to the next one. Every captain sees the same board, so friends in a hosted game can hunt the same target.
+- **Seven contracts on each board:**
+  - a **hunt** in each of five tiers, I to V. Tier I targets are 5th-tier ships within 9 light years; tier V targets are 2nd-tier or Apex ships anywhere. Each hunt is a named ship of a rotating race and class, at a real site in its home space, working for the power opposed to whoever posted it.
+  - a **cull** in the Old Void: kill 4–6 fauna in one exclusion zone or deep system. Progress carries over between sorties.
+  - an **operation**, alternating between two kinds: wreck 3–5 enemy ships at flash points, or make a clean tap of one of the enemy's relays (a military or strategic one, for more pay).
+- **Conditions** roll on each hunt, making it harder and paying more:
+  - **Wingmates:** one or two escorts fly with her.
+  - **Up-armoured:** half as much structure again.
+  - **Runs silent:** quiet and hard to find.
+  - **Skittish:** she breaks off and jumps early.
+  - **Swift bonus:** a quarter more if you finish within 20 minutes of launching.
+
+  Capturing a hunt target pays half as much again, as before.
+- **Rewards rotate too.** On top of the pay and standing, each contract carries one of:
+  - a salvaged part from the target's own race
+  - a Sanctuary seal or a Writ of plunder for your next sortie
+  - two hours of the Orrin war wire
+  - a cash bonus
+- **Elite bounty of the week.** It runs Monday to Monday (UTC): an Apex or 2nd-tier destroyer or carrier with wingmates and armour, and the biggest purse on the board.
+- **Taking contracts:**
+  - A contract you have taken is honoured until you finish or drop it, even after the board moves on. It is marked "from an earlier board".
+  - Three contracts at a time, standing orders included.
+  - Hunt targets show on the map like any other contract, and the launch briefing lists board contracts aboard.
+- **Standing orders:** the old hand-placed contracts stay below the board, unchanged.
+- **Multiplayer:** protocol 12, so everyone needs 0.23.0.
+
 ## 0.22.0 (2026-11-27): Old Void, New Threats
 
 - **A bigger galaxy:** 72 systems, up from 32.

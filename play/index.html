@@ -459,6 +459,7 @@ details.how > div{display:flex;flex-direction:column;gap:12px;padding-top:12px}
 .war-side h2 small,.intel-wrap h2 small{font:500 11px var(--mono);color:var(--faint);letter-spacing:.06em;margin-left:6px;text-transform:none}.intel-wrap{margin-top:18px}.intel-f{display:inline-flex;gap:4px;flex-wrap:wrap}.intel-f .chip{font:600 11px var(--mono);padding:3px 8px;border:1px solid var(--line-soft);background:transparent;color:var(--dim);cursor:pointer}.intel-f .chip.on{border-color:var(--amber);color:var(--text);background:rgba(255,155,47,.1)}.intel-f .chip b{color:var(--faint);margin-left:3px}.intel-scroll{max-height:320px;overflow:auto;border:1px solid var(--line-soft)}.intel-t{width:100%;border-collapse:collapse;font-size:12.5px}.intel-t th{position:sticky;top:0;background:#120d09;font:600 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line-soft)}.intel-t td{padding:5px 8px;border-bottom:1px solid rgba(255,155,47,.06);vertical-align:top}.intel-t tr[data-cl=historical] td{opacity:.55}.intel-t tr[data-cl=outdated] td{opacity:.78}.ic{font:700 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px solid currentColor;white-space:nowrap}.ic[data-cl=observed]{color:#5fd6ff}.ic[data-cl=recent]{color:var(--ok)}.ic[data-cl=outdated]{color:var(--warn)}.ic[data-cl=historical]{color:var(--faint)}.ic[data-cl=unconfirmed]{color:#c58cff;border-style:dashed}.intel-net{display:grid;grid-template-columns:1fr 1fr;gap:16px}.intel-net ul{list-style:none;margin:0;padding:0;columns:2;column-gap:14px}.intel-net li{font-size:12.5px;padding:2px 0;break-inside:avoid}.intel-net li small{color:var(--faint);font-family:var(--mono)}.intel-net .rt{display:inline-block;width:16px;height:16px;line-height:16px;text-align:center;font:700 10px var(--mono);background:var(--c);color:#140e08;margin-right:6px}@media (max-width:900px){.intel-net{grid-template-columns:1fr}.intel-net ul{columns:1}}
 .t-spy{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:6px 0;padding:6px 8px;border:1px dashed rgba(197,140,255,.45);background:rgba(197,140,255,.05)}#t-tap{font:500 11.5px var(--mono);color:#c58cff}.t-plant{display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%;font-size:12px}.t-plant select{background:#120d09;color:var(--text);border:1px solid var(--line-soft);font:500 12px var(--mono);padding:2px 4px}.war-act{margin-top:8px}.war-act h3{font:700 15px var(--display);letter-spacing:.08em;text-transform:uppercase;margin:6px 0}.war-act .btn{display:block;margin:0 0 6px;text-align:left}.war-broker{margin:10px 0;padding-top:8px;border-top:1px solid var(--line-soft)}
 .cage{list-style:none;padding:0;margin:10px 0}.cage li{display:grid;grid-template-columns:9em 1fr 3.2em 6.5em;gap:8px;align-items:center;font-size:13px;margin:3px 0}.cage-bar{height:6px;background:rgba(255,255,255,.08);display:block}.cage-bar i{display:block;height:100%}.cage small{opacity:.7}
+.bb-band{display:inline-block;min-width:2.4em;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:1px 5px;border:1px solid var(--c);color:var(--c);margin-right:6px;vertical-align:1px}.bb-mods{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.bb-mod{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;background:rgba(255,255,255,.06);border:1px solid var(--line-soft);color:var(--ink);cursor:help}.m-group > h3.bb-elite-h{margin-top:14px}.bounty[data-k="done"]{opacity:.5}.bb-std > h3{margin-top:10px}
 </style>
 
 <div id="app">
@@ -730,7 +731,7 @@ const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: 
    multiplayer state and the PC's graphics details, shows the player exactly what will be sent, and sends it to the
    developer through a form service. Only that service knows where it goes: the game holds a form ID, never an
    address. Without a form ID or a connection, the player can save the report as a file or copy it instead. */
-const NET_PROTO = 11;   // bump when what host and clients send each other changes
+const NET_PROTO = 12;   // bump when what host and clients send each other changes
 const REPORT_FORM = (window.VALK_REPORT_FORM || 'maeoazzg').replace(/^__.*__$/, '');
 const VLOG = { lines: [], errors: 0, t0: Date.now(), frames: [], lastNet: '' };
 const VALK_VERSION0 = (document.currentScript && (document.currentScript.textContent.match(new RegExp('const VALK_' + 'VERSION = .([0-9][^\x27]*).')) || [])[1]) || '?';
@@ -856,6 +857,7 @@ function crashPrompt() {
 
 /* ---------- What's new: shown once after an update, and any time from the station ---------- */
 const NEWS = [
+  { v: '0.23.0', title: 'The Tarsis board', items: ['<b>The mission board rotates.</b> Every two hours of real time the Orrin post a fresh board at Tarsis: new targets, new places, new conditions and new rewards. A countdown shows when the next one goes up.', 'Each board has a <b>hunt in each of five tiers</b>, I to V, from close-in 5th-tier ships to Apex ones far out, plus a <b>cull</b> in the Old Void and an <b>operation</b> for one of the powers: wreck their enemies at flash points, or tap one of the enemy\'s relays.', 'Contracts roll <b>conditions</b> that make them harder and pay more: wingmates, up-armoured, runs silent, skittish, and a swift bonus for finishing within 20 minutes of launching. Capture still pays half as much again.', '<b>Rewards rotate too</b>: a salvaged part from the target\'s own race, a seal or a writ for your next sortie, Orrin war-wire time or a cash bonus, on top of the pay and standing.', 'An <b>elite bounty</b> runs for a week at a time, Monday to Monday: an Apex ship with escorts and armour, and the biggest purse on the board.', 'Every captain sees the same board, so friends in a hosted game can hunt the same target. A contract you have taken is honoured until you finish or drop it, even after the board moves on. Three contracts at a time, standing orders included.', 'The old contracts stay as <b>standing orders</b>.', 'Multiplayer protocol 12: everyone needs 0.23.0.'] },
   { v: '0.22.0', title: 'Old Void, New Threats', items: ['<b>The galaxy is bigger</b>: 72 systems, up from 32. Every race has more space, there are four new neutral worlds, and the front is longer.', '<b>The Old Void</b>: a dark sixteen light years across in the south, where nobody can hold ground. Eight Architect <b>wardens</b> stand round it, each in its own exclusion zone. Together they are the cage.', '<b>Void fauna</b> live inside it and hunt anything that comes in. Motes hunt in shoals, stalkers are long eels with mandibles, and a Maw is a leviathan that sheds brood. They are quiet, they never run or surrender, and inside the cage your sensors see late and faint.', '<b>The cage is failing.</b> Every battle the war fights drains the wardens. When one weakens, fauna <b>breach</b> into the inhabited system next door and attack its holding fleet. Lose there, and the hold drops. Nobody gains ground from it, but the next attack finds the system weaker.', 'Help shut a breach and the Orrin pay ¢1,000. They also pay a bounty on every fauna kill, and kills in an exclusion zone let its warden settle. The War tab shows the cage, and the map shows breaches as news of them reaches you.', 'Something very large sleeps at the Hollow, in the middle of the dark.', 'Multiplayer protocol 11: everyone needs 0.22.0.'] },
   { v: '0.21.0', title: 'A second sortie, and a war that moves', items: ['<b>Second sortie (relays)</b> at the station: jump to the nearest relay, sync with it, watch your map catch up, tap it, and sell what you took.', 'Relays and network ships leave a captain in good standing alone. At Neutral they share public news only; at Known (1,000) they share everything. Below that, you can tap them.', '<b>The Orrin war wire</b> (War tab, ¢200 an hour): five correspondents\' cutters watch the front and race home to Tarsis. Subscribers typically hear of a battle within about six minutes of it starting, sometimes before it starts, while its fleets are still massing. Everyone else hears ten minutes after them.', 'Orrin traders now swap public news with every relay they pass, so Tarsis hears of every battle. There are four of them now.', 'The front moves: a system you lose ground on stays weak for hours, and attackers go for the weak points their reports tell them about. Expect a system to change hands about once an hour of play.', 'The Orrin broker pays for real intelligence (fleets, network ships, holding fleets, Remnants), not for public news.'] },
   { v: '0.20.1', title: 'Problem reports are live', items: ['<b>Report a problem</b> now sends straight to the developer. Put an email in the name box if you would like a reply.'] },
@@ -2983,7 +2985,7 @@ const partFrom = p => FACTIONS[p.fac] ? FACTIONS[p.fac].name : 'Orrin';
 const SAVE_KEY = 'valkyrie-drift-v4';
 const human = type => ({ type, tier: 0, cond: 100, fac: 'orrin' });
 const freshSave = () => ({ tmog: {}, looks: {}, credits: 1500, fit: { bridge: human('bridge'), rail: human('rail'), maser: human('maser'), msl: null, pd: null, sensors: human('sensors'), drive: human('drive'), jump: human('jump'), damp: null, hull: human('hull'), stealth: null, hold: human('hold') },
-  stores: [], done: {}, accepted: [], hold: [], seen: false, standing: { concord: 0, dominion: 0 }, peak: { concord: 0, dominion: 0 }, buffs: {}, sound: true });
+  stores: [], done: {}, accepted: [], bb: { taken: [], done: {}, prog: {} }, hold: [], seen: false, standing: { concord: 0, dominion: 0 }, peak: { concord: 0, dominion: 0 }, buffs: {}, sound: true });
 let SAVE = freshSave();
 try { const s = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); if (s && s.fit) SAVE = Object.assign(freshSave(), s, { fit: Object.assign(freshSave().fit, s.fit), standing: Object.assign({ concord: 0, dominion: 0 }, s.standing) }); } catch (_) {}
 /* Every part you have ever held unlocks its look for that slot at the shipwright. */
@@ -3474,7 +3476,7 @@ function makeShip(o) {
 }
 function freshShip(s) {
   buildMods(s);
-  s.tier = s.isUs ? OUR.hullTier() : (s.Fa.t || 0); s.maxStruct = s.isUs ? OUR.hull() : Math.round(s.CL.struct * DM(s.tier)); s.struct = s.maxStruct; s.status = 'active'; s.placed = false; s.lastFire = -99; s.resolve = 100; s.breach = 0;
+  s.tier = s.isUs ? OUR.hullTier() : (s.Fa.t || 0); s.maxStruct = s.isUs ? OUR.hull() : Math.round(s.CL.struct * DM(s.tier)); if (s.bbArm) s.maxStruct = Math.round(s.maxStruct * s.bbArm); s.struct = s.maxStruct; s.status = 'active'; s.placed = false; s.lastFire = -99; s.resolve = 100; s.breach = 0;
   s.state = s.CL.static ? 'static' : 'patrol'; s.sweepT = 2 + rand() * 3; s.pingT = 6; s.cd = { WPN1: 1.5 + rand() * 2, WPN2: 2 + rand() * 2, WPN3: 2.5 + rand() * 2, WPN4: 3 + rand() * 2 }; s.mslCd = 4; s.msl = s.def && s.def.msl ? s.def.msl.ammo : 0;
   s.jump = { state: 'offline', charge: 0, spool: 0, ready: 0, said: '', stalled: false }; s.orbit = rand() < 0.5 ? 1 : -1; s.searchTo = null; s.craftOut = 0; s.craftLeft = s.def && s.def.hangar ? s.def.hangar.total : 0; s.hangarCd = 6;
   s.hopT = 60 + rand() * 60; s.dampOn = false; s.wake = null; s.strippedAll = false; s.hullStripped = false; s.skinStripped = false; s.hullCond = null;
@@ -4047,9 +4049,9 @@ function strike(s) {
   claim(s, 'captured');
 }
 function claim(s, how) {
-  if (s.Fa && s.Fa.bloc === 'void') { voidKill(s); return; }
+  if (s.Fa && s.Fa.bloc === 'void') { voidKill(s); bbClaim(s, how); return; }
   if (s.fp && !s.usHit || s.tut) return;   // the tutorial's deserter is on nobody's books
-  infamyGain(s, how);
+  infamyGain(s, how); bbClaim(s, how);
   const c = CONTRACTS.find(k => k.uid === s.uid), t = s.tier || 0, B = s.Fa.bloc;
   if (c && SAVE.accepted.includes(c.id) && !G.claims.some(k => k.id === c.id)) { G.claims.push({ id: c.id, how }); say('ops', 'The ' + BLOCS[c.by].short + ' contract on the ' + s.name + ' is satisfied: ' + (how === 'captured' ? 'full bounty' : 'kill bounty') + ' when we dock.', 'ok'); }
   if (CLASSES[s.cls].bounty && !G.standing.some(k => k.uid === s.uid)) G.standing.push({ uid: s.uid, name: s.name, how, pay: Math.round(CLASSES[s.cls].bounty * [0.6, 1, 1.7, 2.8, 4.5][t] * (how === 'captured' ? 1 : 0.5) / 50) * 50 });
@@ -5261,7 +5263,7 @@ function spyTapTick(p, dt) {
       return;
     }
     if (T.t >= T.need) {
-      G.tap = null; const h = ihOf(CUR), got = ihXfer(R.h, h, null, false); G.tapped = { sid: T.sid, used: false };
+      G.tap = null; const h = ihOf(CUR), got = ihXfer(R.h, h, null, false); G.tapped = { sid: T.sid, used: false }; bbTapped(R);
       h.hist.push({ u: GC(), t: 'You tapped the ' + R.h.name + ': ' + got.length + ' report' + (got.length === 1 ? '' : 's') + ' of theirs.', k: 'spy', sys: T.sid, via: 'you' });
       addInfamy(2);
       say('ops', 'Tap complete: ' + got.length + ' reports out of the ' + R.h.name + ', and they never knew. We could plant something of our own in it before we go (Target window).', 'ok');
@@ -5631,6 +5633,172 @@ function cageHtml() {
   const live = VOID.list.filter(b => b.phase === 'battle').map(b => SYSTEMS[b.sys].name);
   return '<h2>The cage</h2><p class="hint">Eight Architect wardens hold the Old Void shut. Every battle the war fights drains them a little, and when a warden weakens, what lives in the dark breaks out into the system next door. Breaches shut by the holding fleet, and fauna killed in the exclusion zones, let a warden settle. The Orrin pay a bounty on every one.' + (live.length ? ' <b>Breach under way: ' + esc(live.join(', ')) + '.</b>' : '') + '</p><ul class="cage">' + rows + '</ul><p class="hint">Average ' + Math.round(cageAvg()) + '%. Measured by the Orrin listening post at Driftmark.</p>';
 }
+
+/* ---------- 0.23.0: the Tarsis board. Contracts that rotate ----------
+   The Orrin post a fresh board at Tarsis every two hours of real time, the same board for everyone (each board is
+   worked out from the clock alone, so a host and their friends always see the same one). Seven contracts each time:
+   a hunt in each of five tiers (I to V, 5th-tier targets up to apex), a cull in the Old Void, and an operation for
+   one of the powers (wreck their enemies at flash points, or tap one of the enemy's relays). Each comes with rolled
+   conditions that make it harder and pay more, and a reward of its own: a part, a consumable or Orrin favours.
+   A weekly elite bounty runs Monday to Monday (UTC). A contract you have taken is honoured until you finish or drop
+   it, even after the board moves on. The old hand-placed contracts stay as standing orders. */
+const BB_PERIOD = 2 * 3600 * 1000, BB_WEEK = 7 * 86400 * 1000, BB_WEEK0 = 4 * 86400 * 1000;   // the Unix epoch was a Thursday
+const bbWin = (t = Date.now()) => Math.floor(t / BB_PERIOD);
+const bbWeek = (t = Date.now()) => Math.floor((t - BB_WEEK0) / BB_WEEK);
+const BB_BANDS = [
+  { n: 'I', t: [0], ly: 9, col: '#9fd7f0' }, { n: 'II', t: [0, 1], ly: 14, col: '#7fe0a8' }, { n: 'III', t: [1, 2], ly: 20, col: '#f2b84b' },
+  { n: 'IV', t: [2, 3], ly: 28, col: '#ff8552' }, { n: 'V', t: [3, 4], ly: 99, col: '#ff4d6d' }, { n: 'Elite', t: [4], ly: 99, col: '#c8b8ff' } ];
+const BB_TIERPAY = [0.9, 1.75, 2.9, 4.3, 15.5];   // ×CLASSES bounty for a kill: about a standing order's capture rate. Capture pays half again
+const BB_MODS = {
+  pack: { name: 'Wingmates', pay: 0.35, desc: 'one or two escorts of her own race fly with her' },
+  armoured: { name: 'Up-armoured', pay: 0.3, desc: 'half as much structure again' },
+  silent: { name: 'Runs silent', pay: 0.25, desc: 'quiet and hard to find' },
+  skittish: { name: 'Skittish', pay: 0.2, desc: 'breaks off and jumps early: damp her or lose her' },
+  swift: { name: 'Swift bonus', pay: 0, desc: 'a quarter more if done within 20 minutes of launching' },
+};
+const BB_OF_RACE = (B, t) => Object.keys(FACTIONS).find(f => FACTIONS[f].bloc === B && FACTIONS[f].t === t);
+const bbSites = sid => SYSTEMS[sid].sites.filter(x => (x.kind === 'field' || x.kind === 'empty') && !x.relay && !['post', 'warden', 'heart', 'line', 'ring'].includes(x.id));
+const BB_CACHE = new Map();
+function bbMake(win) {
+  if (BB_CACHE.has('w' + win)) return BB_CACHE.get('w' + win);
+  const r = mulberry32(90001 + win * 7919), pick = a => a[Math.floor(r() * a.length)], used = new Set(), out = [];
+  for (let k = 0; k < 5; k++) out.push(bbHunt('bb' + win + '-' + k, BB_BANDS[k], r, pick, used, win));
+  out.push(bbCull('bb' + win + '-5', r, pick, win));
+  out.push(win % 2 ? bbTap('bb' + win + '-6', r, pick, win) : bbWar('bb' + win + '-6', r, pick, win));
+  BB_CACHE.set('w' + win, out); return out;
+}
+function bbElite(week) {
+  if (BB_CACHE.has('e' + week)) return BB_CACHE.get('e' + week);
+  const r = mulberry32(51001 + week * 104729), pick = a => a[Math.floor(r() * a.length)];
+  const b = bbHunt('el' + week, BB_BANDS[5], r, pick, new Set(), null, true); BB_CACHE.set('e' + week, b); return b;
+}
+function bbGet(id) {
+  if (id.startsWith('el')) { const b = bbElite(+id.slice(2)); return b && b.id === id ? b : null; }
+  const m = /^bb(\d+)-(\d+)$/.exec(id); if (!m) return null; return bbMake(+m[1])[+m[2]] || null;
+}
+function bbHunt(id, band, r, pick, used, win, elite) {
+  const t = pick(band.t), by = r() < 0.5 ? 'concord' : 'dominion', fac = BB_OF_RACE(OTHER_BLOC[by], t);
+  const homes = SYS_IDS.filter(s => SYSTEMS[s].owner0 === fac && bbSites(s).length);
+  const near = homes.filter(s => lyDist('tarsis', s) <= band.ly), sys = pick(near.length ? near : homes), site = pick(bbSites(sys)).id;
+  const cls = elite ? pick(t === 4 ? ['destroyer', 'carrier'] : ['destroyer']) : t === 4 ? pick(['picket', 'frigate', 'frigate', 'destroyer']) : pick(['picket', 'frigate', 'frigate', 'destroyer', 'carrier']);
+  const P = FP_NAMES[fac] || [['Ship'], ['']]; let name = '';
+  for (let i = 0; i < 12 && (!name || used.has(name)); i++) { const a = pick(P[0]), b2 = pick(P[1]); name = fac === 'vashkar' ? a + b2 : a + ' ' + b2; } used.add(name);
+  const mods = []; const pool = ['pack', 'armoured', 'silent', 'skittish', 'swift'];
+  if (elite) mods.push('pack', 'armoured', pick(['silent', 'skittish'])); else { const n = band.n === 'I' ? (r() < 0.5 ? 0 : 1) : 1 + (r() < 0.45 ? 1 : 0); while (mods.length < n) { const m = pick(pool); if (!mods.includes(m)) mods.push(m); } }
+  const esc = mods.includes('pack') ? (r() < 0.5 ? ['picket'] : ['picket', 'frigate']) : [];
+  const mult = mods.reduce((a, m) => a + BB_MODS[m].pay, 1) * (elite ? 1.1 : (0.9 + r() * 0.25) * (1 + 0.12 * BB_BANDS.indexOf(band)));
+  const pay = Math.round(CLASSES[cls].bounty * BB_TIERPAY[t] * mult / 50) * 50;
+  return { id, win, kind: 'hunt', band: band.n, col: band.col, by, t, mods, pay, rep: Math.round(500 * (t + 1) * (elite ? 2 : 1)), swift: mods.includes('swift'),
+    tgt: { uid: 'bbt-' + id, name, fac, cls, sys, site, esc }, item: bbItem(r, pick, t, fac, elite),
+    title: (elite ? 'Elite bounty: ' : '') + name,
+    desc: (by === 'concord' ? 'The Concord' : 'The Dominion') + ' want the ' + FACTIONS[fac].name + ' ' + CLASSES[cls].name.toLowerCase() + ' ' + name + ' dead or brought in, last seen at ' + siteOf(sys, site).name + ' in ' + SYSTEMS[sys].name + '. Captured pays half as much again.' };
+}
+function bbCull(id, r, pick, win) {
+  const sys = pick(SYS_IDS.filter(s => VOID_KIND(s))), n = 4 + Math.floor(r() * 3), deep = VOID_KIND(sys) === 'deep';
+  return { id, win, kind: 'cull', band: deep ? 'IV' : 'III', col: deep ? '#ff8552' : '#f2b84b', by: 'orrin', sys, n, mods: [], pay: Math.round((3000 + 900 * n) * (deep ? 1.6 : 1) / 50) * 50, rep: 0,
+    item: r() < 0.5 ? { kind: 'wire', h: 2, text: 'Two hours of the Orrin war wire' } : { kind: 'credits', amt: 1500 + 500 * Math.floor(r() * 4), text: 'An Orrin bonus' },
+    title: 'Cull in ' + SYSTEMS[sys].name, desc: 'The Orrin want the shoals at ' + SYSTEMS[sys].name + ' thinned: kill ' + n + ' void fauna there (motes, stalkers or a Maw; brood do not count). ' + (deep ? 'Deep inside the cage: sensors see late, and the shoals are bigger.' : 'Every kill here settles the warden a little, too.') };
+}
+function bbWar(id, r, pick, win) {
+  const by = r() < 0.5 ? 'concord' : 'dominion', n = 3 + Math.floor(r() * 3);
+  return { id, win, kind: 'war', band: 'III', col: '#f2b84b', by, bloc: OTHER_BLOC[by], n, mods: [], pay: Math.round(2600 * n / 50) * 50, rep: 350 * n,
+    item: bbItem(r, pick, 2, BB_OF_RACE(by, 1 + Math.floor(r() * 2)), false), title: 'Operation: hold the line',
+    desc: BLOCS[by].name + ' want ' + n + ' ' + BLOCS[OTHER_BLOC[by]].short + ' ships wrecked at flash points, any front. Fight beside them where the war flares; the kills must be yours.' };
+}
+function bbTap(id, r, pick, win) {
+  const by = r() < 0.5 ? 'concord' : 'dominion', cmd = r() < 0.5;
+  return { id, win, kind: 'tap', band: cmd ? 'IV' : 'II', col: cmd ? '#ff8552' : '#7fe0a8', by, bloc: OTHER_BLOC[by], cmd, n: 1, mods: [], pay: cmd ? 9000 : 4000, rep: cmd ? 1500 : 700,
+    item: cmd ? bbItem(r, pick, 3, BB_OF_RACE(by, 3), false) : { kind: 'buff', id: by === 'concord' ? 'seal' : 'writ', text: by === 'concord' ? 'A Sanctuary seal for your next sortie' : 'A Writ of plunder for your next dock' },
+    title: 'Operation: listening post', desc: BLOCS[by].name + ' want a clean tap of ' + (cmd ? 'a military or strategic relay' : 'any relay') + ' of ' + BLOCS[OTHER_BLOC[by]].name + '. Hold fire, go silent, and stay within 80 km for 45 seconds.' };
+}
+function bbItem(r, pick, t, fac, elite) {
+  const R = FACTIONS[fac] || FACTIONS.pell, type = pick([R.kind || 'rail', 'sensors', 'drive', 'jump', 'damp', 'pd', 'msl', 'hull', 'stealth', R.kind || 'maser']);
+  const cond = elite ? 70 + Math.floor(r() * 21) : 45 + Math.floor(r() * 36);
+  return { kind: 'part', type, tier: t, cond, fac, text: (TIERS[t] || '') + '-tier ' + R.name + ' ' + SLOTS[type].name.toLowerCase() + ' at ' + cond + '%' };
+}
+const bbNow = () => bbMake(bbWin()).concat([bbElite(bbWeek())]);
+const bbSave = () => { if (!SAVE.bb) SAVE.bb = { taken: [], done: {}, prog: {} }; return SAVE.bb; };
+const takenN = () => (SAVE.accepted || []).length + bbSave().taken.length;
+/* The targets, as real ships in the galaxy: this board's hunts, the elite, and any hunt a captain is still holding. */
+let BB_LAST = null;
+function bbSync(force) {
+  const w = bbWin() + ':' + bbWeek(); if (w === BB_LAST && !force) return; BB_LAST = w;
+  if (NET.mode === 'client') return;
+  const saves = PLAYERS.map(p => p.SAVE).filter(Boolean); if (SAVE && !saves.includes(SAVE)) saves.push(SAVE);
+  const want = new Map(), doneAll = b => saves.length && saves.every(v => v.bb && v.bb.done[b.id]);
+  for (const b of bbNow()) if (b.kind === 'hunt' && !doneAll(b)) want.set(b.tgt.uid, b);
+  for (const v of saves) { const s = v.bb; if (s) for (const id of s.taken) { const b = bbGet(id); if (b && b.kind === 'hunt') want.set(b.tgt.uid, b); } }
+  WORLD = WORLD.filter(x => !x.bbt || want.has(x.bbt) || NPCS.includes(x));
+  for (const [uid, b] of want) {
+    if (WORLD.some(x => x.bbt === uid)) continue; const T = b.tgt;
+    const s = makeShip({ uid, name: T.name, fac: T.fac, cls: T.cls, sys: T.sys, site: T.site }); s.bbt = uid; s.bb = b.id;
+    if (b.mods.includes('armoured')) { s.bbArm = 1.5; freshShip(s); }
+    if (b.mods.includes('silent')) { s.def.quiet = true; s.def.sig *= 0.6; }
+    if (b.mods.includes('skittish')) s.def.fleeAt = 80;
+    WORLD.push(s);
+    T.esc.forEach((c, i) => { const e = makeShip({ uid: uid + '-w' + i, name: T.name + "'s " + (c === 'picket' ? 'outrider' : 'wingmate'), fac: T.fac, cls: c, sys: T.sys, site: T.site }); e.bbt = uid; WORLD.push(e); });
+  }
+}
+/* Progress: what the field tells the board. */
+function bbClaim(s, how) {
+  if (!G || !G.claims || !SAVE) return; const B = bbSave();
+  for (const id of B.taken) {
+    const b = bbGet(id); if (!b || B.done[id]) continue;
+    if (b.kind === 'hunt' && s.uid === b.tgt.uid && !G.claims.some(c => c.id === id)) { G.claims.push({ bb: true, id, how, t: G.t - (G.launchT || 0) }); say('ops', 'Board contract on the ' + b.tgt.name + ' is done: ' + (how === 'captured' ? 'captured, so the full bonus.' : 'killed.') + ' Paid when we dock.', 'ok'); }
+    else if (b.kind === 'cull' && s.Fa.bloc === 'void' && s.sys === b.sys && s.cls !== 'craft' && s.usHit) bbCount(b, id);
+    else if (b.kind === 'war' && s.fp && !s.vb && s.usHit && s.Fa.bloc === b.bloc && s.cls !== 'craft') bbCount(b, id);
+  }
+}
+function bbCount(b, id) {
+  let c = G.claims.find(k => k.id === id); if (!c) G.claims.push(c = { bb: true, id, n: 0, t: G.t - (G.launchT || 0) }); c.n++;
+  const have = (bbSave().prog[id] || 0) + c.n; say('ops', b.title + ': ' + Math.min(have, b.n) + ' of ' + b.n + (have >= b.n ? '. Done: paid when we dock.' : '.'), have >= b.n ? 'ok' : '');
+}
+function bbTapped(R) {
+  const B = bbSave(); if (!G || !G.claims) return;
+  for (const id of B.taken) { const b = bbGet(id); if (!b || b.kind !== 'tap' || B.done[id] || R.bloc !== b.bloc || (b.cmd && !RELAY_TYPES[R.type].command) || G.claims.some(c => c.id === id)) continue;
+    G.claims.push({ bb: true, id, how: 'tapped', t: G.t - (G.launchT || 0) }); say('ops', 'That tap satisfies the board contract "' + b.title + '". Paid when we dock.', 'ok'); }
+}
+/* At the dock: pay out what is finished, bank what is not. */
+function bbSettle(c, lines, rep, mult, o) {
+  const B = bbSave(), b = bbGet(c.id); if (!b || B.done[c.id]) return;
+  if (b.kind === 'cull' || b.kind === 'war') { B.prog[c.id] = (B.prog[c.id] || 0) + (c.n || 0); if (B.prog[c.id] < b.n) { lines.push(['Board: ' + b.title + ', ' + B.prog[c.id] + ' of ' + b.n + ' so far', 0]); return; } }
+  let pay = b.pay, bonus = []; if (b.kind === 'hunt' && c.how === 'captured') { pay *= 1.5; bonus.push('captured'); } if (b.swift && c.t != null && c.t <= 1200) { pay *= 1.25; bonus.push('swift'); }
+  pay = Math.round(pay * mult / 50) * 50; lines.push(['Board: ' + b.title + (bonus.length ? ' (' + bonus.join(', ') + ')' : ''), pay]);
+  if (b.by !== 'orrin' && b.rep) { rep[b.by] += b.rep; rep[OTHER_BLOC[b.by]] -= Math.round(b.rep / 2); }
+  const it = b.item;
+  if (it.kind === 'part') { const p = { type: it.type, tier: it.tier, cond: it.cond, fac: it.fac, cls: 'frigate' }; SAVE.stores.push(p); o.parts.push(p); lines.push(['Board reward: ' + it.text, 0]); }
+  else if (it.kind === 'buff') { SAVE.buffs = SAVE.buffs || {}; SAVE.buffs[it.id] = true; lines.push(['Board reward: ' + it.text, 0]); }
+  else if (it.kind === 'wire' && NET.mode !== 'client') { SAVE.wire = Math.max(SAVE.wire || 0, GC()) + it.h * 3600; lines.push(['Board reward: ' + it.text, 0]); }
+  else lines.push(['Board reward: ' + (it.kind === 'credits' ? it.text : 'Orrin bonus in place of wire time'), it.amt || 1500]);
+  B.done[c.id] = 1; B.taken = B.taken.filter(x => x !== c.id); delete B.prog[c.id];
+}
+/* ---------- the board itself ---------- */
+const bbClock = () => { const ms = (bbWin() + 1) * BB_PERIOD - Date.now(), h = Math.floor(ms / 3600000), m = Math.floor(ms % 3600000 / 60000); return (h ? h + ' h ' : '') + m + ' min'; };
+const bbWeekClock = () => { const ms = (bbWeek() + 1) * BB_WEEK + BB_WEEK0 - Date.now(), d = Math.floor(ms / 86400000), h = Math.floor(ms % 86400000 / 3600000); return (d ? d + ' d ' : '') + h + ' h'; };
+function bbWhere(b) { return b.kind === 'hunt' ? siteOf(b.tgt.sys, b.tgt.site).name + ', ' + SYSTEMS[b.tgt.sys].name + ' · ' + lyDist('tarsis', b.tgt.sys).toFixed(1) + ' ly' : b.kind === 'cull' ? SYSTEMS[b.sys].name + ' · ' + lyDist('tarsis', b.sys).toFixed(1) + ' ly' : 'Anywhere'; }
+function bbRow(b, held) {
+  const B = bbSave(), taken = B.taken.includes(b.id), done = !!B.done[b.id], full = takenN() >= 3, prog = B.prog[b.id] || 0;
+  const who = b.by === 'orrin' ? 'Orrin exchange' : BLOCS[b.by].name, R = b.kind === 'hunt' ? FACTIONS[b.tgt.fac] : null;
+  const tag = b.kind === 'hunt' ? esc(R.name) + ' · ' + esc(TIERN[b.t]) + ' · ' + esc(CLASSES[b.tgt.cls].name) : b.kind === 'cull' ? 'Void fauna · ' + b.n + ' kills' : b.kind === 'war' ? 'Flash points · ' + b.n + ' wrecks' : 'Spying · one clean tap';
+  const mods = b.mods.map(m => '<span class="bb-mod" title="' + esc(BB_MODS[m].desc) + '">' + esc(BB_MODS[m].name) + '</span>').join('');
+  return '<li class="bounty bb-row" data-k="' + (taken ? 'taken' : done ? 'done' : '') + '"><div><p class="b-race"><span class="bb-band" style="--c:' + b.col + '">' + esc(b.band) + '</span> ' + (R ? '<i style="background:' + R.col + '"></i>' : '') + tag + '</p><p class="b-name">' + esc(b.title) + '</p></div>'
+    + '<div class="b-side"><span class="b-pay">' + money(b.pay) + '</span><span class="hint">' + esc(who) + '</span></div>'
+    + '<p class="b-desc">' + esc(b.desc) + (mods ? '<span class="bb-mods">' + mods + '</span>' : '') + '</p>'
+    + '<p class="b-meta"><span>Where <b>' + esc(bbWhere(b)) + '</b></span><span>Reward <b>' + esc(b.item.text) + '</b></span>' + (b.rep ? '<span>Standing <b>+' + b.rep.toLocaleString('en-US') + ' ' + BLOCS[b.by].short + '</b></span>' : '') + (b.kind === 'hunt' ? '<span class="threat" data-k="' + threatKind(b.t) + '">' + esc(threatText(b.t)) + '</span>' : '') + (prog ? '<span>Progress <b>' + prog + ' of ' + b.n + '</b></span>' : '') + (held ? '<span>From an earlier board</span>' : '') + '</p>'
+    + '<div class="row" style="grid-column:1/-1">' + (done ? '<span class="b-done">Done</span>' : taken ? '<span class="b-done">Taken</span><button class="btn quiet" type="button" data-bbdrop="' + b.id + '">Drop it</button>' : '<button class="btn" type="button" data-bbtake="' + b.id + '"' + (full ? ' disabled' : '') + '>Take the contract</button>' + (full ? '<span class="hint">Three is the limit, standing orders included.</span>' : '')) + '</div></li>';
+}
+function bbBoardHtml() {
+  const B = bbSave(), now = bbMake(bbWin()), el = bbElite(bbWeek()), ids = new Set(now.map(b => b.id).concat([el.id]));
+  const held = B.taken.filter(id => !ids.has(id)).map(bbGet).filter(Boolean);
+  return '<li class="m-group bb-group" style="--bc:#62cdbb"><h3>The Tarsis board<span>New contracts in <b id="bb-clock">' + bbClock() + '</b> · the same board for every captain</span></h3><ul>'
+    + held.map(b => bbRow(b, true)).join('') + now.map(b => bbRow(b)).join('') + '</ul>'
+    + '<h3 class="bb-elite-h">Elite bounty of the week<span>Ends in ' + bbWeekClock() + '</span></h3><ul>' + bbRow(el)
+    + '</ul></li><li class="m-group bb-std"><h3>Standing orders<span>The powers\' own contracts. They never rotate, and pay less each time you repeat one.</span></h3></li>';
+}
+function bbTake(id) { const B = bbSave(); if (takenN() >= 3 || B.taken.includes(id) || B.done[id] || !bbGet(id)) return; B.taken.push(id); store(); bbSync(true); renderStation(); }
+function bbDrop(id) { const B = bbSave(); B.taken = B.taken.filter(x => x !== id); delete B.prog[id]; store(); renderStation(); }
+const bbTargetsIn = sid => bbSave().taken.map(bbGet).filter(b => b && b.kind === 'hunt' && b.tgt.sys === sid).length + bbSave().taken.map(bbGet).filter(b => b && b.kind === 'cull' && b.sys === sid).length;
+setInterval(() => { const c = document.getElementById('bb-clock'); if (c) c.textContent = bbClock(); if (BB_LAST && bbWin() + ':' + bbWeek() !== BB_LAST) { bbSync(); if (G && G.phase === 'docked' && TAB === 'missions' && !$('#station').hidden) renderStation(); } }, 15000);
 
 /* ---------- friends' pictures, kept by the host between sessions ---------- */
 function intelNetOut() {
@@ -6553,7 +6721,7 @@ function refreshUs() {
   freshShip(US); US.m.turn = OUR.turn(); US.model.msl.visible = !!F().msl; US.model.pd.visible = !!F().pd; US.model.damp.visible = !!F().damp;
 }
 function homeDest() { const s = siteOf('tarsis', 'ring'); return { sys: 'tarsis', site: 'ring', pos: s.pos.clone(), arrive: V(0, 0, 260) }; }
-function resetWorld() { WORLD = WORLD.filter(w => !w.agentGone); for (const s of WORLD) { freshShip(s); s.site = s.home; s.wake = null; s.model.g.traverse(o => { if (o.isSprite) o.visible = true; }); } intelPlaceShips(); }
+function resetWorld() { WORLD = WORLD.filter(w => !w.agentGone); for (const s of WORLD) { freshShip(s); s.site = s.home; s.wake = null; s.model.g.traverse(o => { if (o.isSprite) o.visible = true; }); } intelPlaceShips(); bbSync(true); }
 function dockedNow(towed) {
   G.phase = 'docked'; G.script = null; G.strip = null; G.pursue = null; G.salvQ = []; scene.remove(US.model.g);
   const data = sortieData(towed);
@@ -6580,6 +6748,7 @@ function settle(towed) {
   const rep = { concord: G.rep ? G.rep.concord : 0, dominion: G.rep ? G.rep.dominion : 0 };
   shardSettle(lines); infamySettle(lines);
   for (const c of G.claims) {
+    if (c.bb) { bbSettle(c, lines, rep, mult, o); continue; }
     const def = CONTRACTS.find(k => k.id === c.id), pay = Math.round(payFor(def) * (c.how === 'captured' ? 1 : def.kill) * mult), other = def.by === 'concord' ? 'dominion' : 'concord';
     lines.push([BLOCS[def.by].short + ' bounty, ' + (c.how === 'captured' ? 'captured: ' : 'killed: ') + WORLD.find(w => w.uid === def.uid).name, pay]); if (def.wright && !SAVE.done[def.id]) lines.push(['Shipwright open: restyle any slot in ' + BLOCS[def.by].short + ' or human looks you have salvaged', 0]); SAVE.done[def.id] = (SAVE.done[def.id] || 0) + 1; SAVE.accepted = SAVE.accepted.filter(x => x !== def.id);
     rep[def.by] += repFor(def); rep[other] -= Math.round(repFor(def) / 2);
@@ -6612,7 +6781,7 @@ function launch() {
 }
 function launchPlayer() {
   if (G && G.phase !== 'docked') return;
-  newSortie(); G.buffs = SAVE.buffs || {}; SAVE.buffs = {}; if (CUR.local) store(); refreshUs(); G.launchT = WT; scene.add(US.model.g); US.hist = [];
+  bbSync(true); newSortie(); G.buffs = SAVE.buffs || {}; SAVE.buffs = {}; if (CUR.local) store(); refreshUs(); G.launchT = WT; scene.add(US.model.g); US.hist = [];
   if (CUR.local && !fieldPlayers().some(q => q !== CUR)) { const moved = warCatchUp().filter(m => m.kind === 'flip'); if (moved.length) later(4, () => say('ops', 'While we were docked the front moved. ' + moved.map(m => m.msg).join(' '), 'warn')); }
   if (CUR.local) { $('#station').hidden = true; $('#hud').hidden = false; }
   if (STATION && SITE.id === 'ring') {
@@ -6627,6 +6796,7 @@ function launchPlayer() {
   if (CUR.local) { CAM.yaw = Math.PI * 0.85; CAM.pitch = 0.3; CAM.dist = 160; }
   for (const q of fieldPlayers()) if (q !== CUR) { const nm = CUR.name; withP(q, () => say('ops', nm + ' has launched and joined the fleet.', 'ok')); }
   if (SAVE.accepted.length) { const c2 = SAVE.accepted.map(id => CONTRACTS.find(k => k.id === id)); say('nav', 'Contracts aboard: ' + c2.map(k => WORLD.find(w => w.uid === k.uid).name + ' (' + SYSTEMS[WORLD.find(w => w.uid === k.uid).sys].name + ')').join(', ') + '.'); }
+  { const bt = bbSave().taken.map(bbGet).filter(Boolean); if (bt.length) say('nav', 'Board contracts aboard: ' + bt.map(b => b.title + ' (' + bbWhere(b) + ')').join(', ') + '.'); }
 }
 function towHome() { fade('black', true); const p0 = CUR; setTimeout(() => withP(p0, () => { dockedNow(true); fade('black', false); }), reduce ? 0 : 400); G.phase = 'towing'; }
 function fade(kind, on) { if (CUR && !CUR.local) { CUR.evq.push(['fade', kind, on]); return; } const f = $('#fade'); f.classList.toggle('black', kind === 'black'); f.style.opacity = on ? '1' : '0'; }
@@ -6740,7 +6910,7 @@ function receiptHtml(r) {
 }
 function bar(v) { const lo = -10000, hi = 12000, z = (0 - lo) / (hi - lo) * 100, x = (clamp(v, lo, hi) - lo) / (hi - lo) * 100; return '<div class="fx-bar"><i style="left:' + Math.min(z, x).toFixed(1) + '%;width:' + Math.abs(x - z).toFixed(1) + '%"></i></div>'; }
 function renderStation() {
-  $('#st-credits').textContent = money(SAVE.credits); $('#st-rating').textContent = TIERS[bestTier()] + ' tier'; $('#st-taken').textContent = SAVE.accepted.length + ' of 3';
+  $('#st-credits').textContent = money(SAVE.credits); $('#st-rating').textContent = TIERS[bestTier()] + ' tier'; $('#st-taken').textContent = takenN() + ' of 3';
   $('#st-con').textContent = rankOf('concord'); $('#st-dom').textContent = rankOf('dominion'); { const r = infamyRank(SAVE.infamy || 0), nx = INFAMY_RANKS[r + 1]; $('#st-inf').textContent = infamyName(r); $('#st-inf').title = Math.round(SAVE.infamy || 0) + ' infamy' + (nx ? ' · ' + nx[1] + ' at ' + nx[0] : ''); }
   for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-selected', String(b.dataset.tab === TAB));
   { const tb = $('#st-tut'); tb.disabled = NET.mode !== 'solo'; tb.title = NET.mode !== 'solo' ? 'The tutorial runs in solo play' : 'A guided first mission against a practice target'; tb.textContent = (SAVE.tutDone && SAVE.tutDone.first) || (SAVE.tut && (SAVE.tut.kind || 'first') === 'first' && (SAVE.tut.done || SAVE.tut.off)) ? 'Replay the first sortie' : 'First sortie (tutorial)';
@@ -6753,17 +6923,17 @@ function renderStation() {
   else if (!SAVE.seen) { rc.hidden = false; rc.innerHTML = '<p class="eyebrow">Captain\'s notes</p><p>The Magpie is a salvage cutter at Tarsis Ring, neutral ground between two powers: the Concord, benign overlords led by the Seraphine Lattice, and the Dominion, the Vorrakai Autarch\'s dictatorship. Your ship runs on human 5th-tier parts. The only way up is to beat a ship of a higher tier and strip its parts. Start with the 5th-tier ships near home: the Dominion\'s Rust Widow in the Outer belt, or the Concord\'s Lantern Moth above Tarsis III.</p>' + (NET.mode === 'solo' && !SAVE.tut ? '<div class="row"><button class="btn big" type="button" data-tut-start>Fly a guided first sortie</button><span class="hint">Eight short steps, one practice target. Skip any time.</span></div>' : ''); }
   else rc.hidden = true;
   const fpc = fpSeenLatest(), fps = fpStatus(fpc);
-  $('#board').innerHTML = shardBoardHtml() + warBoardHtml() + (fps ? '<li class="m-group fp-note" style="--bc:' + (fps.kind === 'battle' ? '#ff8552' : '#f2b84b') + '"><h3>' + (fps.kind === 'battle' ? 'Flash point' : 'After the battle') + '<span>' + esc(siteOf(fpc.sys, fpc.site).name + ', ' + SYSTEMS[fpc.sys].name + ' · ' + lyDist('tarsis', fpc.sys).toFixed(1) + ' ly') + '</span></h3><p class="b-desc">' + esc(fps.long + repNote(fpc)) + ' Ships of a side that trusts you more than the other will treat you as an ally there; the other side will shoot.</p></li>' : '') + ['concord', 'dominion'].map(B => {
+  $('#board').innerHTML = shardBoardHtml() + warBoardHtml() + (fps ? '<li class="m-group fp-note" style="--bc:' + (fps.kind === 'battle' ? '#ff8552' : '#f2b84b') + '"><h3>' + (fps.kind === 'battle' ? 'Flash point' : 'After the battle') + '<span>' + esc(siteOf(fpc.sys, fpc.site).name + ', ' + SYSTEMS[fpc.sys].name + ' · ' + lyDist('tarsis', fpc.sys).toFixed(1) + ' ly') + '</span></h3><p class="b-desc">' + esc(fps.long + repNote(fpc)) + ' Ships of a side that trusts you more than the other will treat you as an ally there; the other side will shoot.</p></li>' : '') + bbBoardHtml() + ['concord', 'dominion'].map(B => {
     const BB = BLOCS[B], other = B === 'concord' ? 'dominion' : 'concord';
     return '<li class="m-group" style="--bc:' + BB.col + '"><h3>Missions from ' + esc(BB.name) + '<span>' + esc(BB.kind) + ' · you are ' + rankOf(B) + '</span></h3><ul>' + CONTRACTS.filter(c => c.by === B).map(c => {
       const locked = c.needs && (SAVE.standing[B] < -1000 || rankNum(peakOf(B)) < c.needs);
-      const sh = WORLD.find(w => w.uid === c.uid), R = FACTIONS[sh.fac], CL = CLASSES[sh.cls], t = R.t, taken = SAVE.accepted.includes(c.id), full = SAVE.accepted.length >= 3, ly = lyDist('tarsis', sh.sys), site = siteOf(sh.sys, sh.home);
+      const sh = WORLD.find(w => w.uid === c.uid), R = FACTIONS[sh.fac], CL = CLASSES[sh.cls], t = R.t, taken = SAVE.accepted.includes(c.id), full = takenN() >= 3, ly = lyDist('tarsis', sh.sys), site = siteOf(sh.sys, sh.home);
       const wp = [sh.def.gun && (sh.def.gun.kind === 'rail' ? 'railguns' : 'masers'), sh.def.msl && sh.def.msl.name, sh.def.pd && (sh.def.pd.n > 1 ? sh.def.pd.n + ' point-defence mounts' : 'point defence'), sh.def.hangar && 'strike craft', sh.def.damp && 'a damping field'].filter(Boolean).join(', ');
       return '<li class="bounty' + (c.wright ? ' wright' : '') + '" data-k="' + (taken ? 'taken' : '') + '"><div><p class="b-race">' + (c.wright ? '<span class="wtag">Shipwright commission</span> ' : '') + '<i style="background:' + R.col + '"></i>' + esc(R.name) + ' · ' + esc(R.tier) + ' · ' + esc(CL.name) + '</p><p class="b-name">' + esc(sh.name) + '</p></div>'
         + '<div class="b-side"><span class="b-pay">' + money(payFor(c)) + '</span>' + (SAVE.done[c.id] ? '<span class="b-done">Done ×' + SAVE.done[c.id] + ' · repeat rate</span>' : '') + '</div>'
         + '<p class="b-desc">' + esc(c.desc) + '</p>'
         + '<p class="b-meta"><span>Last seen <b>' + esc(site.name) + ', ' + esc(SYSTEMS[sh.sys].name) + '</b>' + (ly ? ' · ' + ly.toFixed(1) + ' ly' : ' · this system') + '</span><span>Carries <b>' + esc(wp) + '</b></span><span class="threat" data-k="' + threatKind(t) + '">' + esc(threatText(t)) + '</span><span>Standing <b>+' + repFor(c).toLocaleString('en-US') + ' ' + BB.short + '</b>, −' + Math.round(repFor(c) / 2).toLocaleString('en-US') + ' ' + BLOCS[other].short + '</span></p>'
-        + '<div class="row" style="grid-column:1/-1">' + (taken ? '<span class="b-done">Taken</span><button class="btn quiet" type="button" data-drop="' + c.id + '">Drop it</button>' : '<button class="btn" type="button" data-take="' + c.id + '"' + (full || locked ? ' disabled' : '') + '>Take the mission</button>' + (locked ? '<span class="hint">Needs ' + RANKS[c.needs + 2][1] + ' rank with ' + esc(BB.short) + ' (peak standing ' + RANKS[c.needs + 2][0].toLocaleString('en-US') + ').</span>' : full ? '<span class="hint">Three is the limit.</span>' : '') + (c.wright && wrightOpen(B) ? '<span class="b-done">Shipwright open</span>' : '')) + '</div></li>';
+        + '<div class="row" style="grid-column:1/-1">' + (taken ? '<span class="b-done">Taken</span><button class="btn quiet" type="button" data-drop="' + c.id + '">Drop it</button>' : '<button class="btn" type="button" data-take="' + c.id + '"' + (full || locked ? ' disabled' : '') + '>Take the mission</button>' + (locked ? '<span class="hint">Needs ' + RANKS[c.needs + 2][1] + ' rank with ' + esc(BB.short) + ' (peak standing ' + RANKS[c.needs + 2][0].toLocaleString('en-US') + ').</span>' : full ? '<span class="hint">Three is the limit, board contracts included.</span>' : '') + (c.wright && wrightOpen(B) ? '<span class="b-done">Shipwright open</span>' : '')) + '</div></li>';
     }).join('') + '</ul></li>';
   }).join('');
   $('#factions').innerHTML = ['concord', 'dominion'].map(B => {
@@ -6804,10 +6974,10 @@ function renderStation() {
   }).join('');
 }
 $('#b-hl-yes').addEventListener('click', () => shardAnswer(true)); $('#b-hl-no').addEventListener('click', () => shardAnswer(false));
-$('#board').addEventListener('click', e => {
+$('#board').addEventListener('click', e => { const bt = e.target.closest('[data-bbtake]'), bd = e.target.closest('[data-bbdrop]'); if (bt) { bbTake(bt.dataset.bbtake); return; } if (bd) { bbDrop(bd.dataset.bbdrop); return; }
   const t = e.target.closest('[data-take]'), d = e.target.closest('[data-drop]'), sh = e.target.closest('[data-shard]');
   if (sh) { shardSell(sh.dataset.shard); return; }
-  if (t && SAVE.accepted.length < 3 && !SAVE.accepted.includes(t.dataset.take)) { SAVE.accepted.push(t.dataset.take); store(); renderStation(); }
+  if (t && takenN() < 3 && !SAVE.accepted.includes(t.dataset.take)) { SAVE.accepted.push(t.dataset.take); store(); renderStation(); }
   if (d) { SAVE.accepted = SAVE.accepted.filter(x => x !== d.dataset.drop); store(); renderStation(); }
 });
 for (const b of document.querySelectorAll('.tab')) b.addEventListener('click', () => { TAB = b.dataset.tab; renderStation(); });
@@ -7072,7 +7242,7 @@ function sysXY(sid, p) { const k = sysScale(sid), r = p.length(); if (r < 1e-9) 
 const PCOL = { ocean: '#4a86c8', rocky: '#a08a70', lava: '#e0703a', gas: '#d6b48a', ice: '#cfe6f2' };
 function openMap() { if (G.phase !== 'play') return; MAP.sys = SITE.sys; MAP.plot = null; $('#map').hidden = false; drawMap(); }
 function closeMap() { $('#map').hidden = true; }
-function contractsAt(sys, site) { return SAVE.accepted.map(id => CONTRACTS.find(c => c.id === id)).map(c => WORLD.find(w => w.uid === c.uid)).filter(s => s && s.sys === sys && s.site === site && isLive(s)); }
+function contractsAt(sys, site) { return SAVE.accepted.map(id => CONTRACTS.find(c => c.id === id)).map(c => WORLD.find(w => w.uid === c.uid)).concat(bbSave().taken.map(bbGet).filter(b => b && b.kind === 'hunt').map(b => WORLD.find(w => w.uid === b.tgt.uid))).filter(s => s && s.sys === sys && s.site === site && isLive(s)); }
 function drawMap() {
   const spec = OUR.jump();
   const gw = gal.width, gh = gal.height;
@@ -7839,8 +8009,8 @@ function des(x) { if (x && x.__v) return V(x.__v[0], x.__v[1], x.__v[2]); if (Ar
 function netSend(o) { if (NET.ws && NET.ws.readyState === 1) NET.ws.send(JSON.stringify(o)); }
 function netTo(p, o) { o.to = p.id; netSend(o); }
 function netCmd(c, a) { netSend({ t: 'cmd', c, a: ser(a) }); return true; }
-const packSave = () => ({ name: LOCAL.name, followKm: SAVE.followKm || 0, shardHeat: SAVE.shardHeat || 0, infamy: SAVE.infamy || 0, fit: SAVE.fit, tmog: SAVE.tmog, accepted: SAVE.accepted, standing: SAVE.standing, peak: SAVE.peak, buffs: SAVE.buffs, done: SAVE.done });
-const VALK_VERSION = '0.22.0';
+const packSave = () => ({ name: LOCAL.name, followKm: SAVE.followKm || 0, shardHeat: SAVE.shardHeat || 0, infamy: SAVE.infamy || 0, fit: SAVE.fit, tmog: SAVE.tmog, accepted: SAVE.accepted, standing: SAVE.standing, peak: SAVE.peak, buffs: SAVE.buffs, done: SAVE.done, bb: SAVE.bb });
+const VALK_VERSION = '0.23.0';
 const NET_CID = (() => { try { let c = localStorage.getItem('valk-cid'); if (!c) { c = Math.random().toString(36).slice(2, 12) + Date.now().toString(36); localStorage.setItem('valk-cid', c); } return c; } catch (_) { return 'c' + Math.random().toString(36).slice(2, 12); } })();
 const NET_GRACE = () => (window.VALK_GRACE || 90);   // seconds the host holds a dropped captain's ship
 function netConnect() {
@@ -8077,9 +8247,10 @@ function netFrame(real) {
 /* ---------- boot ---------- */
 if ((navigator.maxTouchPoints || 0) > 0 && window.matchMedia && matchMedia('(pointer: coarse)').matches) $('#hint').textContent = 'Drag to look around the Magpie · pinch to zoom · tap to set a course · tap one of her systems to call a shot';
 WORLD = ROSTER.map(r => makeShip(r));
-warBoot();
+warBoot(); bbSync(true);
 window.__spy = { PROJ, projStart, projApply, projPlan, leakSpawn, LEAKS, intelAct, spyTapTick, brokerLot, brokerSell, commission, commissionOpts, OFFLINE_P, intelPark, stageLive, agRetire, provoke };
 window.__intel = { VOID, WARDS, DEEP, vbStart, vbPick, vbEnd, cageAvg, voidAmbient, voidKill, cageHtml, voidScene, get VOID_SCN() { return VOID_SCN; }, BAL, get WIREH() { return WIREH; }, wireOn, wireBuy, orrinFleet, playerTrust, RELAYS, AGENTS, IH, GC, ihOf, myIH, knowOf, intelStep, intelFF, agDie, relayKilled, stageTick, intelClass, intelSave, intelBoot, cmdKnows, get STAGE() { return STAGE; }, set STAGE(v) { STAGE = v; }, intelPlayer, intelDocked, ihObserve, ihSee, ihXfer, INT, relayUp, agRoute };
+window.__board = { bbMake, bbElite, bbGet, bbNow, bbWin, bbWeek, bbSync, bbTake, bbDrop, bbClaim, bbTapped, bbSettle, bbSave, takenN, bbBoardHtml, BB_PERIOD, BB_MODS, settle, claim, CONTRACTS, FACTIONS };
 window.__war = { WAR, warResult, warCatchUp, warPick, warFronts, garBuild, SYS_IDS, NEAR, FPS, fpStart, fpEnd, drawGalaxy, warPack, warApply, sysBloc, warSave, WAR_START, GAR };
 LOCAL = makePlayer(0, (() => { try { return localStorage.getItem('valk-name'); } catch (_) { return null; } })() || 'Captain ' + (100 + Math.floor(rand() * 900)), SAVE, true); setCtx(LOCAL);
 refreshUs(); newSortie(); G.phase = 'docked';
